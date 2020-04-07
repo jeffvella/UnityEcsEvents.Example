@@ -18,12 +18,19 @@ namespace Assets.Scripts.UI
             EventSource.AddListener<UIScoreUpdater, ScoreUpdatedEvent>(this);
         }
 
+        private void OnDestroy()
+        {
+            EventSource.RemoveListener<UIScoreUpdater, ScoreUpdatedEvent>(this);
+        }
+
         public void OnEvent(ScoreUpdatedEvent e)
         {
             Debug.Log($"{nameof(ScoreUpdatedEvent)}! Score={e.CurrentScore} Change={e.ChangedAmount} Type={e.Type}");
 
             ScoreText.text = e.CurrentScore.ToString();
         }
+
+
 
     }
 

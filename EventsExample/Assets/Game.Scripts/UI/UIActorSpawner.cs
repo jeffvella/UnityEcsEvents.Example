@@ -17,6 +17,10 @@ namespace Assets.Scripts.UI
         {
             EventSource.AddListener<UIActorSpawner, SpawnActorEvent>(this);
         }
+        private void OnDestroy()
+        {
+            EventSource.RemoveListener<UIActorSpawner, SpawnActorEvent>(this);
+        }
 
         public void SpawnAttacker()
         {
@@ -25,7 +29,7 @@ namespace Assets.Scripts.UI
             {
                 
                 Amount = UnityEngine.Random.Range(_invocations, _invocations / 2),
-                Team = ActorCategory.Attacker,
+                Catetory = ActorCategory.Attacker,
             }); ;
         }
 
@@ -34,7 +38,7 @@ namespace Assets.Scripts.UI
             EventSource.FireEvent(new SpawnActorEvent
             {
                 Amount = 1,
-                Team = ActorCategory.Player,
+                Catetory = ActorCategory.HumanPlayer,
             });
         }
 
@@ -43,7 +47,7 @@ namespace Assets.Scripts.UI
             EventSource.FireEvent(new SpawnActorEvent
             {
                 Amount = 1,
-                Team = ActorCategory.Defender,
+                Catetory = ActorCategory.Defender,
                 OwnerId = CurrentPlayerId,
             });
         }
@@ -55,7 +59,8 @@ namespace Assets.Scripts.UI
 
         public void OnEvent(SpawnActorEvent e)
         {
-            Debug.Log($"{nameof(SpawnActorEvent)}! Amount={e.Amount} Team={e.Team}");
+            Debug.Log($"{nameof(SpawnActorEvent)}! Amount={e.Amount} Team={e.Catetory}");
         }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Components.Events;
+using SubjectNerd.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,9 @@ namespace Assets.Game.Scripts.Effects
             public ParticleEffect Effect;
         }
 
+        [Reorderable]
         public List<EffectEntry> Effects = new List<EffectEntry>();
         public ILookup<EffectCategory, EffectEntry> ByCategory;
-
 
         private void Start()
         {

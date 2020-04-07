@@ -46,10 +46,10 @@ namespace Assets.Scripts.Systems
 
             Entities.ForEach((ref SpawnActorEvent e) =>
             {
-                if (e.Team != ActorCategory.Attacker)
+                if (e.Catetory != ActorCategory.Attacker)
                     return;
 
-                if (prefabData.TryGetFirst(e.Team, out var prefab))
+                if (prefabData.TryGetFirst(e.Catetory, out var prefab))
                 {
                     entities.Resize(e.Amount, NativeArrayOptions.UninitializedMemory);
 

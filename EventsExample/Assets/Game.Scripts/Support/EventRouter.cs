@@ -14,7 +14,7 @@ namespace Assets.Scripts.UI
 {
     public unsafe interface IEventObserver<T> where T : unmanaged, IComponentData
     {
-        void OnEvent(T eventData);
+        void OnEvent(T e);
     }
 
     public class EventRouter : MonoBehaviour
@@ -27,6 +27,24 @@ namespace Assets.Scripts.UI
         {
             _eventSystem.Enqueue(eventData);
         }
+
+        //public Entity CreateEntity<T>(T componentData = default) where T : struct, IComponentData
+        //{
+        //    var entity = _world.EntityManager.CreateEntity(ComponentType.ReadWrite<T>());
+        //    _world.EntityManager.SetComponentData(entity, componentData);
+        //    return entity;
+        //}
+
+        //public void DestroyEntity(Entity entity)
+        //{
+        //    _world.EntityManager.DestroyEntity(entity);
+        //}
+
+        //public void DestroyEntitiesOfType<T>()
+        //{
+        //    var query = _world.EntityManager.CreateEntityQuery(ComponentType.ReadWrite<T>());
+        //    _world.EntityManager.DestroyEntity(query);
+        //}
 
         private void Awake()
         {
@@ -42,16 +60,29 @@ namespace Assets.Scripts.UI
             void ExecuteDefault();
         }
 
-        public unsafe struct DelegateInvoker<THandler, T> : IDelegateInvoker
+        public unsafe struct DelegateInvoker<THandler, T> : IDelegateInvoker, IEquatable<DelegateInvoker<THandler, T>>
             where THandler : IEventObserver<T>
             where T : unmanaged, IComponentData
         {
-            public void* Ptr;
             public THandler Handler;
 
             public void Execute(void* ptr) => Handler.OnEvent(*(T*)ptr);
 
             public void ExecuteDefault() => Handler.OnEvent(default);
+
+            public bool Equals(DelegateInvoker<THandler, T> other)
+            {
+                return Handler.GetHashCode() == other.Handler.GetHashCode();
+            }
+
+            public override int GetHashCode()
+            {
+                int hash = 13;
+                hash = (hash * 7) + Handler.GetHashCode();
+                hash = (hash * 7) + typeof(T).GetHashCode();
+                hash = (hash * 7) + typeof(THandler).GetHashCode();
+                return hash;
+            }
         }
 
         internal void AddListener<THandler, T>(THandler handler = default)
@@ -59,44 +90,69 @@ namespace Assets.Scripts.UI
             where T : unmanaged, IComponentData
         {
             var typeIndex = TypeManager.GetTypeIndex<T>();
-            var component = ComponentType.FromTypeIndex(typeIndex);
             var invoker = new DelegateInvoker<THandler, T>
             {
                 Handler = handler
             };
 
-            _dispatcherSystem.Add(component, invoker);
+            _dispatcherSystem.Add(typeIndex, invoker);
+        }
+
+        internal void RemoveListener<THandler, T>(THandler handler = default)
+            where THandler : IEventObserver<T>
+            where T : unmanaged, IComponentData
+        {
+            var typeIndex = TypeManager.GetTypeIndex<T>();
+            var invoker = new DelegateInvoker<THandler, T>
+            {
+                Handler = handler
+            };
+            _dispatcherSystem.Remove(typeIndex, invoker);
         }
 
         public class EventDispatcher : SystemBase
         {
-            private Dictionary<ComponentType, List<IDelegateInvoker>> _actions;
+            private Dictionary<int, List<IDelegateInvoker>> _actions;
             private EntityQuery _query;
 
             public EventDispatcher()
             {
-                _actions = new Dictionary<ComponentType, List<IDelegateInvoker>>();
+                _actions = new Dictionary<int, List<IDelegateInvoker>>();
             }
 
             protected override void OnCreate()
             {
-                _actions = new Dictionary<ComponentType, List<IDelegateInvoker>>();
+                _actions = new Dictionary<int, List<IDelegateInvoker>>();
                 _query = EntityManager.CreateEntityQuery(ComponentType.ReadOnly<EntityEvent>());
 
                 RequireForUpdate(_query);
             }
 
-            internal void Add<THandler, T>(ComponentType component, DelegateInvoker<THandler, T> invoker)
+            internal void Add<THandler, T>(int typeIndex, DelegateInvoker<THandler, T> invoker)
                 where THandler : IEventObserver<T>
                 where T : unmanaged, IComponentData
             {
-                if (!_actions.ContainsKey(component))
+                if (!_actions.ContainsKey(typeIndex))
                 {
-                    _actions[component] = new List<IDelegateInvoker> { invoker };
+                    _actions[typeIndex] = new List<IDelegateInvoker> { invoker };
                 }
                 else
                 {
-                    _actions[component].Add(invoker);
+                    _actions[typeIndex].Add(invoker);
+                }
+            }
+
+            internal void Remove<THandler, T>(int typeIndex, DelegateInvoker<THandler, T> invoker)
+                where THandler : IEventObserver<T>
+                where T : unmanaged, IComponentData
+            {
+                if (_actions.ContainsKey(typeIndex))
+                {
+                    var invokers = _actions[typeIndex];
+                    if (invokers == null || invokers.Count == 0)
+                        return;
+
+                    invokers.Remove(invoker);
                 }
             }
 
@@ -110,8 +166,7 @@ namespace Assets.Scripts.UI
                     var componentTypeIndex = uem.GetComponentPtr<EntityEvent>(chunk)->ComponentTypeIndex;
                     if (componentTypeIndex != 0)
                     {
-                        var componentType = ComponentType.FromTypeIndex(componentTypeIndex);
-                        if (_actions.TryGetValue(componentType, out var list))
+                        if (_actions.TryGetValue(componentTypeIndex, out var list))
                         {
                             var componentsPtr = uem.GetComponentPtr(chunk, componentTypeIndex);
                             var typeInfo = TypeManager.GetTypeInfo(componentTypeIndex);

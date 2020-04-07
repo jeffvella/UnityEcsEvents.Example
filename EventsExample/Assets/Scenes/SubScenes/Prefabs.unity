@@ -133,20 +133,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: AttackingCube
       objectReference: {fileID: 0}
-    - target: {fileID: 8082390653183256876, guid: 43771e8b8c920614db71dc191fdee2ae,
+    - target: {fileID: 5322616922775520756, guid: 43771e8b8c920614db71dc191fdee2ae,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.3
+      propertyPath: Flags
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8082390653183256876, guid: 43771e8b8c920614db71dc191fdee2ae,
         type: 3}
-      propertyPath: m_LocalPosition.y
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8082390653183256876, guid: 43771e8b8c920614db71dc191fdee2ae,
         type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082390653183256876, guid: 43771e8b8c920614db71dc191fdee2ae,
+        type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8082390653183256876, guid: 43771e8b8c920614db71dc191fdee2ae,
         type: 3}

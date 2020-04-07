@@ -1,10 +1,12 @@
-﻿using Assets.Scripts.Components;
+﻿using Assets.Game.Scripts.Components.Tags;
+using Assets.Scripts.Components;
 using Assets.Scripts.Components.Events;
 using Assets.Scripts.Components.Tags;
 using Assets.Scripts.Providers;
 using Assets.Scripts.Support;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +27,6 @@ namespace Assets.Scripts.Systems
     {
         private IProvider<Players> _players;
         private EntityArchetype _playerArchetype;
-        private EntityQuery _playerQuery;
         private BeginPresentationEntityCommandBufferSystem _commandSystem;
         private IdGenerator _idGenerator;
 
@@ -35,11 +36,11 @@ namespace Assets.Scripts.Systems
             {
                 ComponentType.ReadWrite<PlayerTag>(),
                 ComponentType.ReadWrite<PlayerSession>(),
+                ComponentType.ReadWrite<PlayerInput>(),
             };
 
             _players = World.GetOrCreateProvider<Players>();
             _playerArchetype = EntityManager.CreateArchetype(components);
-            _playerQuery = EntityManager.CreateEntityQuery(components);
             _commandSystem = World.GetOrCreateSystem<BeginPresentationEntityCommandBufferSystem>();
             _idGenerator = new IdGenerator();
         }
@@ -51,26 +52,30 @@ namespace Assets.Scripts.Systems
             var idGenerator = _idGenerator;
             var players = _players;
 
-            Entities.ForEach((ref SpawnActorEvent e) =>
+            Entities.ForEach((ref SpawnPlayerEvent e) =>
             {
-                if(e.Team == ActorCategory.Player)
+                var playerEntity = commands.CreateEntity(archetype);
+                var id = idGenerator.NewId();
+
+                commands.SetComponent(playerEntity, new PlayerSession
                 {
-                    for (int i = 0; i < e.Amount; i++)
-                    {
-                        var playerEntity = commands.CreateEntity(archetype);
-                        var id = idGenerator.NewId();
+                    PlayerId = id,
+                });
 
-                        commands.SetComponent(playerEntity, new PlayerSession
-                        {
-                            PlayerId = id,
-                            Score = 0,
-                        });
-
-                        commands.AddComponent<UnprocessedTag>(playerEntity);
-                    }
+                if (e.Category == ActorCategory.AIPlayer)
+                {
+                    commands.AddComponent<AIPlayerTag>(playerEntity);
                 }
 
+                commands.SetComponent(playerEntity, new PlayerInput
+                {
+                    InputPlayerId = e.InputPlayerId,
+                });
+
+                commands.AddComponent<UnprocessedTag>(playerEntity);
+ 
             }).Run();
+
         }
 
         public struct IdGenerator
@@ -100,7 +105,7 @@ namespace Assets.Scripts.Systems
             var events = _playerCreatedEvents;
             var players = _players.Data;
 
-            Entities.WithAll<PlayerTag, UnprocessedTag>().ForEach((Entity entity, ref PlayerSession session) =>
+            Entities.WithAll<PlayerTag, UnprocessedTag>().ForEach((Entity entity, in PlayerSession session) =>
             {
                 players.Add(new PlayerRef
                 {
@@ -116,8 +121,19 @@ namespace Assets.Scripts.Systems
                 });
 
             }).Run();
+
+            SetEntityDebuggerNamesInEditor();
         }
 
+        [Conditional("UNITY_EDITOR")]
+        private void SetEntityDebuggerNamesInEditor()
+        {
+            Entities.WithAll<PlayerTag, UnprocessedTag>().ForEach((Entity entity, in PlayerSession session, in PlayerInput input) =>
+            {
+                EntityManager.SetName(entity, $"Player: {session.PlayerId} Input:{input.InputPlayerId}");
+
+            }).WithoutBurst().Run();
+        }
     }
 
 }

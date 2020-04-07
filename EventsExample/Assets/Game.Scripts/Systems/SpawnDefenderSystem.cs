@@ -40,7 +40,7 @@ namespace Assets.Scripts.Systems
 
             Entities.ForEach((ref SpawnActorEvent e) =>
             {
-                if (e.Team == ActorCategory.Defender)
+                if (e.Catetory == ActorCategory.Defender)
                 {
                     if (!prefabData.TryGetFirst(ActorCategory.Defender, out var prefab))
                         throw new Exception("Prefab not found");
@@ -57,7 +57,7 @@ namespace Assets.Scripts.Systems
             }).Run();
         }
 
-        private static void CreateDefender(ref EntityCommandBuffer commands, PrefabRef prefab, PlayerRef player)
+        private static void CreateDefender(ref EntityCommandBuffer commands, PrefabRef prefab, PlayerRef player, float3 position = default)
         {
             var targetEntity = commands.Instantiate(prefab.Entity);
             commands.AddComponent<DefenderTag>(targetEntity);
@@ -68,7 +68,7 @@ namespace Assets.Scripts.Systems
             });
             commands.SetComponent(targetEntity, new Translation
             {
-                Value = float3.zero
+                Value = position + prefab.SpawnOffset
             });
         }
 
@@ -91,7 +91,7 @@ namespace Assets.Scripts.Systems
             var commands = _commandSystem.CreateCommandBuffer();
             var events = _createdEvents;
 
-            Entities.WithAll<DefenderTag, UnprocessedTag>().ForEach((Entity entity, ref ActorDefinition def) =>
+            Entities.WithAll<DefenderTag, UnprocessedTag>().ForEach((Entity entity, in ActorDefinition def) =>
             {
                 commands.RemoveComponent<UnprocessedTag>(entity);
 

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Unity.Collections;
 using Unity.Entities;
+using Unity.Transforms;
+using UnityEngine;
 using Vella.Events;
 
 #if (UNITY_EDITOR && ENABLE_UNITY_COLLECTIONS_CHECKS)
@@ -29,6 +31,7 @@ namespace Assets.Scripts.Systems
             }).WithStructuralChanges().WithStoreEntityQueryInField(ref _allEvents).Run();
         }
     }
+
 }
 
 #endif

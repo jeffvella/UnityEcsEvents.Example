@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Components.Events;
 using Assets.Scripts.UI;
+using SubjectNerd.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,16 +10,17 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour, IEventObserver<PlayAudioEvent>
 {
+    [Reorderable]
+    public List<AudioEntry> Clips = new List<AudioEntry>();
     public EventRouter EventSource;
 
     [Serializable]
-    public struct AudioEntry
+    public class AudioEntry
     {
         public SoundCategory Category;
         public AudioClip Clip;
     }
  
-    public List<AudioEntry> Clips = new List<AudioEntry>();
     private List<AudioPlayer> _active = new List<AudioPlayer>();
     private Stack<AudioPlayer> _pool = new Stack<AudioPlayer>();
     private List<AudioPlayer> _keepBuffer = new List<AudioPlayer>();
@@ -30,6 +32,11 @@ public class AudioManager : MonoBehaviour, IEventObserver<PlayAudioEvent>
         EventSource.AddListener<AudioManager, PlayAudioEvent>(this);
     }
 
+    private void OnDestroy()
+    {
+        EventSource.RemoveListener<AudioManager, PlayAudioEvent>(this);
+    }
+
     public class AudioPlayer
     {
         public float EndTime;
@@ -39,8 +46,6 @@ public class AudioManager : MonoBehaviour, IEventObserver<PlayAudioEvent>
 
     public void OnEvent(PlayAudioEvent e)
     {
-        // todo limit the amount of sounds that can be played at the same time.
-
         if (e.Sound == SoundCategory.None)
         {
             Debug.LogError($"PlaySoundEvent detected with no sound specified");
@@ -88,9 +93,6 @@ public class AudioManager : MonoBehaviour, IEventObserver<PlayAudioEvent>
     private bool IsPlayingForEntity(AudioClip clip, Entity entity)
     {
         var isPlaying = false;
-
-        // Perform maintenance on all active sounds.
-
         foreach (AudioPlayer player in _active)
         {
             if (!player.Source.isPlaying)

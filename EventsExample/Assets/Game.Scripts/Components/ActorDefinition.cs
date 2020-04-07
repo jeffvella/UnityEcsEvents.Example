@@ -24,7 +24,8 @@ namespace Assets.Scripts.Components
         None = 0,
         Attacker,
         Defender,
-        Player,
+        HumanPlayer,
+        AIPlayer,
     }
 
     public enum ActorAssetId
@@ -36,11 +37,20 @@ namespace Assets.Scripts.Components
         Adventurer,
     }
 
+    [Flags, Serializable]
+    public enum ActorFlags
+    {
+        None = 0,
+        AddTransformAsOffset = 1 << 0,
+        Unused = 1 << 1
+    }
+
     [GenerateAuthoringComponent]
     public struct ActorDefinition : IComponentData
     {
         public ActorAssetId AssetId;
         public ActorType ActorType;
         public ActorCategory Team;
+        public ActorFlags Flags;
     }
 }

@@ -13,9 +13,12 @@ using System.Threading.Tasks;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
+using Unity.Mathematics;
 using Unity.Physics.Systems;
 using Unity.Scenes;
+using Unity.Transforms;
 using UnityEngine;
+using Vella.Events.Extensions;
 using Debug = UnityEngine.Debug;
 
 namespace Assets.Scripts.Systems
@@ -44,10 +47,15 @@ namespace Assets.Scripts.Systems
 
             Entities.ForEach((Entity entity, in ActorDefinition def) =>
             {
+                float3 spawnOffset = default;
+                if (HasComponent<Translation>(entity) && def.Flags.IsFlagSet(ActorFlags.AddTransformAsOffset))
+                    spawnOffset = GetComponent<Translation>(entity).Value;
+ 
                 prefabs.AddOrReplace(new PrefabRef
                 {
                     Entity = entity,
-                    Definition = def
+                    Definition = def,
+                    SpawnOffset = spawnOffset,
                 });
 
                 commands.AddComponent<OwnerRef>(entity);

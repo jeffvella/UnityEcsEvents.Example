@@ -5,9 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 using UnityEngine;
+using Unity.Burst;
+using Unity.Collections;
+using Unity.Collections.LowLevel.Unsafe;
 
 namespace Assets.Game.Scripts.Effects
 {
+
+
     public class ParticleEffect : MonoBehaviour, IPoolable<ParticleEffect>
     {
         private IObjectPool<ParticleEffect> _pool;

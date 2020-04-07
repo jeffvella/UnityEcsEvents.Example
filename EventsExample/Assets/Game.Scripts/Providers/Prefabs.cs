@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
+using Unity.Mathematics;
 
 namespace Assets.Scripts.Providers
 {
@@ -15,13 +16,14 @@ namespace Assets.Scripts.Providers
     {
         public Entity Entity;
         public ActorDefinition Definition;
+        internal float3 SpawnOffset;
 
         public bool Equals(PrefabRef other) 
             => Definition.AssetId == other.Definition.AssetId;
     }
 
     /// <summary>
-    /// A burstable lookup for Entity prefabs; maintained by<see cref="PrefabSystem"/>
+    /// A burstable lookup for Entity prefabs; maintained by <see cref="PrefabSystem"/>
     /// </summary>
     public struct Prefabs : INativeProvider
     {
@@ -42,7 +44,7 @@ namespace Assets.Scripts.Providers
             var idKey = (int)prefab.Definition.AssetId;
             if (_prefabsByAssetId.ContainsKey(idKey))
             {
-                Length -= _prefabsByTeam.CountValuesForKey(teamKey);
+                Length -= _prefabsByTeam.CountValuesForKey(teamKey); // todo this doesnt seem right.
                 _prefabsByTeam.Remove(teamKey, prefab);
                 _prefabsByAssetId.Remove(idKey);
             }
@@ -92,6 +94,7 @@ namespace Assets.Scripts.Providers
         public void Dispose()
         {
             _prefabsByTeam.Dispose();
+            _prefabsByAssetId.Dispose();
         }
     }
 

@@ -12,6 +12,10 @@ A demonstration project for how the [ECS Events package](https://github.com/jeff
 * Using prefabs from SubScenes.
 * Instantiating ParticleEffects and Sounds from ECS
 
+#### It looks like this:
+
+![enter image description here](https://i.imgur.com/byHVBhg.gif)
+
 #### Installation
 
 Clone or Download the project, 'Add' the project to Unity Hub and open run in Unity 2019.3.6f1+. Once loaded, which might take a while to sort out all the required packages) open the scene 'Assets\Scenes\StartScene'.

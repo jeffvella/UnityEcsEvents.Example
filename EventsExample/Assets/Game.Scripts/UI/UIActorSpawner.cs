@@ -16,10 +16,12 @@ namespace Assets.Scripts.UI
         private void Start()
         {
             EventSource.AddListener<UIActorSpawner, SpawnActorEvent>(this);
+            EventSource.AddListener<UIActorSpawner, PlayerCreatedEvent>(this);
         }
         private void OnDestroy()
         {
             EventSource.RemoveListener<UIActorSpawner, SpawnActorEvent>(this);
+            EventSource.RemoveListener<UIActorSpawner, PlayerCreatedEvent>(this);
         }
 
         public void SpawnAttacker()

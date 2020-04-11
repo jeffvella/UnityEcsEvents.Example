@@ -169,12 +169,12 @@ namespace Vella.Events
 
                         remainingEntities -= (requiredFullChunks - remainingFullChunks) * capacity;
                     }
-                    else
+                    else if (batch.ActiveArchetypeChunks.Length != 0)
                     {
                         // Deactivate all active chunks
                         data.StructuralChanges.AddComponentToChunks.Add(new AddComponentChunkOp
                         {
-                            Chunks = batch.ActiveArchetypeChunks.Ptr,
+                            Chunks = batch.ActiveArchetypeChunks.Ptr,// todo: Assert Ptr !null && length
                             Count = batch.ActiveArchetypeChunks.Length,
                             TypeIndex = data.DisabledTypeIndex,
                         });

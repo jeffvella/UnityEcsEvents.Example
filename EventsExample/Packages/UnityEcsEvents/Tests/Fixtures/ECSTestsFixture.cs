@@ -349,6 +349,7 @@ namespace Vella.Tests.Fixtures
             Assert.IsTrue(chunk.DidChange(type, version-1));
         }
 
+        [DisableAutoCreation]
         class EntityForEachSystem : ComponentSystem
         {
             protected override void OnUpdate() {  }

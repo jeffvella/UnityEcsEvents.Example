@@ -19,8 +19,8 @@ namespace Vella.Events
         //         EntityEventSystemLoader.SetParentType<PresentationSystemGroup>();
         //     }
         // }
-
-        public static Type DefaultGroup { get; } = typeof(LateSimulationSystemGroup);
+        
+        public static Type DefaultGroup { get; } = typeof(PresentationSystemGroup);
 
         private static Type ParentType = DefaultGroup;
 
@@ -30,7 +30,7 @@ namespace Vella.Events
 
         protected override void OnCreate()
         {
-            if(!DisableAutoCreation)
+            if (!DisableAutoCreation)
             {
                 AddToGroup((ComponentSystemGroup)World.GetOrCreateSystem(ParentType));
             }

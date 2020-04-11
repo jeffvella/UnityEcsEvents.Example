@@ -28,24 +28,6 @@ namespace Assets.Scripts.UI
             _eventSystem.Enqueue(eventData);
         }
 
-        //public Entity CreateEntity<T>(T componentData = default) where T : struct, IComponentData
-        //{
-        //    var entity = _world.EntityManager.CreateEntity(ComponentType.ReadWrite<T>());
-        //    _world.EntityManager.SetComponentData(entity, componentData);
-        //    return entity;
-        //}
-
-        //public void DestroyEntity(Entity entity)
-        //{
-        //    _world.EntityManager.DestroyEntity(entity);
-        //}
-
-        //public void DestroyEntitiesOfType<T>()
-        //{
-        //    var query = _world.EntityManager.CreateEntityQuery(ComponentType.ReadWrite<T>());
-        //    _world.EntityManager.DestroyEntity(query);
-        //}
-
         private void Awake()
         {
             _world = World.DefaultGameObjectInjectionWorld;

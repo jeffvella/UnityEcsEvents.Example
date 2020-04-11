@@ -2,6 +2,7 @@
 using Assets.Scripts.Components.Events;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,8 @@ namespace Assets.Scripts.Systems
     public class ExplodeOnCollisionSystem : SystemBase
     {
         private EndSimulationEntityCommandBufferSystem _commandSystem;
-        private EntityQuery _collectionQuery;
         private Events _events;
-        private EventQueue<PlayAudioEvent> _playAudioEvents;
+        private UnsafeEntityManager _uem;
 
         protected override void OnCreate()
         {
@@ -27,8 +27,7 @@ namespace Assets.Scripts.Systems
             _events.AttackerDeath = eventSystem.GetQueue<ActorDeathEvent>();
             _events.SpawnEffect = eventSystem.GetQueue<SpawnEffectEvent>();
             _events.PlaySound = eventSystem.GetQueue<PlayAudioEvent>();
-
-            _playAudioEvents = World.GetOrCreateSystem<EntityEventSystem>().GetQueue<PlayAudioEvent>();
+            _uem = new UnsafeEntityManager(EntityManager);
         }
 
         private struct Events
@@ -40,16 +39,19 @@ namespace Assets.Scripts.Systems
 
         protected override void OnUpdate()
         {
+            var uem = _uem;
             var commands = _commandSystem.CreateCommandBuffer();
             var events = _events;
 
-            Entities.ForEach((int nativeThreadIndex, in CollisionEvent e) =>
+            Entities.ForEach((in CollisionEvent e) =>
             {
+                CheckEntityExistsOrThrow(uem, e.Hit.Target);
+
                 events.AttackerDeath.Enqueue(new ActorDeathEvent
                 {
-                     Definition = GetComponent<ActorDefinition>(e.Hit.Target),
-                     DeathPosition = e.Hit.Position,
-                     AttributedTo = e.Source.Owner
+                    Definition = GetComponent<ActorDefinition>(e.Hit.Target),
+                    DeathPosition = e.Hit.Position,
+                    AttributedTo = e.Source.Owner
                 });
 
                 events.SpawnEffect.Enqueue(new SpawnEffectEvent
@@ -68,7 +70,17 @@ namespace Assets.Scripts.Systems
 
                 commands.DestroyEntity(e.Hit.Target);
 
-            }).WithStoreEntityQueryInField(ref _collectionQuery).Run();
+            }).Run();
         }
+
+        [Conditional("ENABLE_UNITY_COLLECTIONS_CHECKS")]
+        private static void CheckEntityExistsOrThrow(UnsafeEntityManager uem, Entity entity)
+        {
+            // Calling SystemBase.GetComponent<T>() in Burst on Entity.Null will crash the editor.
+
+            if (!uem.Exists(entity))
+                throw new ArgumentException($"Entity doesn't exist");
+        }
+
     }
 }

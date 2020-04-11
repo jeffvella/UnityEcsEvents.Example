@@ -39,6 +39,8 @@ namespace Assets.Scripts.Systems
                 });
 
             }).Schedule();
+
+            _commandSystem.AddJobHandleForProducer(Dependency);
         }
 
     }

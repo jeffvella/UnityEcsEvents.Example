@@ -4,6 +4,7 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
+using UnityEngine;
 using Vella.Events;
 
 namespace Assets.Scripts.Systems
@@ -21,9 +22,18 @@ namespace Assets.Scripts.Systems
         public Entity Target;
         public float3 Position;
     }
-
+    
+    [UpdateInGroup(typeof(PresentationSystemGroup))]
+    [UpdateBefore(typeof(EntityEventSystem))]
     public class SimpleCollisionSystem : SystemBase
     {
+        // There's an important timing consideration here at the moment:
+        // this detects colliding entity + creates collision events, 
+        // >> next frame.
+        // explosion system is triggered by existance of collion events + queues delete of colliding entity in ECB.
+        // to prevent this system running a second time on the same entities, 
+        // it needs to update after the simulation command buffer end.
+
         private EventQueue<CollisionEvent> _collisionEvents;
         private NativeList<DetectorInfo> _buffer;
 
@@ -33,8 +43,10 @@ namespace Assets.Scripts.Systems
             _buffer = new NativeList<DetectorInfo>(1, Allocator.Persistent);
         }
 
-        protected override void OnUpdate()
+        protected override void OnUpdate() 
         {
+
+
             var collisionEvents = _collisionEvents;
             var detectors = _buffer;
             detectors.Clear();
@@ -59,15 +71,18 @@ namespace Assets.Scripts.Systems
                     var distance = math.distance(detector.Position, pos.Value);
                     if (distance < detector.Range)
                     {
-                        collisionEvents.Enqueue(new CollisionEvent
+                        var hit = new Hit
+                        {
+                            Position = detector.Position + (pos.Value - detector.Position),
+                            Target = entity
+                        };
+                        var collision = new CollisionEvent
                         {
                             Source = detector,
-                            Hit = new Hit
-                            {
-                                Position = detector.Position + (pos.Value - detector.Position),
-                                Target = entity
-                            },
-                        });
+                            Hit = hit,
+                        }; 
+                        Debug.Log($"Collision Source={collision.Source.Entity} Target={hit.Target}");
+                        collisionEvents.Enqueue(collision);
                     }
                 }
 

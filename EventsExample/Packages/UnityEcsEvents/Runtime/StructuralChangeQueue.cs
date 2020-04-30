@@ -29,8 +29,6 @@ namespace Vella.Events
 
         internal void Apply()
         {
-            //EntityManager.CompleteAllJobs(); // Such safety, much wow.
-
             for (int i = 0; i < AddComponentToChunks.Length; i++)
             {
                 var op = ((AddComponentChunkOp*)AddComponentToChunks.Ptr)[i];

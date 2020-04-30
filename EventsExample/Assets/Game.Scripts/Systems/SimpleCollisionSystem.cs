@@ -81,7 +81,8 @@ namespace Assets.Scripts.Systems
                             Source = detector,
                             Hit = hit,
                         }; 
-                        Debug.Log($"Collision Source={collision.Source.Entity} Target={hit.Target}");
+                        
+                        //Debug.Log($"Collision Source={collision.Source.Entity} Target={hit.Target}");
                         collisionEvents.Enqueue(collision);
                     }
                 }

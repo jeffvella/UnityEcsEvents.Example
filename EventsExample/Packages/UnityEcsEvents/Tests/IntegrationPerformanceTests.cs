@@ -839,7 +839,7 @@ namespace Performance
             }
         }
 
-        [Test, Performance, TestCategory(TestCategory.Performance)]
+        /*[Test, Performance, TestCategory(TestCategory.Performance)]
         public void UpdatePhaseBreakdown([Values(1, 1000, 10000)] int eventsPerArchetype, [Values(1, 25, 50)] int archetypeCount)
         {
             var system = Manager.World.GetOrCreateSystem<LoadTestSystem>();
@@ -892,7 +892,7 @@ namespace Performance
                     Measure.Custom(clearQueuesGroup, sw.Elapsed.TotalMilliseconds);
                 }
             }
-        }
+        }*/
 
         [Test, Performance, TestCategory(TestCategory.Performance)]
         public void CreateEvents([Values(1, 10, 100, 1000, 10000)] int eventsPerArchetype, [Values(1, 10, 50, 100)] int archetypeCount)

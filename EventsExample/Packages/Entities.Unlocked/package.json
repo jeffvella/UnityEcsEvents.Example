@@ -1,10 +1,10 @@
 {
-  "name": "xzjv.unlocked",
-  "displayName": "EntityManager Unlocked",
+  "name": "com.vella.events.entities.unlocked",
+  "displayName": "Entities Unlocked",
   "version": "0.0.1",
-  "unity": "2019.3",
-  "description": "Stuff",
+  "unity": "2020.2",
+  "description": "Exposes useful internal functionality in the Entities package.",
   "dependencies": {
-    "com.unity.entities": "0.9.1-preview.15"
+    "com.unity.entities": "0.10.0-preview.6"
   }
 }

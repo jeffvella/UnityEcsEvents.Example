@@ -20,8 +20,8 @@ namespace Assets.Scripts.UI
         }
         private void OnDestroy()
         {
-            EventSource.RemoveListener<UIActorSpawner, SpawnActorEvent>(this);
-            EventSource.RemoveListener<UIActorSpawner, PlayerCreatedEvent>(this);
+            EventSource?.RemoveListener<UIActorSpawner, SpawnActorEvent>(this);
+            EventSource?.RemoveListener<UIActorSpawner, PlayerCreatedEvent>(this);
         }
 
         public void SpawnAttacker()

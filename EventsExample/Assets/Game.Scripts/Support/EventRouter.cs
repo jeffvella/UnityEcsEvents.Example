@@ -141,10 +141,11 @@ namespace Assets.Scripts.UI
             protected unsafe override void OnUpdate()
             {
                 var chunks = _query.CreateArchetypeChunkArray(Allocator.TempJob);
+                var uem = EntityManager.Unsafe;
 
                 foreach (var chunk in chunks)
                 {
-                    var uem = new UnsafeEntityManager(chunk);
+                    
                     var componentTypeIndex = uem.GetComponentPtr<EntityEvent>(chunk)->ComponentTypeIndex;
                     if (componentTypeIndex != 0)
                     {
@@ -152,12 +153,13 @@ namespace Assets.Scripts.UI
                         {
                             var componentsPtr = uem.GetComponentPtr(chunk, componentTypeIndex);
                             var typeInfo = TypeManager.GetTypeInfo(componentTypeIndex);
+                            var componentType = ComponentType.FromTypeIndex(componentTypeIndex);
 
                             for (int i = 0; i < list.Count; i++)
                             {
                                 for (int j = 0; j < chunk.Count; j++)
                                 {
-                                    if (typeInfo.IsZeroSized)
+                                    if (componentType.IsZeroSized)
                                     {
                                         list[i].ExecuteDefault();
                                     }

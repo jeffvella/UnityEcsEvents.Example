@@ -74,7 +74,7 @@ namespace Assets.Scripts.Systems
 
                 commands.AddComponent<UnprocessedTag>(playerEntity);
  
-            }).Run();
+            }).WithoutBurst().Run();
 
         }
 

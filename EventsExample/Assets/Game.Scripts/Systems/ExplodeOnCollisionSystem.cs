@@ -27,7 +27,7 @@ namespace Assets.Scripts.Systems
             _events.AttackerDeath = eventSystem.GetQueue<ActorDeathEvent>();
             _events.SpawnEffect = eventSystem.GetQueue<SpawnEffectEvent>();
             _events.PlaySound = eventSystem.GetQueue<PlayAudioEvent>();
-            _uem = new UnsafeEntityManager(EntityManager);
+            _uem = EntityManager.Unsafe;
         }
 
         private struct Events

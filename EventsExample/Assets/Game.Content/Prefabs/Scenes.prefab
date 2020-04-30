@@ -53,5 +53,5 @@ MonoBehaviour:
   - Id: 2
     Category: 1
     Asset:
-      sceneAsset: {fileID: 102900000, guid: 406d8b9c8df19364e854fe4c839779c6, type: 3}
-      scenePath: Assets/Scenes/Levels/Level_1.unity
+      sceneAsset: {fileID: 102900000, guid: 578ec84881f7d764e818e8ae0538204f, type: 3}
+      scenePath: Assets/Scenes/Levels/test1.unity

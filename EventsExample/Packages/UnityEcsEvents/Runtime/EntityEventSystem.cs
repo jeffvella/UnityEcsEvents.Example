@@ -38,7 +38,7 @@ namespace Vella.Events
             EventSystemData data = default;
             data.TypeIndexToBatchMap = new UnsafeHashMap<int, int>(1, Allocator.Persistent);
             data.Batches = new UnsafeList<EventBatch>(1, Allocator.Persistent);
-            data.UnsafeEntityManager = new UnsafeEntityManager(EntityManager);
+            data.UnsafeEntityManager = EntityManager.Unsafe;
             data.StructuralChanges = new StructuralChangeQueue(data.UnsafeEntityManager, Allocator.Persistent);
             data.EventComponent = ComponentType.ReadOnly<EntityEvent>();
             data.DisabledTypeIndex = TypeManager.GetTypeIndex<Disabled>();
@@ -57,6 +57,8 @@ namespace Vella.Events
 
             if (Data.EntityCount > 0 || Data.HasChanged)
             {
+                //EntityManager.DeclareStructuralChange();
+
                 Data.StructuralChanges.Apply();
                 UpdateChunkCollections();
                 SetComponents();
@@ -99,7 +101,7 @@ namespace Vella.Events
                     if (requiredEntities == 0)
                     {
                         // Deactivate all 
-                        if (batch.ActiveChunks.Length != 0)
+                        if (batch.ActiveChunks.ChunkCount != 0)
                         {
                             data.StructuralChanges.AddComponentToChunks.Add(new AddComponentChunkOp
                             {
@@ -180,7 +182,7 @@ namespace Vella.Events
                         });
                     }
 
-                    if (remainingEntities > 0 && batch.InactiveChunks.Length != 0)
+                    if (remainingEntities > 0 && batch.InactiveChunks.ChunkCount != 0)
                     {
                         // Create from inactive partials
                         if (batch.InactivePartialArchetypeChunk.Length != 0) // todo create full chunk sized pieces out before this
@@ -188,11 +190,11 @@ namespace Vella.Events
                             var batchInChunks = new NativeList<EntityBatchInChunkProxy>(Allocator.Temp);
                             for (int j = 0; j < batch.InactivePartialArchetypeChunk.Length; j++)
                             {
-                                var archetypeChunkPtr = ((ArchetypeChunk*)batch.InactivePartialArchetypeChunk.Ptr)[j];
-                                var amountToMove = math.min(archetypeChunkPtr.Count, remainingEntities);
+                                var archetypeChunk = ((ArchetypeChunk*)batch.InactivePartialArchetypeChunk.Ptr)[j];
+                                var amountToMove = math.min(archetypeChunk.Count, remainingEntities);
                                 var entityBatch = new EntityBatchInChunkProxy
                                 {
-                                    ChunkPtr = archetypeChunkPtr.GetChunkPtr(),
+                                    ChunkPtr = archetypeChunk.GetChunkPtr(),
                                     Count = amountToMove,
                                     StartIndex = 0,
                                 };
@@ -268,9 +270,9 @@ namespace Vella.Events
 
                     for (int j = 0; j < batch->Archetype.ChunkCount; j++)
                     {
-                        ArchetypeChunk* archetypeChunkPtr = batch->ActiveChunks.GetArchetypeChunkPtr(j);
-                        byte* chunkPtr = (byte*)archetypeChunkPtr->GetChunkPtr();
-                        var size = archetypeChunkPtr->Count * sizeof(EntityEvent);
+                        ArchetypeChunk archetypeChunk = batch->ActiveChunks.GetArchetypeChunk(j);
+                        byte* chunkPtr = (byte*)archetypeChunk.GetChunkPtr();
+                        var size = archetypeChunk.Count * sizeof(EntityEvent);
                         metaComponents.CopyTo(chunkPtr + batch->Offsets.MetaOffset, size);
                     }
 
@@ -280,9 +282,9 @@ namespace Vella.Events
 
                         for (int j = 0; j < batch->Archetype.ChunkCount; j++)
                         {
-                            ArchetypeChunk* archetypeChunkPtr = batch->ActiveChunks.GetArchetypeChunkPtr(j);
-                            byte* chunkPtr = (byte*)archetypeChunkPtr->GetChunkPtr();
-                            var size = archetypeChunkPtr->Count * batch->ComponentTypeSize;
+                            ArchetypeChunk archetypeChunk = batch->ActiveChunks.GetArchetypeChunk(j);
+                            byte* chunkPtr = (byte*)archetypeChunk.GetChunkPtr();
+                            var size = archetypeChunk.Count * batch->ComponentTypeSize;
                             queuedComponents.CopyTo(chunkPtr + batch->Offsets.ComponentOffset, size);
                         }
                     }

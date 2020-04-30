@@ -1,4 +1,9 @@
 using NUnit.Framework;
+using System;
+using System.Diagnostics;
+using System.Linq.Expressions;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
@@ -11,75 +16,119 @@ using Vella.Tests.Fixtures;
 
 class ProxyTests : ECSTestsFixture
 {
-    [Test, TestCategory(TestCategory.Integrity)]
-    unsafe public void GetComponentPtr()
-    {
-        World.GetOrCreateSystem<GetComponentPtrSystem>().Update();
-    }
+    //[Test, TestCategory(TestCategory.Integrity)]
+    //unsafe public void EntityExistsTest()
+    //{
+    //    World.GetOrCreateSystem<EntityExistsTestSystem>().Update();
+    //}
 
-    [DisableAutoCreation, AlwaysUpdateSystem]
-    public unsafe class GetComponentPtrSystem : SystemBase
-    {
-        protected override void OnUpdate()
-        {
-            var entity = EntityManager.CreateEntity(ComponentType.ReadWrite<EcsTestData>());
-            var uem = new UnsafeEntityManager(EntityManager);
-            var inputTypeIndex = TypeManager.GetTypeIndex<EcsTestData>();
-            var missingComponentTypeIndex = TypeManager.GetTypeIndex<EcsTestData2>();
+    //[DisableAutoCreation, AlwaysUpdateSystem]
+    //public unsafe class EntityExistsTestSystem : SystemBase
+    //{
+    //    protected override void OnUpdate()
+    //    {
+    //        var entity = EntityManager.CreateEntity(ComponentType.ReadWrite<EcsTestData>());
+    //        var uem = EntityManager.Unsafe;
 
-            byte* result1 = null;
-            byte* result2 = null;
-            byte* actualPtr = null;
+    //        bool result = false;
 
-            Entities.ForEach((Entity e, ref EcsTestData data) =>
-            {
-                result1 = (byte*)uem.GetComponentPtr<EcsTestData>(e);
-                result2 = uem.GetComponentPtr(e, inputTypeIndex);
-                actualPtr = (byte*)UnsafeUtility.AddressOf(ref data);
+    //        Entities.ForEach((Entity e, ref EcsTestData data) =>
+    //        {
+    //            result = uem.Exists(e);
 
-            }).Run();
+    //        }).Run();
 
-            if (result1 == null)
-                Assert.Fail();
-            if (result2 == null)
-                Assert.Fail();
-            if (actualPtr == null)
-                Assert.Fail();
+    //        Assert.IsTrue(result);
 
-            Assert.AreEqual(*(long*)result1, *(long*)result2);
-            Assert.AreEqual(*(long*)actualPtr, *(long*)result2);
+    //        EntityManager.DestroyEntity(entity);
 
-        }
-    }
+    //        Job.WithCode(() =>
+    //        {
+    //            result = uem.Exists(entity);
 
-    [Test, TestCategory(TestCategory.Integrity)]
-    unsafe public void BufferHeaderProxy()
-    {
-        var unityType = FindType("Unity.Entities.BufferHeader");
-        AssertTypeSizesAreEqual<BufferHeaderProxy>(unityType);
-        AssertInstanceBytesAreEqual<BufferHeaderProxy>(unityType);
-        AssertFieldsAreEqual<BufferHeaderProxy>(unityType);
-    }
+    //        }).Run();
 
-    [Test, TestCategory(TestCategory.Integrity)]
-    unsafe public void EntityArchetypeProxy()
-    {
-        var unityType = typeof(EntityArchetype);
-        AssertTypeSizesAreEqual<EntityArchetypeProxy>(unityType);
-        AssertInstanceBytesAreEqual<EntityArchetypeProxy>(unityType);
+    //        Assert.IsFalse(result);
 
-        var flags = FieldComparisonFlags.AllowVoidPointerReplacement | FieldComparisonFlags.IgnorePointers;
-        AssertFieldsAreEqual<EntityArchetypeProxy>(unityType, flags);
-    }
+    //        Job.WithCode(() =>
+    //        {
+    //            result = uem.Exists(Entity.Null);
 
-    [Test, TestCategory(TestCategory.Integrity)]
-    unsafe public void ArchetypeChunkProxy()
-    {
-        var unityType = typeof(ArchetypeChunk);
-        AssertTypeSizesAreEqual<ArchetypeChunkProxy>(unityType);
-        AssertInstanceBytesAreEqual<ArchetypeChunkProxy>(unityType);
+    //        }).Run();
 
-        var flags = FieldComparisonFlags.AllowVoidPointerReplacement;
-        AssertFieldsAreEqual<ArchetypeChunkProxy>(unityType, flags);
-    }
+    //        Assert.IsFalse(result);
+    //    }
+    //}
+
+    //[Test, TestCategory(TestCategory.Integrity)]
+    //unsafe public void GetComponentPtr()
+    //{
+    //    World.GetOrCreateSystem<GetComponentPtrSystem>().Update();
+    //}
+
+    //[DisableAutoCreation, AlwaysUpdateSystem]
+    //public unsafe class GetComponentPtrSystem : SystemBase
+    //{
+    //    protected override void OnUpdate()
+    //    {
+    //        var entity = EntityManager.CreateEntity(ComponentType.ReadWrite<EcsTestData>());
+    //        var uem = EntityManager.Unsafe;
+    //        var inputTypeIndex = TypeManager.GetTypeIndex<EcsTestData>();
+    //        var missingComponentTypeIndex = TypeManager.GetTypeIndex<EcsTestData2>();
+
+    //        byte* result1 = null;
+    //        byte* result2 = null;
+    //        byte* actualPtr = null;
+
+    //        Entities.ForEach((Entity e, ref EcsTestData data) =>
+    //        {
+    //            result1 = (byte*)uem.GetComponentPtr<EcsTestData>(e);
+    //            result2 = uem.GetComponentPtr(e, inputTypeIndex);
+    //            actualPtr = (byte*)UnsafeUtility.AddressOf(ref data);
+
+    //        }).Run();
+
+    //        if (result1 == null)
+    //            Assert.Fail();
+    //        if (result2 == null)
+    //            Assert.Fail();
+    //        if (actualPtr == null)
+    //            Assert.Fail();
+
+    //        Assert.AreEqual(*(long*)result1, *(long*)result2);
+    //        Assert.AreEqual(*(long*)actualPtr, *(long*)result2);
+
+    //    }
+    //}
+
+    //[Test, TestCategory(TestCategory.Integrity)]
+    //unsafe public void BufferHeaderProxy()
+    //{
+    //    var unityType = FindType("Unity.Entities.BufferHeader");
+    //    AssertTypeSizesAreEqual<BufferHeaderProxy>(unityType);
+    //    AssertInstanceBytesAreEqual<BufferHeaderProxy>(unityType);
+    //    AssertFieldsAreEqual<BufferHeaderProxy>(unityType);
+    //}
+
+    //[Test, TestCategory(TestCategory.Integrity)]
+    //unsafe public void EntityArchetypeProxy()
+    //{
+    //    var unityType = typeof(EntityArchetype);
+    //    AssertTypeSizesAreEqual<EntityArchetypeProxy>(unityType);
+    //    AssertInstanceBytesAreEqual<EntityArchetypeProxy>(unityType);
+
+    //    var flags = FieldComparisonFlags.AllowVoidPointerReplacement | FieldComparisonFlags.IgnorePointers;
+    //    AssertFieldsAreEqual<EntityArchetypeProxy>(unityType, flags);
+    //}
+
+    //[Test, TestCategory(TestCategory.Integrity)]
+    //unsafe public void ArchetypeChunkProxy()
+    //{
+    //    var unityType = typeof(ArchetypeChunk);
+    //    AssertTypeSizesAreEqual<ArchetypeChunkProxy>(unityType);
+    //    AssertInstanceBytesAreEqual<ArchetypeChunkProxy>(unityType);
+
+    //    var flags = FieldComparisonFlags.AllowVoidPointerReplacement;
+    //    AssertFieldsAreEqual<ArchetypeChunkProxy>(unityType, flags);
+    //}
 }

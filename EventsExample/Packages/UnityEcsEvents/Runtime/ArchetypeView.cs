@@ -11,92 +11,92 @@ namespace Vella.Events
     [DebuggerDisplay("Chunks={Length}")]
     public unsafe struct ArchetypeView
     {
-        private ArchetypeProxy* _archetype;
-        private void* _componentStore;
+        private EntityArchetype _entityArchetype;
+        //private UnsafeEntityManager _unsafeEntityManager;
 
-        public int Length => _archetype->Chunks.Count;
+        public int ChunkCount => _entityArchetype.ChunkCount;
 
-        public int ChunkCapacity => _archetype->Chunks.Capacity;
+        public int ChunkCapacity => _entityArchetype.ChunkCapacity;
 
-        public ArchetypeView(EntityArchetype archetype)
+        public ArchetypeView(EntityArchetype entityArchetype)
         {
-            var entityArchetype = ((EntityArchetypeProxy*)&archetype);
-            _archetype = entityArchetype->Archetype;
-            _componentStore = entityArchetype->_DebugComponentStore;
+            _entityArchetype = entityArchetype;
         }
 
-        public ArchetypeChunk this[int index] => GetArchetypeChunk(index);
+        public ArchetypeChunk this[int index] => _entityArchetype.GetArchetypeChunk(index);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public ArchetypeChunk First() => GetArchetypeChunk(0);
+        public ArchetypeChunk First() => _entityArchetype.GetArchetypeChunk(0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public ArchetypeChunk Last() => GetArchetypeChunk(_archetype->Chunks.Count - 1);
+        public ArchetypeChunk Last() => _entityArchetype.GetArchetypeChunk(ChunkCount - 1);
+
+        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //private ArchetypeChunk GetArchetypeChunk(int index)
+        //{
+        //    ArchetypeChunkProxy chunk;
+        //    chunk.m_Chunk = _archetype->Chunks.p[index];
+        //    chunk.entityComponentStore = _componentStore;
+        //    return UnsafeUtilityEx.AsRef<ArchetypeChunk>(&chunk);
+        //}
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private ArchetypeChunk GetArchetypeChunk(int index)
+        public ArchetypeChunk GetArchetypeChunk(int index)
         {
-            ArchetypeChunkProxy chunk;
-            chunk.m_Chunk = _archetype->Chunks.p[index];
-            chunk.entityComponentStore = _componentStore;
-            return UnsafeUtilityEx.AsRef<ArchetypeChunk>(&chunk);
+            return _entityArchetype.GetArchetypeChunk(index);
+            //return (ArchetypeChunk*)((byte*)_entityArchetype->Chunks.p + sizeof(void*) * index);
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public ArchetypeChunk* GetArchetypeChunkPtr(int index)
-        {
-            return (ArchetypeChunk*)((byte*)_archetype->Chunks.p + sizeof(void*) * index);
-        }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public byte* GetChunkPtr(int index)
-        {
-            return *(byte**)((byte*)_archetype->Chunks.p + sizeof(void*) * index);
-        }
+        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //public byte* GetChunkPtr(int index)
+        //{
+        //    return *(byte**)((byte*)_entityArchetype->Chunks.p + sizeof(void*) * index);
+        //}
 
-        public unsafe void CopyTo(void* destinationPtr)
-        {
-            UnsafeUtility.MemCpyStride(destinationPtr, sizeof(ArchetypeChunk), _archetype->Chunks.p, sizeof(void*),
-                sizeof(ArchetypeChunk), _archetype->Chunks.Count);
-        }
+        //public unsafe void CopyTo(void* destinationPtr)
+        //{
+        //    UnsafeUtility.MemCpyStride(destinationPtr, sizeof(ArchetypeChunk), _entityArchetype->Chunks.p, sizeof(void*),
+        //        sizeof(ArchetypeChunk), _entityArchetype->Chunks.Count);
+        //}
 
-        public unsafe void AddTo(ref UnsafeList<ArchetypeChunk> destination)
-        {
-            var dstLength = destination.Length;
-            var srcLength = _archetype->Chunks.Count;
-            destination.Resize(dstLength + srcLength);
-            var start = (byte*)destination.Ptr + sizeof(ArchetypeChunk) * dstLength;
-            UnsafeUtility.MemCpyStride(start, sizeof(EntityArchetype), _archetype->Chunks.p, sizeof(void*), sizeof(ArchetypeChunk), srcLength);
-        }
+        //public unsafe void AddTo(ref UnsafeList<ArchetypeChunk> destination)
+        //{
+        //    var dstLength = destination.Length;
+        //    var srcLength = _entityArchetype->Chunks.Count;
+        //    destination.Resize(dstLength + srcLength);
+        //    var start = (byte*)destination.Ptr + sizeof(ArchetypeChunk) * dstLength;
+        //    UnsafeUtility.MemCpyStride(start, sizeof(EntityArchetype), _entityArchetype->Chunks.p, sizeof(void*), sizeof(ArchetypeChunk), srcLength);
+        //}
 
-        public unsafe void CopyTo(void* destinationPtr, int destinationOffsetElements)
-        {
-            UnsafeUtility.MemCpyStride((byte*)destinationPtr + sizeof(EntityArchetype) * destinationOffsetElements,
-                sizeof(EntityArchetype), _archetype->Chunks.p, sizeof(void*), sizeof(ArchetypeChunk), _archetype->Chunks.Count);
-        }
+        //public unsafe void CopyTo(void* destinationPtr, int destinationOffsetElements)
+        //{
+        //    UnsafeUtility.MemCpyStride((byte*)destinationPtr + sizeof(EntityArchetype) * destinationOffsetElements,
+        //        sizeof(EntityArchetype), _entityArchetype->Chunks.p, sizeof(void*), sizeof(ArchetypeChunk), _entityArchetype->Chunks.Count);
+        //}
 
         public SimpleChunkIterator GetEnumerator() => new SimpleChunkIterator(ref this);
 
-        public FilteringChunkIterator GetEnumerator(ChunkFilter filter, IteratorDirection direction = IteratorDirection.Forwards)
-        {
-            FilteringChunkIterator it;
-            it._chunks = &_archetype->Chunks;
-            it._filter = filter;
-            it._step = (int)direction;
+        //public FilteringChunkIterator GetEnumerator(ChunkFilter filter, IteratorDirection direction = IteratorDirection.Forwards)
+        //{
+        //    FilteringChunkIterator it;
+        //    it._chunks = &_entityArchetype->Chunks;
+        //    it._filter = filter;
+        //    it._step = (int)direction;
 
-            if (direction == IteratorDirection.Forwards)
-            {
-                it._startIndex = -1;
-                it._endIndex = _archetype->Chunks.Count-1;
-            }
-            else
-            {
-                it._startIndex = _archetype->Chunks.Count;
-                it._endIndex = 0;
-            }
-            it._index = it._startIndex;
-            return it;
-        }
+        //    if (direction == IteratorDirection.Forwards)
+        //    {
+        //        it._startIndex = -1;
+        //        it._endIndex = _entityArchetype->Chunks.Count-1;
+        //    }
+        //    else
+        //    {
+        //        it._startIndex = _entityArchetype->Chunks.Count;
+        //        it._endIndex = 0;
+        //    }
+        //    it._index = it._startIndex;
+        //    return it;
+        //}
 
         public struct SimpleChunkIterator
         {
@@ -110,7 +110,7 @@ namespace Vella.Events
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public bool MoveNext() => ++_index < _source.Length;
+            public bool MoveNext() => ++_index < _source.ChunkCount;
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public void Reset() => _index = -1;
@@ -118,56 +118,56 @@ namespace Vella.Events
             public ArchetypeChunk Current => _source.GetArchetypeChunk(_index);
         }
 
-        public ref struct FilteringChunkIterator
-        {
-            internal ArchetypeChunkDataProxy* _chunks;
-            internal ChunkFilter _filter;
-            internal int _index;
-            internal int _step;
-            internal int _startIndex;
-            internal int _endIndex;
+        //public ref struct FilteringChunkIterator
+        //{
+        //    internal ArchetypeChunkDataProxy* _chunks;
+        //    internal ChunkFilter _filter;
+        //    internal int _index;
+        //    internal int _step;
+        //    internal int _startIndex;
+        //    internal int _endIndex;
 
-            public bool MoveNext()
-            {
-                while (_index != _endIndex)
-                {
-                    _index += _step;
-                    switch (_filter)
-                    {
-                        case ChunkFilter.Full:
-                            if (Current.Full)
-                                return true;
-                            break;
-                        case ChunkFilter.Partial:
-                            if (!Current.Full)
-                                return true;
-                            break;
-                        default:
-                            return true;
-                    }
-                }
-                return false;
-            }
+        //    public bool MoveNext()
+        //    {
+        //        while (_index != _endIndex)
+        //        {
+        //            _index += _step;
+        //            switch (_filter)
+        //            {
+        //                case ChunkFilter.Full:
+        //                    if (Current.Full)
+        //                        return true;
+        //                    break;
+        //                case ChunkFilter.Partial:
+        //                    if (!Current.Full)
+        //                        return true;
+        //                    break;
+        //                default:
+        //                    return true;
+        //            }
+        //        }
+        //        return false;
+        //    }
 
-            public void Reset() => _index = _startIndex;
+        //    public void Reset() => _index = _startIndex;
 
-            public FilteringChunkIterator GetEnumerator() => this;
+        //    public FilteringChunkIterator GetEnumerator() => this;
 
-            public ref ArchetypeChunk Current => ref *(ArchetypeChunk*)((byte*)_chunks->p + _index * sizeof(void*));
-        }
+        //    public ref ArchetypeChunk Current => ref *(ArchetypeChunk*)((byte*)_chunks->p + _index * sizeof(void*));
+        //}
 
-        public List<ArchetypeChunk> ToList(ChunkFilter filter = ChunkFilter.None)
-        {
-            var result = new List<ArchetypeChunk>();
-            var enu = GetEnumerator(filter);
-            while (enu.MoveNext())
-                result.Add(enu.Current);
-            return result;
-        }
+        //public List<ArchetypeChunk> ToList(ChunkFilter filter = ChunkFilter.None)
+        //{
+        //    var result = new List<ArchetypeChunk>();
+        //    var enu = GetEnumerator(filter);
+        //    while (enu.MoveNext())
+        //        result.Add(enu.Current);
+        //    return result;
+        //}
 
-        public List<ArchetypeChunk> Chunks => ToList();
-        public List<ArchetypeChunk> FullChunks => ToList(ChunkFilter.Full);
-        public List<ArchetypeChunk> PartialChunks => ToList(ChunkFilter.Partial);
+        //public List<ArchetypeChunk> Chunks => ToList();
+        //public List<ArchetypeChunk> FullChunks => ToList(ChunkFilter.Full);
+        //public List<ArchetypeChunk> PartialChunks => ToList(ChunkFilter.Partial);
 
     }
 

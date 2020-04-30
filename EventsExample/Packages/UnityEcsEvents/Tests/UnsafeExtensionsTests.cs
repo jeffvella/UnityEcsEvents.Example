@@ -11,33 +11,42 @@ using Vella.Tests.Fixtures;
 
 namespace ExtensionsTests
 {
-    class EntityArchetypeExtensionsTests : ECSTestsFixture
+    public struct MyTestData : IComponentData
+    { 
+        public int value;
+    }
+
+    public class EntityArchetypeExtensionsTests : SimpleTestFixture
     {
-        [Test, Category("Functionality")]
-        unsafe public void CopiesChunksFromEntityArchetype([Values(0, 10000)] int entityCount)
+        [Test]
+        unsafe public void CopiesChunksFromEntityArchetype([Values(1, 1000)] int entityCount)
         {
-            var archetype = Manager.CreateArchetype(typeof(EcsTestData));
-            var entities = new NativeArray<Entity>(entityCount, Allocator.TempJob);
-            Manager.CreateEntity(archetype, entities);
+            //var archetype = m_Manager.CreateArchetype(typeof(MyTestData)); // causes crash.
 
-            var clone = new NativeArray<ArchetypeChunk>(archetype.ChunkCount, Allocator.Temp);
-            archetype.CopyChunksTo(clone);
+            var archetype = m_Manager.CreateArchetype(ComponentType.ReadWrite<MyTestData>());
 
-            var actual = new NativeList<ArchetypeChunk>(archetype.ChunkCount, Allocator.Temp);
-            var allChunks = Manager.GetAllChunks();
-            for (int i = 0; i < allChunks.Length; i++)
-            {
-                var chunk = allChunks[i];
-                if (chunk.Archetype == archetype)
-                    actual.Add(chunk);
-            }
+            var entities = new NativeArray<Entity>(entityCount, Allocator.Persistent);
 
-            AssertBytesAreEqual(clone, actual);
+            m_Manager.CreateEntity(archetype, entities);
 
-            clone.Dispose();
-            actual.Dispose();
-            allChunks.Dispose();
+            var destination = new NativeArray<ArchetypeChunk>(archetype.ChunkCount, Allocator.Persistent);
+
+            m_Manager.Unsafe.CopyChunks(archetype, destination);
+
+            AssertBytesAreEqual(destination, m_Manager.GetAllChunks());
+
+            destination.Dispose();
             entities.Dispose();
+        }
+
+        public unsafe void AssertBytesAreEqual<T>(NativeArray<T> arr1, NativeArray<T> arr2) where T : struct
+        {
+            var ptr1 = arr1.GetUnsafePtr();
+            var ptr2 = arr2.GetUnsafePtr();
+            var size = arr1.Length * UnsafeUtility.SizeOf<T>();
+
+            Assert.AreEqual(arr1.Length, arr2.Length);
+            Assert.AreEqual(0, UnsafeUtility.MemCmp(ptr1, ptr2, size));
         }
 
     }

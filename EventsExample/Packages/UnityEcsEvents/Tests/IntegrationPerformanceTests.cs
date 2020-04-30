@@ -999,7 +999,7 @@ namespace Performance
         }
 
         [Test, Performance, TestCategory(TestCategory.Performance)]
-        public void CreateBufferEvents([Values(1, 10, 100, 1000)] int eventCount, [Values(1, 10, 100, 1000, 10000)] int bufferLength)
+        public void CreateBufferEvents([Values(1, 10, 100, 1000)] int eventCount, [Values(1, 10, 100, 1000)] int bufferLength)
         {
             var system = Manager.World.GetOrCreateSystem<BufferEventFromJobsWithCodeSystem>();
 
@@ -1055,9 +1055,13 @@ namespace Performance
                 var componentCount = EventCount;
                 var bufferElementCount = BufferElementCount;
 
+                if (bufferElementCount <= 0)
+                    throw new ArgumentException();
+
+                var bufferPtr = new NativeArray<EcsIntElement>(bufferElementCount, Allocator.Temp).GetUnsafePtr();
+
                 Job.WithCode(() =>
                 {
-                    var bufferPtr = stackalloc EcsIntElement[bufferElementCount];
                     for (int i = 0; i < componentCount; i++)
                     {
                         queue.Enqueue(EventComponentData, bufferPtr, bufferElementCount);
@@ -1134,7 +1138,7 @@ namespace Performance
 
                     var chunkHeaderTypeIndex = TypeManager.GetTypeIndex<ChunkHeader>();
 
-                    var types = TypeManager.GetAllTypes().Where(t => t.SizeInChunk > 1 && t.Category == TypeManager.TypeCategory.ComponentData
+                    var types = TypeManager.GetAllTypes().Where(t => t.SizeInChunk > 1 && t.SizeInChunk < 128 && t.Category == TypeManager.TypeCategory.ComponentData
                         && !t.Type.FullName.Contains(nameof(Vella.Events)) && t.TypeIndex != chunkHeaderTypeIndex);
 
                     _componentTypeInfos = new NativeArray<TypeManager.TypeInfo>(types.ToArray(), Allocator.Persistent);

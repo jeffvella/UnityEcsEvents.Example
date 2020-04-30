@@ -1,36 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="410f93e2-3bb8-421d-9450-7986ea61f5c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Prefabs/InGameInterface.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Prefabs/InGameInterface.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Prefabs/Scenes.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Prefabs/Scenes.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EventsExample/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventsExample/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EventsExample/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventsExample/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EventsExample/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventsExample/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EventsExample/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EventsExample/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Entities.Unlocked.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Effects/Fire &amp; Explosion Effects/Materials/Embers_LWRP.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Effects/Fire &amp; Explosion Effects/Materials/Embers_LWRP.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Effects/Fire &amp; Explosion Effects/Materials/EnergyExplosion_LWRP.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Effects/Fire &amp; Explosion Effects/Materials/EnergyExplosion_LWRP.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Effects/Fire &amp; Explosion Effects/Materials/EnergyShockwave_LWRP.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Effects/Fire &amp; Explosion Effects/Materials/EnergyShockwave_LWRP.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Materials/GroundMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Materials/GroundMaterial.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_adventurer.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_adventurer.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_man.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_man.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_manAlternative.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_manAlternative.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_orc.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_orc.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_robot.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_robot.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_soldier.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_soldier.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_woman.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_woman.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_womanAlternative.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Advanced/skin_womanAlternative.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_adventurer.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_adventurer.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_man.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_man.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_manAlternative.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_manAlternative.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_orc.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_orc.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_robot.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_robot.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_soldier.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_soldier.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_woman.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_woman.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_womanAlternative.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Material/Basic/skin_womanAlternative.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Model/Materials/lambert.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Model/Materials/lambert.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Model/Materials/lambert1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Content/Models/Character Model/Model/Materials/lambert1.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game.Scripts/BugFixes/CopySkinnedEntityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Scripts/BugFixes/CopySkinnedEntityData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Scripts/Providers/Prefabs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Scripts/Providers/Prefabs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Scripts/Providers/ProviderSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Scripts/Providers/ProviderSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game.Scripts/Support/EventRouter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Scripts/Support/EventRouter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/ExplodeOnCollisionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/ExplodeOnCollisionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Scripts/Support/UnsafeEnumerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Scripts/Support/UnsafeEnumerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/LevelCreateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/LevelCreateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/PrefabSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/PrefabSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/SimpleCollisionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/SimpleCollisionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/SpawnAttackerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/SpawnAttackerSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/SpawnDefenderSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/SpawnDefenderSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/SpawnPlayerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/SpawnPlayerSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Levels/Level_1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UI/InGameMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UI/InGameMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneDependencyCache/aa08e2024f026385f30f00c7c18bbfdc.sceneWithBuildSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneDependencyCache/aa08e2024f026385f30f00c7c18bbfdc.sceneWithBuildSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SceneDependencyCache/aa08e2024f026385f30f00c7c18bbfdc.sceneWithBuildSettings.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SceneDependencyCache/aa08e2024f026385f30f00c7c18bbfdc.sceneWithBuildSettings.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Default.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Default.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SubScenes/Prefabs.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SubScenes/Prefabs.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityECSOffsets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityECSOffsets/Extensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityECSOffsets/Extensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityECSOffsets/Imposters.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityECSOffsets/Imposters.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityECSOffsets/Offsets.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityECSOffsets/Offsets.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityECSOffsets/UnsafeArray.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityECSOffsets/UnsafeArray.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/Entities.Unlocked/UnsafeEntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/Entities.Unlocked/UnsafeEntityManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Entities.Unlocked.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/ArchetypeView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/ArchetypeView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/BufferHeaderProxy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/BufferHeaderProxy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EntityEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EntityEvent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EntityEventSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EntityEventSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EntityEventSystemLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EntityEventSystemLoader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EventBatch.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EventBatch.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EventQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EventQueue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/Extensions/StringExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/Extensions/StringExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/Extensions/UnsafeExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/Extensions/UnsafeExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/StructuralChangeQueue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/StructuralChangeQueue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/UnsafeEntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/UnsafeEntityManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/UnsafeEntityManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/UnsafeEntityManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/UnsafeNativeArray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/UnsafeNativeArray.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/ArchetypeChunkViewTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/ArchetypeChunkViewTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/Fixtures/ECSTestsFixture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/Fixtures/ECSTestsFixture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/Fixtures/EntityPerformanceTestFixture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/Fixtures/EntityPerformanceTestFixture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/Fixtures/SimpleTestFixture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/Fixtures/SimpleTestFixture.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/IntegrationPerformanceTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/IntegrationPerformanceTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/IsolatedComparison.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/IsolatedComparison.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/ProxyTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/ProxyTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/UnsafeEntityManagerTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/UnsafeEntityManagerTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/UnsafeExtensionsTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/UnsafeExtensionsTests.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/UnityEcsEvents/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/UnityEcsEvents/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
@@ -44,19 +101,115 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.10.0-preview.6/Unity.Entities/ScriptBehaviourUpdateOrder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.10.0-preview.6/Unity.Entities/ComponentSystemBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.10.0-preview.6/Unity.Entities/SystemBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/Fixtures/EntityPerformanceTestFixture.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Support/SubscenePrefabConversion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Support/EventRouter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/Fixtures/ECSTestsFixture.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/Fixtures/SimpleTestFixture.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Support/UnsafeEnumerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EntityEventSystemLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.10.0-preview.6/Unity.Entities/World.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Support/PoolGroup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/BufferHeaderProxy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Systems/PlayerSessionSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/BufferLink.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Systems/LevelDestroySystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EntityEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/MultiAppendBuffer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Systems/SpawnDefenderSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.10.0-preview.6/Unity.Entities/EntityComponentStore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Systems/SpawnPlayerSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Systems/SimpleCollisionSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Systems/LevelCreateSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Systems/TargetFinderSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Systems/ExplodeOnCollisionSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/Entities.Unlocked/UnsafeEntityManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.10.0-preview.6/Unity.Entities/Iterators/ArchetypeChunkArray.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Systems/PrefabSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.10.0-preview.6/Unity.Entities/Iterators/ArchetypeChunkIterator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Systems/SpawnAttackerSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/BugFixes/CopySkinnedEntityData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Providers/ProviderSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Providers/Prefabs.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1233FC14-C045-498A-94F6-533FDF6633F6/f3/a9198093/EntityDataAccess.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.10.0-preview.6/Unity.Entities/Iterators/EntityQueryManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EventBatch.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/Entities.Unlocked/Offsets.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.10.0-preview.6/Unity.Entities/EntityManagerSync.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EventQueue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.10.0-preview.6/Unity.Entities/CodeGeneratedJobForEach/LambdaJobDescription.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/ArchetypeView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/UnsafeNativeArray.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EntityEventSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/UnsafeExtensionsTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/UnsafeEntityManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/StructuralChangeQueue.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.10.0-preview.6/Unity.Entities/CodeGeneratedJobForEach/LambdaParameterValueProviders.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/Components/ActorDefinition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/IntegrationPerformanceTests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FB001E01-371B-4ADC-A200-13E0AC763896/3c/c7d2b622/GCHandle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2AB2854A-DE47-4944-AAAE-E820C644F328/c3/a30c9482/UnsafeUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.8.0-preview.5/Unity.Collections/UnsafeList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@0.10.0-preview.6/Unity.Entities/IJobChunk.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collections@0.8.0-preview.5/Unity.Collections/UnsafeUtilityEx.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game.Scripts/SceneLoader.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EntityEvent.cs" />
+        <option value="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/BufferHeaderProxy.cs" />
+        <option value="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/ArchetypeView.cs" />
+        <option value="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EventQueue.cs" />
+        <option value="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/IntegrationPerformanceTests.cs" />
+        <option value="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/UnsafeExtensionsTests.cs" />
+        <option value="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/Fixtures/SimpleTestFixture.cs" />
+        <option value="$PROJECT_DIR$/Assets/UnityECSOffsets/Imposters.cs" />
+        <option value="$PROJECT_DIR$/Assets/UnityECSOffsets/Extensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/UnityECSOffsets/Offsets.cs" />
+        <option value="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/Fixtures/EntityPerformanceTestFixture.cs" />
+        <option value="$PROJECT_DIR$/Packages/UnityEcsEvents/Tests/Fixtures/ECSTestsFixture.cs" />
+        <option value="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EventBatch.cs" />
+        <option value="$PROJECT_DIR$/Packages/Entities.Unlocked/Offsets.cs" />
+        <option value="$PROJECT_DIR$/Packages/Entities.Unlocked/UnsafeEntityManager.cs" />
+        <option value="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EntityEventSystemLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game.Scripts/Systems/SimpleCollisionSystem.cs" />
+        <option value="$PROJECT_DIR$/Packages/UnityEcsEvents/Runtime/EntityEventSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game.Scripts/Support/EventRouter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game.Scripts/Support/UnsafeEnumerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game.Scripts/Providers/Prefabs.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game.Scripts/Systems/SpawnAttackerSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game.Scripts/Systems/SpawnDefenderSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game.Scripts/Systems/PrefabSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game.Scripts/Providers/ProviderSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game.Scripts/Systems/LevelCreateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game.Scripts/Systems/SpawnPlayerSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Game.Scripts/BugFixes/CopySkinnedEntityData.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1bEP2FOkhtApWNNMvAK58Sr2j4q" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.416499" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.16257545" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="XThreadsFramesViewSplitterKey" value="0.22727273" />
+    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -65,12 +218,15 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="7660">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="7660" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -84,15 +240,156 @@
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="461" y="164" width="1342" height="711" key="SettingsEditor" timestamp="1588195615839">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="955" y="388" key="#Menus_and_Toolbars" timestamp="1588254770145">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="955" y="388" key="#Menus_and_Toolbars/0.0.2560.1400@0.0.2560.1400" timestamp="1588254770145" />
+    <state width="507" height="464" key="DebuggerActiveHint" timestamp="1588276538680">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="507" height="464" key="DebuggerActiveHint/0.0.2560.1400@0.0.2560.1400" timestamp="1588276538680" />
+    <state width="2516" height="390" key="GridCell.Tab.0.bottom" timestamp="1588276378356">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378356" />
+    <state width="2516" height="390" key="GridCell.Tab.0.center" timestamp="1588276378356">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378356" />
+    <state width="2516" height="390" key="GridCell.Tab.0.left" timestamp="1588276378356">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378356" />
+    <state width="2516" height="390" key="GridCell.Tab.0.right" timestamp="1588276378356">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378356" />
+    <state width="2516" height="390" key="GridCell.Tab.1.bottom" timestamp="1588276378357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378357" />
+    <state width="2516" height="390" key="GridCell.Tab.1.center" timestamp="1588276378356">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378356" />
+    <state width="2516" height="390" key="GridCell.Tab.1.left" timestamp="1588276378356">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378356" />
+    <state width="2516" height="390" key="GridCell.Tab.1.right" timestamp="1588276378357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378357" />
+    <state width="2516" height="390" key="GridCell.Tab.2.bottom" timestamp="1588276378357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.2.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378357" />
+    <state width="2516" height="390" key="GridCell.Tab.2.center" timestamp="1588276378357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.2.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378357" />
+    <state width="2516" height="390" key="GridCell.Tab.2.left" timestamp="1588276378357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.2.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378357" />
+    <state width="2516" height="390" key="GridCell.Tab.2.right" timestamp="1588276378357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.2.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378357" />
+    <state width="2516" height="390" key="GridCell.Tab.3.bottom" timestamp="1588276378357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.3.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378357" />
+    <state width="2516" height="390" key="GridCell.Tab.3.center" timestamp="1588276378357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.3.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378357" />
+    <state width="2516" height="390" key="GridCell.Tab.3.left" timestamp="1588276378357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.3.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378357" />
+    <state width="2516" height="390" key="GridCell.Tab.3.right" timestamp="1588276378357">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2516" height="390" key="GridCell.Tab.3.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588276378357" />
+    <state x="63" y="391" width="1821" height="710" key="SettingsEditor" timestamp="1588272668085">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="461" y="164" width="1342" height="711" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588195615839" />
+    <state x="63" y="391" width="1821" height="710" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1588272668085" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1588256046659">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.2560.1400@0.0.2560.1400" timestamp="1588256046659" />
+    <state x="370" y="254" width="1658" height="911" key="VCS.FileHistoryDialog" timestamp="1588250233516">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="370" y="254" width="1658" height="911" key="VCS.FileHistoryDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1588250233516" />
+    <state width="1057" height="598" key="XDebugger.FullValuePopup" timestamp="1588270703962">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1057" height="598" key="XDebugger.FullValuePopup/0.0.2560.1400@0.0.2560.1400" timestamp="1588270703962" />
+    <state x="936" y="353" width="672" height="676" key="search.everywhere.popup" timestamp="1588275401206">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="936" y="353" width="672" height="676" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1588275401206" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Game.Scripts/Providers/ProviderSystem.cs</url>
+          <line>73</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Game.Scripts/Providers/ProviderSystem.cs" initialLine="77">
+            <startOffsets>
+              <option value="2726" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2761" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Game.Scripts/Systems/PrefabSystem.cs</url>
+          <line>61</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Game.Scripts/Systems/PrefabSystem.cs" initialLine="61">
+            <startOffsets>
+              <option value="2070" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2118" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="UNITY_DEBUG_RUN_CONFIGURATION">
+        <watch expression="World.GetOrCreateProvider&lt;Prefabs&gt;()" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

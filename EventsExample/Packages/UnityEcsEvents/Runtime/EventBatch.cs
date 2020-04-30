@@ -191,10 +191,8 @@ namespace Vella.Events
 
         private void CreateInactiveEntities(EntityManager em, int entityCount)
         {
-            var capacity = InactiveArchetype.ChunkCapacity;
-            var chunkCount = entityCount / capacity + ((entityCount % capacity == 0) ? 0 : 1);
-            var newChunks = new NativeArray<ArchetypeChunk>(chunkCount, Allocator.Temp);
-            em.CreateChunk(InactiveArchetype, newChunks, entityCount);
+            var results = new NativeArray<Entity>(entityCount, Allocator.Temp);
+            em.CreateEntity(InactiveArchetype, results);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

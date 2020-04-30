@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Program Files\Unity\Hub\Editor\2020.2.0a8\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Editor" t="Include">
+    <e p="C:\Users\icecube\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\icecube\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_EventsExample.1077533049.00" t="ExcludeRecursive" />
+    <e p="C:\Users\icecube\AppData\Roaming\JetBrains\Rider2020.1\Extensions" t="IncludeRecursive" />
+    <e p="X:\UnityEditors\2020.2.0a9\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Editor" t="Include">
       <e p="EventSystem" t="Include">
         <e p="EventSystemEditor.cs" t="Include" />
         <e p="EventTriggerEditor.cs" t="Include" />
@@ -49,7 +52,7 @@
       </e>
       <e p="UnityEditor.UI.asmdef" t="Include" />
     </e>
-    <e p="C:\Program Files\Unity\Hub\Editor\2020.2.0a8\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime" t="Include">
+    <e p="X:\UnityEditors\2020.2.0a9\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui\Runtime" t="Include">
       <e p="EventSystem" t="Include">
         <e p="EventData" t="Include">
           <e p="AxisEventData.cs" t="Include" />
@@ -165,12 +168,9 @@
       </e>
       <e p="UnityEngine.UI.asmdef" t="Include" />
     </e>
-    <e p="C:\Users\Jeffrey\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Jeffrey\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_EventsExample.-1133646469.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Jeffrey\Desktop\GitSource\RepoTests\NewRepoDownload\UnityEcsEvents.Example\EventsExample" t="IncludeRecursive">
+    <e p="X:\UnitySource\UnityEcsEvents.Example\EventsExample" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
-      <e p="Assembly-CSharp.Player.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="3rdParty" t="Include">
           <e p="ReorderableList" t="Include">
@@ -287,14 +287,7 @@
           </e>
         </e>
         <e p="TestSystem.cs" t="Include" />
-        <e p="UnityECSOffsets" t="Include">
-          <e p="Extensions.cs" t="Include" />
-          <e p="Imposters.cs" t="Include" />
-          <e p="Offsets.cs" t="Include" />
-          <e p="UnsafeArray.cs" t="Include" />
-        </e>
       </e>
-      <e p="DocCodeSamples.csproj" t="IncludeRecursive" />
       <e p="EventsExample.sln" t="IncludeFlat" />
       <e p="Library" t="Include">
         <e p="PackageCache" t="Include">
@@ -531,7 +524,7 @@
               </e>
             </e>
           </e>
-          <e p="com.unity.collections@0.7.1-preview.3" t="Include">
+          <e p="com.unity.collections@0.8.0-preview.5" t="Include">
             <e p="Unity.Collections" t="Include">
               <e p="AllocatorManager.cs" t="Include" />
               <e p="AssemblyInfo.cs" t="Include" />
@@ -544,15 +537,18 @@
               <e p="ListExtensions.cs" t="Include" />
               <e p="NativeArrayExtensions.cs" t="Include" />
               <e p="NativeArraySOA.cs" t="Include" />
+              <e p="NativeBitArray.cs" t="Include" />
               <e p="NativeHashMap.cs" t="Include" />
               <e p="NativeList.cs" t="Include" />
               <e p="NativeQueue.cs" t="Include" />
               <e p="NativeSort.cs" t="Include" />
               <e p="NativeStream.cs" t="Include" />
               <e p="NativeString.gen.cs" t="Include" />
+              <e p="NativeStringExtensions.gen.cs" t="Include" />
               <e p="Unicode.cs" t="Include" />
               <e p="Unity.Collections.asmdef" t="Include" />
               <e p="UnsafeAppendBuffer.cs" t="Include" />
+              <e p="UnsafeAtomicCounter.cs" t="Include" />
               <e p="UnsafeBitArray.cs" t="Include" />
               <e p="UnsafeHashMap.cs" t="Include" />
               <e p="UnsafeList.cs" t="Include" />
@@ -560,6 +556,495 @@
               <e p="UnsafeScratchAllocator.cs" t="Include" />
               <e p="UnsafeStream.cs" t="Include" />
               <e p="UnsafeUtilityEx.cs" t="Include" />
+            </e>
+          </e>
+          <e p="com.unity.entities@0.10.0-preview.6" t="Include">
+            <e p="Unity.Core" t="Include">
+              <e p="Hashes" t="Include">
+                <e p="XXHash.cs" t="Include" />
+              </e>
+              <e p="TimeData.cs" t="Include" />
+              <e p="Unity.Core.asmref" t="Include" />
+            </e>
+            <e p="Unity.Deformations" t="Include">
+              <e p="DeformationComponents.cs" t="Include" />
+              <e p="Unity.Deformations.asmdef" t="Include" />
+            </e>
+            <e p="Unity.Entities" t="Include">
+              <e p="AlwaysSynchronizeSystemAttribute.cs" t="Include" />
+              <e p="AlwaysUpdateSystemAttribute.cs" t="Include" />
+              <e p="ApiCompatibilityLevelTest.cs" t="Include" />
+              <e p="AssemblyInfo.cs" t="Include" />
+              <e p="BlobBuilder.cs" t="Include" />
+              <e p="Blobs.cs" t="Include" />
+              <e p="BlockAllocator.cs" t="Include" />
+              <e p="ChangeVersionUtility.cs" t="Include" />
+              <e p="ChunkDataUtility.cs" t="Include" />
+              <e p="ChunkListMap.cs" t="Include" />
+              <e p="CodeGeneratedJobForEach" t="Include">
+                <e p="LambdaJobDescription.cs" t="Include" />
+                <e p="LambdaJobQueryConstructionMethods.gen.cs" t="Include" />
+                <e p="LambdaParameterValueProviders.cs" t="Include" />
+                <e p="UniversalDelegates.gen.cs" t="Include" />
+              </e>
+              <e p="ComponentDependencyManager.cs" t="Include" />
+              <e p="ComponentSafetyHandles.cs" t="Include" />
+              <e p="ComponentSystem.cs" t="Include" />
+              <e p="ComponentSystemBase.cs" t="Include" />
+              <e p="ComponentSystemGroup.cs" t="Include" />
+              <e p="ComponentSystemSorter.cs" t="Include" />
+              <e p="ConverterVersionAttribute.cs" t="Include" />
+              <e p="CopyUtility.cs" t="Include" />
+              <e p="DebugView.cs" t="Include" />
+              <e p="DefaultWorld.cs" t="Include" />
+              <e p="Diff" t="Include">
+                <e p="DynamicBlobAssetBatch.cs" t="Include" />
+                <e p="EntityChangeSet.cs" t="Include" />
+                <e p="EntityDiffer.cs" t="Include" />
+                <e p="EntityDifferArchetypeChanges.cs" t="Include" />
+                <e p="EntityDifferBlobs.cs" t="Include" />
+                <e p="EntityDifferClearMissingReferences.cs" t="Include" />
+                <e p="EntityDifferComponentChanges.cs" t="Include" />
+                <e p="EntityDifferCopyAndReplace.cs" t="Include" />
+                <e p="EntityDifferEntityInChunkChanges.cs" t="Include" />
+                <e p="EntityDifferValidation.cs" t="Include" />
+                <e p="EntityManagerDiffer.cs" t="Include" />
+                <e p="EntityPatcher.cs" t="Include" />
+                <e p="EntityPatcherBlobs.cs" t="Include" />
+              </e>
+              <e p="DisallowRefReturnCrossingThisAttribute.cs" t="Include" />
+              <e p="DOTSCompilerGeneratedAttribute.cs" t="Include" />
+              <e p="EntityBatchInChunk.cs" t="Include" />
+              <e p="EntityCommandBuffer.cs" t="Include" />
+              <e p="EntityCommandBufferSystem.cs" t="Include" />
+              <e p="EntityComponentStore.cs" t="Include" />
+              <e p="EntityComponentStoreChangeArchetype.cs" t="Include" />
+              <e p="EntityComponentStoreChunk.cs" t="Include" />
+              <e p="EntityComponentStoreCreateArchetype.cs" t="Include" />
+              <e p="EntityComponentStoreCreateDestroyEntities.cs" t="Include" />
+              <e p="EntityComponentStoreDebug.cs" t="Include" />
+              <e p="EntityDataAccess.cs" t="Include" />
+              <e p="EntityInChunk.cs" t="Include" />
+              <e p="EntityManager.cs" t="Include" />
+              <e p="EntityManagerAccessComponentData.cs" t="Include" />
+              <e p="EntityManagerChangeArchetype.cs" t="Include" />
+              <e p="EntityManagerCopyEntitiesFrom.cs" t="Include" />
+              <e p="EntityManagerCreateArchetype.cs" t="Include" />
+              <e p="EntityManagerCreateDestroyEntities.cs" t="Include" />
+              <e p="EntityManagerDebug.cs" t="Include" />
+              <e p="EntityManagerExclusiveEntityTransaction.cs" t="Include" />
+              <e p="EntityManagerLocks.cs" t="Include" />
+              <e p="EntityManagerMoveEntities.cs" t="Include" />
+              <e p="EntityManagerQuery.cs" t="Include" />
+              <e p="EntityManagerSerialization.cs" t="Include" />
+              <e p="EntityManagerSync.cs" t="Include" />
+              <e p="EntityManagerTypes.cs" t="Include" />
+              <e p="EntityManagerValidate.cs" t="Include" />
+              <e p="EntityManagerVersions.cs" t="Include" />
+              <e p="EntityQueryBuilder.cs" t="Include" />
+              <e p="EntityQueryBuilder_ForEach.gen.cs" t="Include" />
+              <e p="EntityQueryBuilder_With.gen.cs" t="Include" />
+              <e p="EntityQueryCache.cs" t="Include" />
+              <e p="EntityRemapUtility.cs" t="Include" />
+              <e p="ExclusiveEntityTransaction.cs" t="Include" />
+              <e p="FixedRateUtils.cs" t="Include" />
+              <e p="GenerateAuthoringComponentAttribute.cs" t="Include" />
+              <e p="IComponentData.cs" t="Include" />
+              <e p="IJobChunk.cs" t="Include" />
+              <e p="IJobEntityBatch.cs" t="Include" />
+              <e p="IJobForEach.cs" t="Include" />
+              <e p="IJobForEach.gen.cs" t="Include" />
+              <e p="ISystemBase.cs" t="Include" />
+              <e p="Iterators" t="Include">
+                <e p="ArchetypeChunkArray.cs" t="Include" />
+                <e p="ArchetypeChunkIterator.cs" t="Include" />
+                <e p="BufferFromEntity.cs" t="Include" />
+                <e p="ChunkDataGatherJobs.cs" t="Include" />
+                <e p="ChunkIterationUtility.cs" t="Include" />
+                <e p="ComponentDataFromEntity.cs" t="Include" />
+                <e p="DynamicBuffer.cs" t="Include" />
+                <e p="EntityQuery.cs" t="Include" />
+                <e p="EntityQueryManager.cs" t="Include" />
+              </e>
+              <e p="JetBrains.Annotations.cs" t="Include" />
+              <e p="JobComponentSystem.cs" t="Include" />
+              <e p="ManagedComponentStore.cs" t="Include" />
+              <e p="RetainBlobAssetSystem.cs" t="Include" />
+              <e p="SceneViewWorldPositionAttribute.cs" t="Include" />
+              <e p="ScriptBehaviourUpdateOrder.cs" t="Include" />
+              <e p="Serialization" t="Include">
+                <e p="BinarySerialization.cs" t="Include" />
+                <e p="ManagedObjectBinarySerialization.cs" t="Include" />
+                <e p="SerializeUtility.cs" t="Include" />
+                <e p="SerializeUtilityToYaml.cs" t="Include" />
+                <e p="YamlWriter.cs" t="Include" />
+              </e>
+              <e p="SortingUtilities.cs" t="Include" />
+              <e p="Static.cs" t="Include" />
+              <e p="Stubs" t="Include">
+                <e p="Unity" t="Include">
+                  <e p="Debug.cs" t="Include" />
+                  <e p="ProfilerMarker.cs" t="Include" />
+                </e>
+                <e p="Unity.Assertions" t="Include">
+                  <e p="Assert.cs" t="Include" />
+                </e>
+              </e>
+              <e p="SystemBase.cs" t="Include" />
+              <e p="SystemBaseRegistry.cs" t="Include" />
+              <e p="SystemDependencySafetyUtility.cs" t="Include" />
+              <e p="Types" t="Include">
+                <e p="Archetype.cs" t="Include" />
+                <e p="ArchetypeChunkData.cs" t="Include" />
+                <e p="BufferHeader.cs" t="Include" />
+                <e p="CalculateReaderWriterDependency.cs" t="Include" />
+                <e p="Chunk.cs" t="Include" />
+                <e p="CleanupEntity.cs" t="Include" />
+                <e p="ComponentType.cs" t="Include" />
+                <e p="ComponentTypeInArchetype.cs" t="Include" />
+                <e p="ComponentTypes.cs" t="Include" />
+                <e p="Entity.cs" t="Include" />
+                <e p="EntityArchetype.cs" t="Include" />
+                <e p="FastEquality.cs" t="Include" />
+                <e p="Hash128.cs" t="Include" />
+                <e p="LayoutUtility.cs" t="Include" />
+                <e p="RegisterGenericComponentTypeAttribute.cs" t="Include" />
+                <e p="SceneTagComponent.cs" t="Include" />
+                <e p="SharedComponentValues.cs" t="Include" />
+                <e p="SystemTypeManager.cs" t="Include" />
+                <e p="TypeHash.cs" t="Include" />
+                <e p="TypeManager.cs" t="Include" />
+              </e>
+              <e p="Unity.Entities.asmdef" t="Include" />
+              <e p="UnsafeList.gen.cs" t="Include" />
+              <e p="World.cs" t="Include" />
+              <e p="World.Deprecated.cs" t="Include" />
+              <e p="WorldDebuggingTools.cs" t="Include" />
+              <e p="WorldSystemFiltering.cs" t="Include" />
+              <e p="WorldTime.cs" t="Include" />
+            </e>
+            <e p="Unity.Entities.BuildUtils" t="Include">
+              <e p="MonoExtensions.cs" t="Include" />
+              <e p="TypeHash.cs" t="Include" />
+              <e p="TypeUtils.cs" t="Include" />
+              <e p="Unity.Entities.BuildUtils.asmdef" t="Include" />
+            </e>
+            <e p="Unity.Entities.CodeGen" t="Include">
+              <e p="AssemblyInfo.cs" t="Include" />
+              <e p="BlobAssetSafety" t="Include">
+                <e p="BlobAssetSafetyVerifier.cs" t="Include" />
+              </e>
+              <e p="CecilExtensionMethods.cs" t="Include" />
+              <e p="CecilHelpers.cs" t="Include" />
+              <e p="EntitiesILHelpers.cs" t="Include" />
+              <e p="EntitiesILPostProcessor.cs" t="Include" />
+              <e p="ISystemBasePostProcessor.cs" t="Include" />
+              <e p="LambdaJobs" t="Include">
+                <e p="EntitiesForEachAttributes.cs" t="Include" />
+                <e p="EntitiesForEachJobCreator.cs" t="Include" />
+                <e p="InjectAndInitializeEntityQueryField.cs" t="Include" />
+                <e p="LambdaJobDescriptionConstruction.cs" t="Include" />
+                <e p="LambdaJobsComponentAccessPatcher.cs" t="Include" />
+                <e p="LambdaJobsPostProcessor.cs" t="Include" />
+                <e p="LambdaParamaterValueProviderInformation.cs" t="Include" />
+                <e p="LambdaParameterValueInformations.cs" t="Include" />
+                <e p="UserError.cs" t="Include" />
+              </e>
+              <e p="ListExtensions.cs" t="Include" />
+              <e p="PostProcessException.cs" t="Include" />
+              <e p="SingletonAccess" t="Include">
+                <e p="SingletonAccessPostProcessor.cs" t="Include" />
+              </e>
+              <e p="StaticTypeRegistry" t="Include">
+                <e p="FieldInfoGeneration.cs" t="Include" />
+                <e p="ILHelper.cs" t="Include" />
+                <e p="MonoExtensions.cs" t="Include" />
+                <e p="StaticTypeRegistryPostProcessor.cs" t="Include" />
+                <e p="SystemInfoGeneration.cs" t="Include" />
+                <e p="TypeHash.cs" t="Include" />
+                <e p="TypeInfoGeneration.cs" t="Include" />
+                <e p="TypeUtils.cs" t="Include" />
+              </e>
+              <e p="TestCaseILPP.cs" t="Include" />
+              <e p="Unity.Entities.CodeGen.asmdef" t="Include" />
+            </e>
+            <e p="Unity.Entities.CodeGen.Tests" t="Include">
+              <e p="Unity.Entities.CodeGen.Tests.TestTypes" t="Include">
+                <e p="TestTypes.cs" t="Include" />
+                <e p="Unity.Entities.CodeGen.Tests.TestTypes.asmdef" t="Include" />
+              </e>
+            </e>
+            <e p="Unity.Entities.Editor" t="Include">
+              <e p="AssemblyInfo.cs" t="Include" />
+              <e p="CommonGUI" t="Include">
+                <e p="EntityQueryGUI.cs" t="Include" />
+                <e p="EntityQueryGUIControl.cs" t="Include" />
+                <e p="GUIHelpers.cs" t="Include" />
+                <e p="GUIStyleAsset.cs" t="Include" />
+                <e p="RepaintLimiter.cs" t="Include" />
+                <e p="SystemInclusionList.cs" t="Include" />
+              </e>
+              <e p="ComponentSystemProcessing.cs" t="Include" />
+              <e p="Decompiler.cs" t="Include" />
+              <e p="Editors" t="Include">
+                <e p="ComponentDataProxyBaseEditor.cs" t="Include" />
+                <e p="DynamicBufferProxyBaseEditor.cs" t="Include" />
+                <e p="GameObjectEntityEditor.cs" t="Include" />
+              </e>
+              <e p="EntityDebugger" t="Include">
+                <e p="ChunkInfoListView.cs" t="Include" />
+                <e p="ComponentTypeChooser.cs" t="Include" />
+                <e p="ComponentTypeFilterUI.cs" t="Include" />
+                <e p="ComponentTypeListView.cs" t="Include" />
+                <e p="EntityArrayListAdapter.cs" t="Include" />
+                <e p="EntityDebugger.cs" t="Include" />
+                <e p="EntityDebuggerStyles.cs" t="Include" />
+                <e p="EntityListQuery.cs" t="Include" />
+                <e p="EntityListView.cs" t="Include" />
+                <e p="EntityQueryListView.cs" t="Include" />
+                <e p="SystemListView.cs" t="Include" />
+                <e p="WorldPopup.cs" t="Include" />
+              </e>
+              <e p="EntityInspector" t="Include">
+                <e p="Adapters" t="Include">
+                  <e p="IMGUIAdapter.Default.cs" t="Include" />
+                  <e p="IMGUIAdapter.Entity.cs" t="Include" />
+                  <e p="IMGUIAdapter.EntityGuid.cs" t="Include" />
+                  <e p="IMGUIAdapter.Mathematics.cs" t="Include" />
+                  <e p="IMGUIAdapter.Primitives.cs" t="Include" />
+                  <e p="IMGUIAdapter.UnityEngine.cs" t="Include" />
+                </e>
+                <e p="DynamicBufferContainer.cs" t="Include" />
+                <e p="EntityContainer.cs" t="Include" />
+                <e p="EntityIMGUIVisitor.cs" t="Include" />
+                <e p="EntitySelectionProxy.cs" t="Include" />
+                <e p="EntitySelectionProxyEditor.cs" t="Include" />
+              </e>
+              <e p="ExtraTypesProvider.cs" t="Include" />
+              <e p="LiveLink" t="Include">
+                <e p="EditorCompanionGameObjectUpdateSystem.cs" t="Include" />
+                <e p="Icons.cs" t="Include" />
+                <e p="LiveLinkCommands.cs" t="Include" />
+                <e p="LiveLinkConnectionsDropdown.cs" t="Include" />
+                <e p="LiveLinkStyles.cs" t="Include" />
+                <e p="LiveLinkToolbar.cs" t="Include" />
+                <e p="StartLiveLinkWindow.cs" t="Include" />
+                <e p="UIElementHelpers.cs" t="Include" />
+              </e>
+              <e p="PostprocessedILInspector" t="Include">
+                <e p="ILPostProcessorWindow.uss" t="Include" />
+                <e p="ILPostProcessorWindow.uxml" t="Include" />
+                <e p="PostprocessedILWindow.cs" t="Include" />
+                <e p="TypeDefinitionExtensions.cs" t="Include" />
+              </e>
+              <e p="PropertyDrawers" t="Include">
+                <e p="LayerFieldDrawer.cs" t="Include" />
+                <e p="WrappedComponentDataDrawer.cs" t="Include" />
+              </e>
+              <e p="ScriptTemplates" t="Include">
+                <e p="AuthoringComponent.txt" t="Include" />
+                <e p="RunTimeComponent.txt" t="Include" />
+                <e p="ScriptTemplates.cs" t="Include" />
+                <e p="System.txt" t="Include" />
+              </e>
+              <e p="Unity.Entities.Editor.asmdef" t="Include" />
+            </e>
+            <e p="Unity.Entities.Hybrid" t="Include">
+              <e p="AssemblyInfo.cs" t="Include" />
+              <e p="AuthoringComponent.cs" t="Include" />
+              <e p="BufferElementDataAuthoringComponent.cs" t="Include" />
+              <e p="CompanionGameObjectUpdateSystem.cs" t="Include" />
+              <e p="Components" t="Include">
+                <e p="CompanionLink.cs" t="Include" />
+                <e p="ComponentDataProxy.cs" t="Include" />
+                <e p="ComponentDataProxyBase.cs" t="Include" />
+                <e p="DynamicBufferProxy.cs" t="Include" />
+                <e p="GameObjectEntity.cs" t="Include" />
+                <e p="SharedComponentDataProxy.cs" t="Include" />
+              </e>
+              <e p="ConvertToEntity.cs" t="Include" />
+              <e p="EditorRenderData.cs" t="Include" />
+              <e p="EntityManagerExtensions.cs" t="Include" />
+              <e p="FileUtilityHybrid.cs" t="Include" />
+              <e p="GameObjectConversion" t="Include">
+                <e p="BlobAssetComputationContext.cs" t="Include" />
+                <e p="BlobAssetStore.cs" t="Include" />
+                <e p="ConversionDependencies.cs" t="Include" />
+                <e p="ConversionJournalData.cs" t="Include" />
+                <e p="ConversionSystemFilterSettings.cs" t="Include" />
+                <e p="ConvertGameObjectToEntitySystem.cs" t="Include" />
+                <e p="GameObjectConversionMappingSystem.cs" t="Include" />
+                <e p="GameObjectConversionSettings.cs" t="Include" />
+                <e p="GameObjectConversionSystem.cs" t="Include" />
+                <e p="GameObjectConversionUtility.cs" t="Include" />
+                <e p="JournalDataDebug.cs" t="Include" />
+                <e p="JournalingUnityLogger.cs" t="Include" />
+                <e p="MultiList.cs" t="Include" />
+                <e p="SceneBoundingVolume.cs" t="Include" />
+                <e p="UnityEngineExtensions.cs" t="Include" />
+              </e>
+              <e p="GeneratedAuthoringComponentImplementation.cs" t="Include" />
+              <e p="Injection" t="Include">
+                <e p="AutomaticWorldBootstrap.cs" t="Include" />
+                <e p="CompanionGameObject.cs" t="Include" />
+                <e p="DefaultWorldInitialization.cs" t="Include" />
+                <e p="DefaultWorldInitializationProxy.cs" t="Include" />
+              </e>
+              <e p="Iterators" t="Include">
+                <e p="ComponentArray.cs" t="Include" />
+                <e p="TransformAccessArrayIterator.cs" t="Include" />
+              </e>
+              <e p="JetBrains.Annotations.cs" t="Include" />
+              <e p="LayerFieldAttribute.cs" t="Include" />
+              <e p="ReferencedUnityObjects.cs" t="Include" />
+              <e p="ResourceCatalogData.cs" t="Include" />
+              <e p="SceneSectionComponent.cs" t="Include" />
+              <e p="SceneSectionProxy.cs" t="Include" />
+              <e p="SerializeUtilityHybrid.cs" t="Include" />
+              <e p="StaticOptimizeEntity.cs" t="Include" />
+              <e p="StopConvertToEntity.cs" t="Include" />
+              <e p="TypeUtility.cs" t="Include" />
+              <e p="Unity.Entities.Hybrid.asmdef" t="Include" />
+              <e p="UpdateWorldTimeSystem.cs" t="Include" />
+            </e>
+            <e p="Unity.Entities.Hybrid.CodeGen" t="Include">
+              <e p="AuthoringComponent" t="Include">
+                <e p="AuthoringComponentPostProcessor_IBufferElementData.cs" t="Include" />
+                <e p="AuthoringComponentPostProcessor_IComponentData.cs" t="Include" />
+                <e p="AuthoringComponentPostProcessor_Shared.cs" t="Include" />
+              </e>
+              <e p="Unity.Entities.Hybrid.CodeGen.asmdef" t="Include" />
+            </e>
+            <e p="Unity.Entities.Hybrid.EndToEnd.Tests" t="Include">
+              <e p="TestUtilities.cs" t="Include" />
+              <e p="Unity.Entities.Hybrid.EndToEnd.Tests.asmdef" t="Include" />
+            </e>
+            <e p="Unity.Mathematics.Extensions" t="Include">
+              <e p="Aabb.cs" t="Include" />
+              <e p="GeneratePoints.cs" t="Include" />
+              <e p="MinMaxAABB.cs" t="Include" />
+              <e p="Unity.Mathematics.Extensions.asmdef" t="Include" />
+            </e>
+            <e p="Unity.Mathematics.Extensions.Hybrid" t="Include">
+              <e p="BoundsToAABB.cs" t="Include" />
+              <e p="Unity.Mathematics.Extensions.Hybrid.asmdef" t="Include" />
+            </e>
+            <e p="Unity.Scenes.Editor" t="Include">
+              <e p="AssemblyInfo.cs" t="Include" />
+              <e p="Build" t="Include">
+                <e p="LiveLink.cs" t="Include" />
+              </e>
+              <e p="ConversionWarningsEditor.cs" t="Include" />
+              <e p="EditorConnectionExtensions.cs" t="Include" />
+              <e p="EditorEntityScenes.cs" t="Include" />
+              <e p="EditorSceneLiveLinkToPlayerSendSystem.cs" t="Include" />
+              <e p="EditorSubSceneLiveLinkSystem.cs" t="Include" />
+              <e p="HierarchyOverlay.cs" t="Include" />
+              <e p="HybridBuildPipelineMigration.cs" t="Include" />
+              <e p="LiveLink" t="Include">
+                <e p="EditorPlayerConnection.cs" t="Include" />
+                <e p="IEditorConnection.cs" t="Include" />
+                <e p="LiveLinkAssetBundleBuildSystem.cs" t="Include" />
+                <e p="LiveLinkBuildImporter.cs" t="Include" />
+                <e p="LiveLinkBuildPipeline.cs" t="Include" />
+                <e p="LiveLinkClassicBuildCustomizer.cs" t="Include" />
+                <e p="LiveLinkDebugHelper.cs" t="Include" />
+                <e p="LiveLinkEditorEventSystem.cs" t="Include" />
+                <e p="LiveLinkEditorSystemGroup.cs" t="Include" />
+              </e>
+              <e p="LiveLinkConnection.cs" t="Include" />
+              <e p="LiveLinkDiffGenerator.cs" t="Include" />
+              <e p="ResourceCatalogBuildCode.cs" t="Include" />
+              <e p="RetainBlobAssetsSetting.cs" t="Include" />
+              <e p="SceneImporterData.cs" t="Include" />
+              <e p="SceneInspector.cs" t="Include" />
+              <e p="SceneMetaDataImporter.cs" t="Include" />
+              <e p="SubSceneBuildCode.cs" t="Include" />
+              <e p="SubSceneContextMenu.cs" t="Include" />
+              <e p="SubSceneFilesProvider.cs" t="Include" />
+              <e p="SubSceneImporter.cs" t="Include" />
+              <e p="SubSceneInspector.cs" t="Include" />
+              <e p="SubSceneInspectorUtility.cs" t="Include" />
+              <e p="SubSceneTransformHierarchyHook.cs" t="Include" />
+              <e p="TimeBasedCallbackInvoker.cs" t="Include" />
+              <e p="TypeDependencyCache.cs" t="Include" />
+              <e p="Unity.Scenes.Editor.asmdef" t="Include" />
+            </e>
+            <e p="Unity.Scenes.Hybrid" t="Include">
+              <e p="AssemblyInfo.cs" t="Include" />
+              <e p="AssetBundleManager.cs" t="Include" />
+              <e p="AssetDatabaseCompatibility.cs" t="Include" />
+              <e p="AssetObjectManifest.cs" t="Include" />
+              <e p="AsyncLoadSceneOperation.cs" t="Include" />
+              <e p="EditorUpdateUtility.cs" t="Include" />
+              <e p="EntityChangeSetSerialization.cs" t="Include" />
+              <e p="EntitySceneOptimization.cs" t="Include" />
+              <e p="EntityScenesPaths.cs" t="Include" />
+              <e p="GlobalAssetObjectResolver.cs" t="Include" />
+              <e p="LiveLink" t="Include">
+                <e p="LiveLinkMsg.cs" t="Include" />
+                <e p="LiveLinkPlayerAssetRefreshSystem.cs" t="Include" />
+                <e p="LiveLinkPlayerSystem.cs" t="Include" />
+                <e p="LiveLinkPlayerSystemGroup.cs" t="Include" />
+                <e p="LiveLinkResolveSceneReferenceSystem.cs" t="Include" />
+                <e p="LiveLinkSceneChangeTracker.cs" t="Include" />
+                <e p="LiveLinkUtility.cs" t="Include" />
+                <e p="MessageEventArgsExtensions.cs" t="Include" />
+              </e>
+              <e p="LiveLinkPatcher.cs" t="Include" />
+              <e p="PublicEntityRef.cs" t="Include" />
+              <e p="ResolveSceneReferenceSystem.cs" t="Include" />
+              <e p="ResolveSceneSectionUtility.cs" t="Include" />
+              <e p="SceneSectionBundleTag.cs" t="Include" />
+              <e p="SceneSectionStreamingSystem.cs" t="Include" />
+              <e p="SceneSystem.cs" t="Include" />
+              <e p="SceneSystemGroup.cs" t="Include" />
+              <e p="SceneWithBuildConfigurationGUIDs.cs" t="Include" />
+              <e p="SubScene.cs" t="Include" />
+              <e p="Unity.Scenes.Hybrid.asmdef" t="Include" />
+            </e>
+            <e p="Unity.Transforms" t="Include">
+              <e p="BoneIndexOffset.cs" t="Include" />
+              <e p="CompositeRotation.cs" t="Include" />
+              <e p="CompositeScale.cs" t="Include" />
+              <e p="EndFrameTransformSystems.cs" t="Include" />
+              <e p="Frozen.cs" t="Include" />
+              <e p="LocalToParent.cs" t="Include" />
+              <e p="LocalToParentSystem.cs" t="Include" />
+              <e p="LocalToWorld.cs" t="Include" />
+              <e p="NonUniformScale.cs" t="Include" />
+              <e p="Parent.cs" t="Include" />
+              <e p="ParentScaleInverse.cs" t="Include" />
+              <e p="ParentSystem.cs" t="Include" />
+              <e p="PostRotationEuler.cs" t="Include" />
+              <e p="Rotation.cs" t="Include" />
+              <e p="RotationEuler.cs" t="Include" />
+              <e p="Scale.cs" t="Include" />
+              <e p="Translation.cs" t="Include" />
+              <e p="TRSToLocalToParentSystem.cs" t="Include" />
+              <e p="TRSToLocalToWorldSystem.cs" t="Include" />
+              <e p="Unity.Transforms.asmdef" t="Include" />
+              <e p="WorldToLocal.cs" t="Include" />
+            </e>
+            <e p="Unity.Transforms.Editor" t="Include">
+              <e p="TransformComponentEditors.cs" t="Include" />
+              <e p="Unity.Transforms.Editor.asmdef" t="Include" />
+            </e>
+            <e p="Unity.Transforms.Hybrid" t="Include">
+              <e p="AssemblyInfo.cs" t="Include" />
+              <e p="CompanionGameObjectUpdateTransformSystem.cs" t="Include" />
+              <e p="CopyInitialTransformFromGameObjectProxy.cs" t="Include" />
+              <e p="CopyInitialTransformFromGameObjectSystem.cs" t="Include" />
+              <e p="CopyTransformFromGameObjectProxy.cs" t="Include" />
+              <e p="CopyTransformFromGameObjectSystem.cs" t="Include" />
+              <e p="CopyTransformToGameObjectProxy.cs" t="Include" />
+              <e p="CopyTransformToGameObjectSystem.cs" t="Include" />
+              <e p="LocalToWorldProxy.cs" t="Include" />
+              <e p="NonUniformScaleProxy.cs" t="Include" />
+              <e p="RotationProxy.cs" t="Include" />
+              <e p="TransformConversion.cs" t="Include" />
+              <e p="TranslationProxy.cs" t="Include" />
+              <e p="Unity.Transforms.Hybrid.asmdef" t="Include" />
             </e>
           </e>
           <e p="com.unity.ide.rider@2.0.2" t="Include">
@@ -610,11 +1095,12 @@
               </e>
             </e>
           </e>
-          <e p="com.unity.ide.visualstudio@2.0.0" t="Include">
+          <e p="com.unity.ide.visualstudio@2.0.1" t="Include">
             <e p="Editor" t="Include">
               <e p="com.unity.ide.visualstudio.asmdef" t="Include" />
               <e p="Discovery.cs" t="Include" />
               <e p="FileUtility.cs" t="Include" />
+              <e p="Image.cs" t="Include" />
               <e p="Messaging" t="Include">
                 <e p="Deserializer.cs" t="Include" />
                 <e p="ExceptionEventArgs.cs" t="Include" />
@@ -625,7 +1111,13 @@
                 <e p="Serializer.cs" t="Include" />
                 <e p="UdpSocket.cs" t="Include" />
               </e>
-              <e p="ProjectGeneration.cs" t="Include" />
+              <e p="ProjectGeneration" t="Include">
+                <e p="AssemblyNameProvider.cs" t="Include" />
+                <e p="FileIOProvider.cs" t="Include" />
+                <e p="GUIDProvider.cs" t="Include" />
+                <e p="ProjectGeneration.cs" t="Include" />
+                <e p="ProjectGenerationFlag.cs" t="Include" />
+              </e>
               <e p="Solution.cs" t="Include" />
               <e p="SolutionParser.cs" t="Include" />
               <e p="SolutionProjectEntry.cs" t="Include" />
@@ -650,7 +1142,7 @@
               <e p="VSCodeScriptEditor.cs" t="Include" />
             </e>
           </e>
-          <e p="com.unity.jobs@0.2.8-preview.3" t="Include">
+          <e p="com.unity.jobs@0.2.9-preview.15" t="Include">
             <e p="Editor" t="Include">
               <e p="JobsMenu.cs" t="Include" />
               <e p="Unity.Jobs.Editor.asmdef" t="Include" />
@@ -990,79 +1482,126 @@
               </e>
             </e>
           </e>
-          <e p="com.unity.platforms@0.2.2-preview.7" t="Include">
+          <e p="com.unity.platforms@0.3.0-preview.2" t="Include">
             <e p="Editor" t="Include">
               <e p="Unity.Build" t="Include">
                 <e p="AssemblyInfo.cs" t="Include" />
                 <e p="AssetGuidAttribute.cs" t="Include" />
+                <e p="BoolResult.cs" t="Include" />
                 <e p="BuildArtifacts.cs" t="Include" />
                 <e p="BuildBatchDescription.cs" t="Include" />
                 <e p="BuildConfiguration.cs" t="Include" />
                 <e p="BuildConfigurationScriptedImporter.cs" t="Include" />
                 <e p="BuildContext.cs" t="Include" />
                 <e p="BuildManifest.cs" t="Include" />
-                <e p="BuildPipeline.cs" t="Include" />
-                <e p="BuildPipelineResult.cs" t="Include" />
-                <e p="BuildPipelineScriptedImporter.cs" t="Include" />
+                <e p="BuildPipelineBase.cs" t="Include" />
+                <e p="BuildPipelineBaseJsonAdapter.cs" t="Include" />
+                <e p="BuildProcess.cs" t="Include" />
                 <e p="BuildProgress.cs" t="Include" />
                 <e p="BuildQueue.cs" t="Include" />
-                <e p="BuildSettings.cs" t="Include" />
-                <e p="BuildStep.cs" t="Include" />
+                <e p="BuildResult.cs" t="Include" />
                 <e p="BuildStepAttribute.cs" t="Include" />
-                <e p="BuildStepJsonAdapter.cs" t="Include" />
-                <e p="BuildStepOrderAttribute.cs" t="Include" />
-                <e p="BuildStepResult.cs" t="Include" />
-                <e p="BuildStepRunAfterAttribute.cs" t="Include" />
-                <e p="BuildStepRunBeforeAttribute.cs" t="Include" />
+                <e p="BuildStepBase.cs" t="Include" />
+                <e p="BuildStepCollection.cs" t="Include" />
                 <e p="BuildType.cs" t="Include" />
                 <e p="BuildTypeCache.cs" t="Include" />
                 <e p="ContextBase.cs" t="Include" />
                 <e p="Extensions" t="Include">
+                  <e p="DictionaryExtensions.cs" t="Include" />
                   <e p="DirectoryInfoExtensions.cs" t="Include" />
                   <e p="FileInfoExtensions.cs" t="Include" />
                   <e p="StringExtensions.cs" t="Include" />
                   <e p="TimeSpanExtensions.cs" t="Include" />
                   <e p="TypeExtensions.cs" t="Include" />
+                  <e p="UnityEngineObjectExtensions.cs" t="Include" />
                 </e>
                 <e p="IBuildArtifacts.cs" t="Include" />
                 <e p="IBuildComponent.cs" t="Include" />
                 <e p="IBuildPipelineComponent.cs" t="Include" />
-                <e p="IBuildSettingsComponent.cs" t="Include" />
-                <e p="IBuildStep.cs" t="Include" />
                 <e p="IRunInstance.cs" t="Include" />
-                <e p="IRunStep.cs" t="Include" />
+                <e p="Obsolete" t="Include">
+                  <e p="BuildPipeline.cs" t="Include" />
+                  <e p="BuildPipelineResult.cs" t="Include" />
+                  <e p="BuildSettings.cs" t="Include" />
+                  <e p="BuildStep.cs" t="Include" />
+                  <e p="BuildStepOrderAttribute.cs" t="Include" />
+                  <e p="BuildStepResult.cs" t="Include" />
+                  <e p="BuildStepRunAfterAttribute.cs" t="Include" />
+                  <e p="BuildStepRunBeforeAttribute.cs" t="Include" />
+                  <e p="IBuildSettingsComponent.cs" t="Include" />
+                  <e p="IBuildStep.cs" t="Include" />
+                  <e p="IRunStep.cs" t="Include" />
+                  <e p="RunStep.cs" t="Include" />
+                  <e p="RunStepAttribute.cs" t="Include" />
+                  <e p="RunStepResult.cs" t="Include" />
+                </e>
                 <e p="Package.cs" t="Include" />
                 <e p="Properties" t="Include">
                   <e p="HierarchicalComponentContainer.cs" t="Include" />
                   <e p="ScriptableObjectPropertyContainer.cs" t="Include" />
                 </e>
                 <e p="ResultBase.cs" t="Include" />
-                <e p="RunStep.cs" t="Include" />
-                <e p="RunStepAttribute.cs" t="Include" />
-                <e p="RunStepJsonAdapter.cs" t="Include" />
-                <e p="RunStepResult.cs" t="Include" />
+                <e p="RunContext.cs" t="Include" />
+                <e p="RunResult.cs" t="Include" />
                 <e p="TemporaryFileTracker.cs" t="Include" />
+                <e p="TypeCacheHelper.cs" t="Include" />
                 <e p="TypeConstructionHelper.cs" t="Include" />
                 <e p="Unity.Build.asmdef" t="Include" />
               </e>
               <e p="Unity.Build.Classic" t="Include">
                 <e p="AssemblyInfo.cs" t="Include" />
-                <e p="BuildStepApplyPlayerSettings.cs" t="Include" />
-                <e p="BuildStepBuildClassicPlayer.cs" t="Include" />
-                <e p="BuildStepSwitchPlatfomClassic.cs" t="Include" />
-                <e p="ClassicBuildProfile.cs" t="Include" />
-                <e p="ClassicScriptingSettings.cs" t="Include" />
-                <e p="ClassicScriptingSettingsInspector.cs" t="Include" />
-                <e p="RunStepNotImplemented.cs" t="Include" />
+                <e p="ClassicBuildPipelineCustomizer.cs" t="Include" />
+                <e p="Components" t="Include">
+                  <e p="ClassicBuildOptions.cs" t="Include" />
+                  <e p="ClassicBuildProfile.cs" t="Include" />
+                  <e p="ClassicScriptingSettings.cs" t="Include" />
+                  <e p="ClassicScriptingSettingsInspector.cs" t="Include" />
+                </e>
                 <e p="Unity.Build.Classic.asmdef" t="Include" />
+              </e>
+              <e p="Unity.Build.Classic.Private" t="Include">
+                <e p="BuildContextExtensions.cs" t="Include" />
+                <e p="BuildPipelineSelector.cs" t="Include" />
+                <e p="ClassicBuildOptionsCustomizer.cs" t="Include" />
+                <e p="ClassicPipelineBase.cs" t="Include" />
+                <e p="ClassicSharedData.cs" t="Include" />
+                <e p="CustomizerInfoImpl.cs" t="Include" />
+                <e p="EmbeddedScenesValue.cs" t="Include" />
+                <e p="KnownPlatforms.cs" t="Include" />
+                <e p="NonIncremental" t="Include">
+                  <e p="ClassicNonIncrementalPipelineBase.cs" t="Include" />
+                  <e p="MissingPipelines" t="Include">
+                    <e p="iOSClassicNonIncrementalPipeline.cs" t="Include" />
+                    <e p="LinuxClassicNonIncrementalPipeline.cs" t="Include" />
+                    <e p="MissingNonIncrementalPipeline.cs" t="Include" />
+                    <e p="PS4ClassicNonIncrementalPipeline.cs" t="Include" />
+                    <e p="SwitchClassicNonIncrementalPipeline.cs" t="Include" />
+                    <e p="tvOSClassicNonIncrementalPipeline .cs" t="Include" />
+                    <e p="WebGLClassicNonIncrementalPipeline.cs" t="Include" />
+                    <e p="WSAClassicNonIncrementalPipeline.cs" t="Include" />
+                    <e p="XboxOneClassicNonIncrementalPipeline.cs" t="Include" />
+                  </e>
+                  <e p="Steps" t="Include">
+                    <e p="ApplyUnitySettingsStep.cs" t="Include" />
+                    <e p="AssemblyInfo.cs" t="Include" />
+                    <e p="BuildPlayerStep.cs" t="Include" />
+                    <e p="CalculateLocationPathStep.cs" t="Include" />
+                    <e p="CopyAdditionallyProvidedFilesStep.cs" t="Include" />
+                    <e p="NonIncrementalClassicSharedData.cs" t="Include" />
+                    <e p="SaveScenesAndAssetsStep.cs" t="Include" />
+                    <e p="SwitchPlatfomStep.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="PlatformInspector.cs" t="Include" />
+                <e p="PlatformJsonAdapter.cs" t="Include" />
+                <e p="Unity.Build.Classic.Private.asmdef" t="Include" />
+                <e p="UnitySettingsState.cs" t="Include" />
               </e>
               <e p="Unity.Build.Common" t="Include">
                 <e p="GeneralSettings.cs" t="Include" />
                 <e p="GraphicsSettings.cs" t="Include" />
                 <e p="OutputBuildDirectory.cs" t="Include" />
                 <e p="SceneList.cs" t="Include" />
-                <e p="SourceBuildConfiguration.cs" t="Include" />
-                <e p="TestablePlayer.cs" t="Include" />
                 <e p="Unity.Build.Common.asmdef" t="Include" />
               </e>
               <e p="Unity.Build.DotsRuntime" t="Include">
@@ -1070,14 +1609,13 @@
                 <e p="Unity.Build.DotsRuntime.asmdef" t="Include" />
               </e>
               <e p="Unity.Build.Editor" t="Include">
+                <e p="AssemblyInfo.cs" t="Include" />
                 <e p="AssetGuidDrawer.cs" t="Include" />
                 <e p="Assets.cs" t="Include" />
                 <e p="BuildConfigurationMenuItem.cs" t="Include" />
                 <e p="BuildConfigurationScriptedImporterEditor.cs" t="Include" />
                 <e p="BuildManager.cs" t="Include" />
                 <e p="BuildManagerTreeView.cs" t="Include" />
-                <e p="BuildPipelineMenuItem.cs" t="Include" />
-                <e p="BuildPipelineScriptedImporterEditor.cs" t="Include" />
                 <e p="DirectoryInfoInspector.cs" t="Include" />
                 <e p="HierarchicalComponentContainerElement.cs" t="Include" />
                 <e p="Searcher" t="Include">
@@ -1098,23 +1636,26 @@
                   <e p="BuildConfiguration.uss" t="Include" />
                   <e p="BuildConfiguration_dark.uss" t="Include" />
                   <e p="BuildConfiguration_light.uss" t="Include" />
-                  <e p="BuildPipelineCustomInspector.uss" t="Include" />
-                  <e p="BuildPipelineCustomInspector_dark.uss" t="Include" />
-                  <e p="BuildPipelineCustomInspector_light.uss" t="Include" />
                   <e p="HierarchicalComponentContainer.uss" t="Include" />
                   <e p="HierarchicalComponentContainer_dark.uss" t="Include" />
                   <e p="HierarchicalComponentContainer_light.uss" t="Include" />
+                  <e p="TypeInspector.uss" t="Include" />
+                  <e p="TypeInspector_dark.uss" t="Include" />
+                  <e p="TypeInspector_light.uss" t="Include" />
                 </e>
                 <e p="UXML" t="Include">
-                  <e p="BuildPipelineCustomInspector.uxml" t="Include" />
                   <e p="TypeInspector.uxml" t="Include" />
                 </e>
               </e>
               <e p="Unity.Build.Internals" t="Include">
                 <e p="AssemblyInfo.cs" t="Include" />
                 <e p="BuildContext.Internals.cs" t="Include" />
-                <e p="BuildPipeline.Internals.cs" t="Include" />
                 <e p="Unity.Build.Internals.asmdef" t="Include" />
+              </e>
+              <e p="Unity.InternalAPIEditorBridge.012" t="Include">
+                <e p="AssemblyInfo.cs" t="Include" />
+                <e p="EditorGUIBridge.cs" t="Include" />
+                <e p="Unity.InternalAPIEditorBridge.012.asmdef" t="Include" />
               </e>
               <e p="Unity.Platforms" t="Include">
                 <e p="AssemblyInfo.cs" t="Include" />
@@ -1132,7 +1673,7 @@
               </e>
             </e>
           </e>
-          <e p="com.unity.properties.ui@1.1.0-preview" t="Include">
+          <e p="com.unity.properties.ui@1.1.1-preview" t="Include">
             <e p="Editor" t="Include">
               <e p="AssemblyInfo.cs" t="Include" />
               <e p="Elements" t="Include">
@@ -1233,7 +1774,7 @@
               <e p="Unity.Properties.UI.asmdef" t="Include" />
             </e>
           </e>
-          <e p="com.unity.properties@1.1.0-preview" t="Include">
+          <e p="com.unity.properties@1.1.1-preview" t="Include">
             <e p="Editor" t="Include">
               <e p="Unity.Properties.CodeGen" t="Include">
                 <e p="AssemblyInfo.cs" t="Include" />
@@ -1334,7 +1875,7 @@
               </e>
             </e>
           </e>
-          <e p="com.unity.render-pipelines.core@8.0.1" t="Include">
+          <e p="com.unity.render-pipelines.core@8.1.0" t="Include">
             <e p="Editor" t="Include">
               <e p="CameraEditorUtils.cs" t="Include" />
               <e p="ContextualMenuDispatcher.cs" t="Include" />
@@ -1588,7 +2129,7 @@
               <e p="VolumeRendering.hlsl" t="Include" />
             </e>
           </e>
-          <e p="com.unity.render-pipelines.universal@8.0.1" t="Include">
+          <e p="com.unity.render-pipelines.universal@8.1.0" t="Include">
             <e p="Editor" t="Include">
               <e p="2D" t="Include">
                 <e p="CinemachineUniversalPixelPerfectEditor.cs" t="Include" />
@@ -1671,16 +2212,19 @@
                 <e p="AutodeskInteractiveMaterialImport.cs" t="Include" />
                 <e p="FBXArnoldSurfaceMaterialDescriptionPreprocessor.cs" t="Include" />
                 <e p="FBXMaterialDescriptionPreprocessor.cs" t="Include" />
+                <e p="MaterialPostprocessor.cs" t="Include" />
                 <e p="PhysicalMaterial3DsMaxPreprocessor.cs" t="Include" />
                 <e p="SketchupMaterialDescriptionPostprocessor.cs" t="Include" />
                 <e p="ThreeDSMaterialDescriptionPostprocessor.cs" t="Include" />
               </e>
               <e p="AssetVersion.cs" t="Include" />
+              <e p="DefaultScene" t="Include">
+                <e p="UniversalProjectSettings.cs" t="Include" />
+              </e>
               <e p="Deprecated.cs" t="Include" />
               <e p="EditorUtils.cs" t="Include" />
               <e p="ForwardRendererDataEditor.cs" t="Include" />
               <e p="LightExplorer.cs" t="Include" />
-              <e p="MaterialPostprocessor.cs" t="Include" />
               <e p="Overrides" t="Include">
                 <e p="BloomEditor.cs" t="Include" />
                 <e p="ChannelMixerEditor.cs" t="Include" />
@@ -1707,6 +2251,7 @@
               <e p="RenderStateDataEditor.cs" t="Include" />
               <e p="SavedParameter.cs" t="Include" />
               <e p="ScriptableRendererDataEditor.cs" t="Include" />
+              <e p="ScriptableRendererFeatureEditor.cs" t="Include" />
               <e p="ShaderGraph" t="Include">
                 <e p="AssetCallbacks" t="Include">
                   <e p="CreateSpriteLitShaderGraph.cs" t="Include" />
@@ -1731,6 +2276,7 @@
                 </e>
                 <e p="MasterNodes" t="Include">
                   <e p="SpriteLitMasterNode.cs" t="Include" />
+                  <e p="SpriteSettingsView.cs" t="Include" />
                   <e p="SpriteUnlitMasterNode.cs" t="Include" />
                 </e>
                 <e p="SubShaders" t="Include">
@@ -1773,6 +2319,7 @@
               <e p="Unity.RenderPipelines.Universal.Editor.asmdef" t="Include" />
               <e p="UniversalAdditionalCameraDataEditor.cs" t="Include" />
               <e p="UniversalAdditionalLightDataEditor.cs" t="Include" />
+              <e p="UniversalAnalytics.cs" t="Include" />
               <e p="UniversalRenderPipelineAssetEditor.cs" t="Include" />
               <e p="UniversalRenderPipelineCameraEditor.cs" t="Include" />
               <e p="UniversalRenderPipelineLightEditor.cs" t="Include" />
@@ -2003,11 +2550,110 @@
               </e>
             </e>
           </e>
-          <e p="com.unity.rendering.hybrid@0.4.2-preview.16" t="Include">
+          <e p="com.unity.rendering.hybrid@0.5.0-preview.6" t="Include">
             <e p="Editor" t="Include">
               <e p="MaterialOverrideAssetEditor.cs" t="Include" />
               <e p="MaterialOverrideEditor.cs" t="Include" />
               <e p="Unity.Rendering.Hybrid.Editor.asmdef" t="Include" />
+            </e>
+            <e p="Unity.Rendering.Hybrid" t="Include">
+              <e p="BoneIndexOffsetMaterialProperty.cs" t="Include" />
+              <e p="BuiltinMaterialProperties" t="Include">
+                <e p="BuiltinMaterialPropertyUnity_DynamicLightmapST.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_LightData.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_LightIndices.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_LightmapST.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_LODFade.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_MatrixPreviousM.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_MatrixPreviousMI_Tag.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_MotionVectorsParams.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_ProbesOcclusion.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_ProbeVolumeMin.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_ProbeVolumeParams.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_ProbeVolumeSizeInv.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_ProbeVolumeWorldToObject.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_RenderingLayer.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_SHAb.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_SHAg.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_SHAr.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_SHBb.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_SHBg.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_SHBr.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_SHC.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_SpecCube0_HDR.cs" t="Include" />
+                <e p="BuiltinMaterialPropertyUnity_WorldTransformParams.cs" t="Include" />
+              </e>
+              <e p="CopySkinnedEntityDataToRenderEntity.cs" t="Include" />
+              <e p="CullingStatsDrawer.cs" t="Include" />
+              <e p="CullingTypes.cs" t="Include" />
+              <e p="DisableRenderingComponent.cs" t="Include" />
+              <e p="FreezeStaticLODObjects.cs" t="Include" />
+              <e p="FrozenRenderSceneTagProxy.cs" t="Include" />
+              <e p="FrozenStaticRendererSystem.cs" t="Include" />
+              <e p="FrustumPlanes.cs" t="Include" />
+              <e p="HDRPMaterialProperties" t="Include">
+                <e p="HDRPMaterialPropertyAlphaCutoff.cs" t="Include" />
+                <e p="HDRPMaterialPropertyAORemapMax.cs" t="Include" />
+                <e p="HDRPMaterialPropertyAORemapMin.cs" t="Include" />
+                <e p="HDRPMaterialPropertyBaseColor.cs" t="Include" />
+                <e p="HDRPMaterialPropertyDetailAlbedoScale.cs" t="Include" />
+                <e p="HDRPMaterialPropertyDetailNormalScale.cs" t="Include" />
+                <e p="HDRPMaterialPropertyDetailSmoothnessScale.cs" t="Include" />
+                <e p="HDRPMaterialPropertyDiffusionProfileHash.cs" t="Include" />
+                <e p="HDRPMaterialPropertyEmissiveColor.cs" t="Include" />
+                <e p="HDRPMaterialPropertyMetallic.cs" t="Include" />
+                <e p="HDRPMaterialPropertySmoothness.cs" t="Include" />
+                <e p="HDRPMaterialPropertySmoothnessRemapMax.cs" t="Include" />
+                <e p="HDRPMaterialPropertySmoothnessRemapMin.cs" t="Include" />
+                <e p="HDRPMaterialPropertySpecularColor.cs" t="Include" />
+                <e p="HDRPMaterialPropertyThickness.cs" t="Include" />
+                <e p="HDRPMaterialPropertyThicknessRemap.cs" t="Include" />
+                <e p="HDRPMaterialPropertyUnlitColor.cs" t="Include" />
+              </e>
+              <e p="HeapAllocator.cs" t="Include" />
+              <e p="HLOD.cs" t="Include" />
+              <e p="HLODGroupConversion.cs" t="Include" />
+              <e p="HLODGroupSectionSplitConversion.cs" t="Include" />
+              <e p="HybridEditorTools.cs" t="Include" />
+              <e p="HybridEntitiesConversion.cs" t="Include" />
+              <e p="HybridV2Culling.cs" t="Include" />
+              <e p="HybridV2RenderSystem.cs" t="Include" />
+              <e p="InstancedRenderMeshBatchGroup.cs" t="Include" />
+              <e p="LODGroupConversion.cs" t="Include" />
+              <e p="LODGroupExtensions.cs" t="Include" />
+              <e p="LodRequirementsUpdateSystem.cs" t="Include" />
+              <e p="MaterialColor.cs" t="Include" />
+              <e p="MaterialOverride.cs" t="Include" />
+              <e p="MaterialOverrideAsset.cs" t="Include" />
+              <e p="MaterialPropertyAttribute.cs" t="Include" />
+              <e p="MatrixPreviousSystem.cs" t="Include" />
+              <e p="MeshLODComponent.cs" t="Include" />
+              <e p="MeshRendererConversion.cs" t="Include" />
+              <e p="RemoveLocalBounds.cs" t="Include" />
+              <e p="RenderBoundsComponent.cs" t="Include" />
+              <e p="RenderBoundsUpdateSystem.cs" t="Include" />
+              <e p="RenderMeshFlippedWindingTagProxy.cs" t="Include" />
+              <e p="RenderMeshProxy.cs" t="Include" />
+              <e p="RenderMeshSystemV2.cs" t="Include" />
+              <e p="Resources" t="Include">
+                <e p="SparseUploader.compute" t="Include" />
+              </e>
+              <e p="SkinnedEntityReference.cs" t="Include" />
+              <e p="SkinnedMeshRendererConversion.cs" t="Include" />
+              <e p="SparseUploader.cs" t="Include" />
+              <e p="StructuralChangePresentationSystemGroup.cs" t="Include" />
+              <e p="Unity.Rendering.Hybrid.asmdef" t="Include" />
+              <e p="UpdatePresentationSystemGroup.cs" t="Include" />
+              <e p="URPMaterialProperties" t="Include">
+                <e p="URPMaterialPropertyBaseColor.cs" t="Include" />
+                <e p="URPMaterialPropertyBumpScale.cs" t="Include" />
+                <e p="URPMaterialPropertyCutoff.cs" t="Include" />
+                <e p="URPMaterialPropertyEmissionColor.cs" t="Include" />
+                <e p="URPMaterialPropertyMetallic.cs" t="Include" />
+                <e p="URPMaterialPropertyOcclusionStrength.cs" t="Include" />
+                <e p="URPMaterialPropertySmoothness.cs" t="Include" />
+                <e p="URPMaterialPropertySpecColor.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="com.unity.scriptablebuildpipeline@1.6.4-preview" t="Include">
@@ -2146,7 +2792,7 @@
               <e p="Unity.Searcher.Editor.asmdef" t="Include" />
             </e>
           </e>
-          <e p="com.unity.serialization@1.1.0-preview" t="Include">
+          <e p="com.unity.serialization@1.1.1-preview" t="Include">
             <e p="Editor" t="Include">
               <e p="Unity.Serialization.Editor" t="Include">
                 <e p="SessionState.cs" t="Include" />
@@ -2251,7 +2897,7 @@
               </e>
             </e>
           </e>
-          <e p="com.unity.shadergraph@8.0.1" t="Include">
+          <e p="com.unity.shadergraph@8.1.0" t="Include">
             <e p="Editor" t="Include">
               <e p="AssemblyInfo.cs" t="Include" />
               <e p="AssetCallbacks" t="Include">
@@ -2371,6 +3017,7 @@
                     <e p="ISlot.cs" t="Include" />
                     <e p="SlotReference.cs" t="Include" />
                   </e>
+                  <e p="ICanChangeShaderGUI.cs" t="Include" />
                   <e p="IGeneratesBodyCode.cs" t="Include" />
                   <e p="IGeneratesFunction.cs" t="Include" />
                   <e p="IGroupItem.cs" t="Include" />
@@ -2518,6 +3165,7 @@
                   </e>
                   <e p="IPropertyFromNode.cs" t="Include" />
                   <e p="MasterNode.cs" t="Include" />
+                  <e p="MaterialMasterNode.cs" t="Include" />
                   <e p="Math" t="Include">
                     <e p="Advanced" t="Include">
                       <e p="AbsoluteNode.cs" t="Include" />
@@ -2761,6 +3409,7 @@
                   <e p="GraphEditorView.cs" t="Include" />
                   <e p="HlslFunctionView.cs" t="Include" />
                   <e p="IShaderNodeView.cs" t="Include" />
+                  <e p="MasterNodeSettingsView.cs" t="Include" />
                   <e p="MaterialGraphView.cs" t="Include" />
                   <e p="MaterialNodeView.cs" t="Include" />
                   <e p="NodeSettingsView.cs" t="Include" />
@@ -2924,7 +3573,7 @@
               <e p="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.asmdef" t="Include" />
             </e>
           </e>
-          <e p="com.unity.test-framework.performance@1.3.3-preview" t="Include">
+          <e p="com.unity.test-framework.performance@2.0.8-preview" t="Include">
             <e p="Editor" t="Include">
               <e p="PerformanceTestBuildAssemblyFilter.cs" t="Include" />
               <e p="PerformanceTestRunSaver.cs" t="Include" />
@@ -2943,13 +3592,17 @@
               <e p="AssemblyInfo.cs" t="Include" />
               <e p="Attributes" t="Include">
                 <e p="PerformanceAttribute.cs" t="Include" />
-                <e p="PerformanceAttributes.deprecated.cs" t="Include" />
                 <e p="VersionAttribute.cs" t="Include" />
               </e>
               <e p="Data" t="Include">
-                <e p="PerformanceProjectVersion.cs" t="Include" />
-                <e p="PerformanceTestResult.cs" t="Include" />
+                <e p="Editor.cs" t="Include" />
+                <e p="Hardware.cs" t="Include" />
+                <e p="Player.cs" t="Include" />
+                <e p="Project.cs" t="Include" />
+                <e p="Run.cs" t="Include" />
                 <e p="SampleGroup.cs" t="Include" />
+                <e p="SampleUnit.cs" t="Include" />
+                <e p="TestResult.cs" t="Include" />
               </e>
               <e p="Measure.cs" t="Include" />
               <e p="Measurements" t="Include">
@@ -2961,6 +3614,7 @@
               <e p="PerformanceTest.cs" t="Include" />
               <e p="PerformanceTestException.cs" t="Include" />
               <e p="PlayerCallbacks.cs" t="Include" />
+              <e p="SampleGroup.cs" t="Include" />
               <e p="Unity.PerformanceTesting.asmdef" t="Include" />
               <e p="Utils.cs" t="Include" />
             </e>
@@ -3847,767 +4501,9 @@
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive">
-        <e p="com.unity.entities@0.9.1-preview.15" t="Include">
-          <e p="DocCodeSamples.Tests" t="Include">
-            <e p="ChunkComponentExamples.cs" t="Include" />
-            <e p="ChunkIterationJob.cs" t="Include" />
-            <e p="DisableAutoCreation.cs" t="Include" />
-            <e p="DocCodeSamples.asmdef" t="Include" />
-            <e p="DynamicBufferExamples.cs" t="Include" />
-            <e p="EntityCommandBuffers.cs" t="Include" />
-            <e p="EntityQueryExamples.cs" t="Include" />
-            <e p="LambdaJobExamples.cs" t="Include" />
-            <e p="LookupDataExamples.cs" t="Include" />
-            <e p="StatefulSystem.cs" t="Include" />
-            <e p="SystemBaseExamples.cs" t="Include" />
-          </e>
-          <e p="Unity.Burst.Tests" t="Include">
-            <e p="BurstDelegateTest.cs" t="Include" />
-            <e p="BurstSafetyTests.cs" t="Include" />
-            <e p="BurstTests.cs" t="Include" />
-            <e p="Unity.Burst.Tests.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Core" t="Include">
-            <e p="Hashes" t="Include">
-              <e p="XXHash.cs" t="Include" />
-            </e>
-            <e p="TimeData.cs" t="Include" />
-            <e p="Unity.Core.asmref" t="Include" />
-          </e>
-          <e p="Unity.Deformations" t="Include">
-            <e p="DeformationComponents.cs" t="Include" />
-            <e p="Unity.Deformations.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Entities" t="Include">
-            <e p="AlwaysSynchronizeSystemAttribute.cs" t="Include" />
-            <e p="AlwaysUpdateSystemAttribute.cs" t="Include" />
-            <e p="ApiCompatibilityLevelTest.cs" t="Include" />
-            <e p="AssemblyInfo.cs" t="Include" />
-            <e p="BlobBuilder.cs" t="Include" />
-            <e p="Blobs.cs" t="Include" />
-            <e p="BlockAllocator.cs" t="Include" />
-            <e p="ChangeVersionUtility.cs" t="Include" />
-            <e p="ChunkDataUtility.cs" t="Include" />
-            <e p="ChunkListMap.cs" t="Include" />
-            <e p="CodeGeneratedJobForEach" t="Include">
-              <e p="LambdaJobDescription.cs" t="Include" />
-              <e p="LambdaJobQueryConstructionMethods.gen.cs" t="Include" />
-              <e p="LambdaParameterValueProviders.cs" t="Include" />
-              <e p="UniversalDelegates.gen.cs" t="Include" />
-            </e>
-            <e p="ComponentDependencyManager.cs" t="Include" />
-            <e p="ComponentSafetyHandles.cs" t="Include" />
-            <e p="ComponentSystem.cs" t="Include" />
-            <e p="ComponentSystemBase.cs" t="Include" />
-            <e p="ComponentSystemGroup.cs" t="Include" />
-            <e p="ComponentSystemSorter.cs" t="Include" />
-            <e p="ConverterVersionAttribute.cs" t="Include" />
-            <e p="CopyUtility.cs" t="Include" />
-            <e p="DebugView.cs" t="Include" />
-            <e p="DefaultWorld.cs" t="Include" />
-            <e p="Diff" t="Include">
-              <e p="DynamicBlobAssetBatch.cs" t="Include" />
-              <e p="EntityChangeSet.cs" t="Include" />
-              <e p="EntityDiffer.cs" t="Include" />
-              <e p="EntityDifferArchetypeChanges.cs" t="Include" />
-              <e p="EntityDifferBlobs.cs" t="Include" />
-              <e p="EntityDifferClearMissingReferences.cs" t="Include" />
-              <e p="EntityDifferComponentChanges.cs" t="Include" />
-              <e p="EntityDifferCopyAndReplace.cs" t="Include" />
-              <e p="EntityDifferEntityInChunkChanges.cs" t="Include" />
-              <e p="EntityDifferValidation.cs" t="Include" />
-              <e p="EntityManagerDiffer.cs" t="Include" />
-              <e p="EntityPatcher.cs" t="Include" />
-              <e p="EntityPatcherBlobs.cs" t="Include" />
-            </e>
-            <e p="DisallowRefReturnCrossingThisAttribute.cs" t="Include" />
-            <e p="DOTSCompilerGeneratedAttribute.cs" t="Include" />
-            <e p="EntityBatchInChunk.cs" t="Include" />
-            <e p="EntityCommandBuffer.cs" t="Include" />
-            <e p="EntityCommandBufferSystem.cs" t="Include" />
-            <e p="EntityComponentStore.cs" t="Include" />
-            <e p="EntityComponentStoreChangeArchetype.cs" t="Include" />
-            <e p="EntityComponentStoreCreateArchetype.cs" t="Include" />
-            <e p="EntityComponentStoreCreateDestroyEntities.cs" t="Include" />
-            <e p="EntityComponentStoreDebug.cs" t="Include" />
-            <e p="EntityComponentStoreMoveEntities.cs" t="Include" />
-            <e p="EntityDataAccess.cs" t="Include" />
-            <e p="EntityInChunk.cs" t="Include" />
-            <e p="EntityManager.cs" t="Include" />
-            <e p="EntityManagerAccessComponentData.cs" t="Include" />
-            <e p="EntityManagerChangeArchetype.cs" t="Include" />
-            <e p="EntityManagerCopyEntitiesFrom.cs" t="Include" />
-            <e p="EntityManagerCreateArchetype.cs" t="Include" />
-            <e p="EntityManagerCreateDestroyEntities.cs" t="Include" />
-            <e p="EntityManagerDebug.cs" t="Include" />
-            <e p="EntityManagerExclusiveEntityTransaction.cs" t="Include" />
-            <e p="EntityManagerLocks.cs" t="Include" />
-            <e p="EntityManagerMoveEntities.cs" t="Include" />
-            <e p="EntityManagerQuery.cs" t="Include" />
-            <e p="EntityManagerSerialization.cs" t="Include" />
-            <e p="EntityManagerSync.cs" t="Include" />
-            <e p="EntityManagerTypes.cs" t="Include" />
-            <e p="EntityManagerValidate.cs" t="Include" />
-            <e p="EntityManagerVersions.cs" t="Include" />
-            <e p="EntityQueryBuilder.cs" t="Include" />
-            <e p="EntityQueryBuilder_ForEach.gen.cs" t="Include" />
-            <e p="EntityQueryBuilder_With.gen.cs" t="Include" />
-            <e p="EntityQueryCache.cs" t="Include" />
-            <e p="EntityRemapUtility.cs" t="Include" />
-            <e p="ExclusiveEntityTransaction.cs" t="Include" />
-            <e p="FixedRateUtils.cs" t="Include" />
-            <e p="GenerateAuthoringComponentAttribute.cs" t="Include" />
-            <e p="IComponentData.cs" t="Include" />
-            <e p="IJobChunk.cs" t="Include" />
-            <e p="IJobForEach.cs" t="Include" />
-            <e p="IJobForEach.gen.cs" t="Include" />
-            <e p="Iterators" t="Include">
-              <e p="ArchetypeChunkArray.cs" t="Include" />
-              <e p="ArchetypeChunkIterator.cs" t="Include" />
-              <e p="BufferFromEntity.cs" t="Include" />
-              <e p="ChunkDataGatherJobs.cs" t="Include" />
-              <e p="ChunkIterationUtility.cs" t="Include" />
-              <e p="ComponentDataFromEntity.cs" t="Include" />
-              <e p="DynamicBuffer.cs" t="Include" />
-              <e p="EntityQuery.cs" t="Include" />
-              <e p="EntityQueryManager.cs" t="Include" />
-            </e>
-            <e p="JetBrains.Annotations.cs" t="Include" />
-            <e p="JobComponentSystem.cs" t="Include" />
-            <e p="ManagedComponentStore.cs" t="Include" />
-            <e p="RetainBlobAssetSystem.cs" t="Include" />
-            <e p="SceneViewWorldPositionAttribute.cs" t="Include" />
-            <e p="ScriptBehaviourUpdateOrder.cs" t="Include" />
-            <e p="Serialization" t="Include">
-              <e p="BinarySerialization.cs" t="Include" />
-              <e p="ManagedObjectBinarySerialization.cs" t="Include" />
-              <e p="SerializeUtility.cs" t="Include" />
-              <e p="SerializeUtilityToYaml.cs" t="Include" />
-              <e p="YamlWriter.cs" t="Include" />
-            </e>
-            <e p="SortingUtilities.cs" t="Include" />
-            <e p="Static.cs" t="Include" />
-            <e p="Stubs" t="Include">
-              <e p="Unity" t="Include">
-                <e p="Debug.cs" t="Include" />
-                <e p="ProfilerMarker.cs" t="Include" />
-              </e>
-              <e p="Unity.Assertions" t="Include">
-                <e p="Assert.cs" t="Include" />
-              </e>
-            </e>
-            <e p="SystemBase.cs" t="Include" />
-            <e p="SystemDependencySafetyUtility.cs" t="Include" />
-            <e p="Types" t="Include">
-              <e p="Archetype.cs" t="Include" />
-              <e p="ArchetypeChunkData.cs" t="Include" />
-              <e p="BufferHeader.cs" t="Include" />
-              <e p="CalculateReaderWriterDependency.cs" t="Include" />
-              <e p="Chunk.cs" t="Include" />
-              <e p="CleanupEntity.cs" t="Include" />
-              <e p="ComponentType.cs" t="Include" />
-              <e p="ComponentTypeInArchetype.cs" t="Include" />
-              <e p="ComponentTypes.cs" t="Include" />
-              <e p="Entity.cs" t="Include" />
-              <e p="EntityArchetype.cs" t="Include" />
-              <e p="FastEquality.cs" t="Include" />
-              <e p="Hash128.cs" t="Include" />
-              <e p="LayoutUtility.cs" t="Include" />
-              <e p="RegisterGenericComponentTypeAttribute.cs" t="Include" />
-              <e p="SceneTagComponent.cs" t="Include" />
-              <e p="SharedComponentValues.cs" t="Include" />
-              <e p="SystemTypeManager.cs" t="Include" />
-              <e p="TypeHash.cs" t="Include" />
-              <e p="TypeManager.cs" t="Include" />
-            </e>
-            <e p="Unity.Entities.asmdef" t="Include" />
-            <e p="UnsafeList.gen.cs" t="Include" />
-            <e p="World.cs" t="Include" />
-            <e p="World.Deprecated.cs" t="Include" />
-            <e p="WorldDebuggingTools.cs" t="Include" />
-            <e p="WorldSystemFiltering.cs" t="Include" />
-            <e p="WorldTime.cs" t="Include" />
-          </e>
-          <e p="Unity.Entities.AutoCreation.Tests" t="Include">
-            <e p="AutoCreateComponentSystemTests.cs" t="Include" />
-            <e p="Unity.Entities.AutoCreation.Tests.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Entities.BuildUtils" t="Include">
-            <e p="MonoExtensions.cs" t="Include" />
-            <e p="TypeHash.cs" t="Include" />
-            <e p="TypeUtils.cs" t="Include" />
-            <e p="Unity.Entities.BuildUtils.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Entities.CodeGen" t="Include">
-            <e p="AssemblyInfo.cs" t="Include" />
-            <e p="BlobAssetSafety" t="Include">
-              <e p="BlobAssetSafetyVerifier.cs" t="Include" />
-            </e>
-            <e p="CecilExtensionMethods.cs" t="Include" />
-            <e p="CecilHelpers.cs" t="Include" />
-            <e p="EntitiesILHelpers.cs" t="Include" />
-            <e p="EntitiesILPostProcessor.cs" t="Include" />
-            <e p="LambdaJobs" t="Include">
-              <e p="EntitiesForEachAttributes.cs" t="Include" />
-              <e p="EntitiesForEachJobCreator.cs" t="Include" />
-              <e p="InjectAndInitializeEntityQueryField.cs" t="Include" />
-              <e p="LambdaJobDescriptionConstruction.cs" t="Include" />
-              <e p="LambdaJobsComponentAccessPatcher.cs" t="Include" />
-              <e p="LambdaJobsPostProcessor.cs" t="Include" />
-              <e p="LambdaParamaterValueProviderInformation.cs" t="Include" />
-              <e p="LambdaParameterValueInformations.cs" t="Include" />
-              <e p="UserError.cs" t="Include" />
-            </e>
-            <e p="ListExtensions.cs" t="Include" />
-            <e p="PostProcessException.cs" t="Include" />
-            <e p="SingletonAccess" t="Include">
-              <e p="SingletonAccessPostProcessor.cs" t="Include" />
-            </e>
-            <e p="StaticTypeRegistry" t="Include">
-              <e p="FieldInfoGeneration.cs" t="Include" />
-              <e p="ILHelper.cs" t="Include" />
-              <e p="MonoExtensions.cs" t="Include" />
-              <e p="StaticTypeRegistryPostProcessor.cs" t="Include" />
-              <e p="SystemInfoGeneration.cs" t="Include" />
-              <e p="TypeHash.cs" t="Include" />
-              <e p="TypeInfoGeneration.cs" t="Include" />
-              <e p="TypeUtils.cs" t="Include" />
-            </e>
-            <e p="Unity.Entities.CodeGen.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Entities.CodeGen.Tests" t="Include">
-            <e p="BlobAssetSafetyVerifier" t="Include">
-              <e p="BlobAssetSafetyVerifierTests.cs" t="Include" />
-            </e>
-            <e p="CecilHelpersTests.cs" t="Include" />
-            <e p="IntegrationTest.cs" t="Include" />
-            <e p="LambdaJobDescriptionConstructionTests.cs" t="Include" />
-            <e p="LambdaJobs" t="Include">
-              <e p="LambdaJobIntegrationTest.cs" t="Include" />
-            </e>
-            <e p="LambdaJobsLambdaJobsPostProcessorTests.cs" t="Include" />
-            <e p="LambdaJobsPostProcessorTestBase.cs" t="Include" />
-            <e p="SingletonAccess" t="Include">
-              <e p="SingletonAccessIntegrationTest.cs" t="Include" />
-            </e>
-            <e p="TestJobComponentSystem.cs" t="Include" />
-            <e p="TestTypes.cs" t="Include" />
-            <e p="Unity.Entities.CodeGen.Tests.asmdef" t="Include" />
-            <e p="Unity.Entities.CodeGen.Tests.TestTypes" t="Include">
-              <e p="TestTypes.cs" t="Include" />
-              <e p="Unity.Entities.CodeGen.Tests.TestTypes.asmdef" t="Include" />
-            </e>
-          </e>
-          <e p="Unity.Entities.Editor" t="Include">
-            <e p="AssemblyInfo.cs" t="Include" />
-            <e p="CommonGUI" t="Include">
-              <e p="EntityQueryGUI.cs" t="Include" />
-              <e p="EntityQueryGUIControl.cs" t="Include" />
-              <e p="GUIHelpers.cs" t="Include" />
-              <e p="GUIStyleAsset.cs" t="Include" />
-              <e p="RepaintLimiter.cs" t="Include" />
-              <e p="SystemInclusionList.cs" t="Include" />
-            </e>
-            <e p="ComponentSystemProcessing.cs" t="Include" />
-            <e p="Decompiler.cs" t="Include" />
-            <e p="Editors" t="Include">
-              <e p="ComponentDataProxyBaseEditor.cs" t="Include" />
-              <e p="DynamicBufferProxyBaseEditor.cs" t="Include" />
-              <e p="GameObjectEntityEditor.cs" t="Include" />
-            </e>
-            <e p="EntityDebugger" t="Include">
-              <e p="ChunkInfoListView.cs" t="Include" />
-              <e p="ComponentTypeChooser.cs" t="Include" />
-              <e p="ComponentTypeFilterUI.cs" t="Include" />
-              <e p="ComponentTypeListView.cs" t="Include" />
-              <e p="EntityArrayListAdapter.cs" t="Include" />
-              <e p="EntityDebugger.cs" t="Include" />
-              <e p="EntityDebuggerStyles.cs" t="Include" />
-              <e p="EntityListQuery.cs" t="Include" />
-              <e p="EntityListView.cs" t="Include" />
-              <e p="EntityQueryListView.cs" t="Include" />
-              <e p="SystemListView.cs" t="Include" />
-              <e p="WorldPopup.cs" t="Include" />
-            </e>
-            <e p="EntityInspector" t="Include">
-              <e p="Adapters" t="Include">
-                <e p="IMGUIAdapter.Default.cs" t="Include" />
-                <e p="IMGUIAdapter.Entity.cs" t="Include" />
-                <e p="IMGUIAdapter.EntityGuid.cs" t="Include" />
-                <e p="IMGUIAdapter.Mathematics.cs" t="Include" />
-                <e p="IMGUIAdapter.Primitives.cs" t="Include" />
-                <e p="IMGUIAdapter.UnityEngine.cs" t="Include" />
-              </e>
-              <e p="DynamicBufferContainer.cs" t="Include" />
-              <e p="EntityContainer.cs" t="Include" />
-              <e p="EntityIMGUIVisitor.cs" t="Include" />
-              <e p="EntitySelectionProxy.cs" t="Include" />
-              <e p="EntitySelectionProxyEditor.cs" t="Include" />
-            </e>
-            <e p="ExtraTypesProvider.cs" t="Include" />
-            <e p="LiveLink" t="Include">
-              <e p="EditorCompanionGameObjectUpdateSystem.cs" t="Include" />
-              <e p="Icons.cs" t="Include" />
-              <e p="LiveLinkCommands.cs" t="Include" />
-              <e p="LiveLinkConnectionsDropdown.cs" t="Include" />
-              <e p="LiveLinkStyles.cs" t="Include" />
-              <e p="LiveLinkToolbar.cs" t="Include" />
-              <e p="StartLiveLinkWindow.cs" t="Include" />
-              <e p="UIElementHelpers.cs" t="Include" />
-            </e>
-            <e p="PostprocessedILInspector" t="Include">
-              <e p="ILPostProcessorWindow.uss" t="Include" />
-              <e p="ILPostProcessorWindow.uxml" t="Include" />
-              <e p="PostprocessedILWindow.cs" t="Include" />
-              <e p="TypeDefinitionExtensions.cs" t="Include" />
-            </e>
-            <e p="PropertyDrawers" t="Include">
-              <e p="LayerFieldDrawer.cs" t="Include" />
-              <e p="WrappedComponentDataDrawer.cs" t="Include" />
-            </e>
-            <e p="ScriptTemplates" t="Include">
-              <e p="AuthoringComponent.txt" t="Include" />
-              <e p="RunTimeComponent.txt" t="Include" />
-              <e p="ScriptTemplates.cs" t="Include" />
-              <e p="System.txt" t="Include" />
-            </e>
-            <e p="Unity.Entities.Editor.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Entities.Editor.Tests" t="Include">
-            <e p="AssemblyInfo.cs" t="Include" />
-            <e p="ComponentTypeFilterUITests.cs" t="Include" />
-            <e p="EntityArrayListAdapterTests.cs" t="Include" />
-            <e p="EntityDebuggerTests.cs" t="Include" />
-            <e p="EntityQueryGUITests.cs" t="Include" />
-            <e p="ListViewTests.cs" t="Include" />
-            <e p="LiveLink" t="Include">
-              <e p="LiveLinkDropdownTests.cs" t="Include" />
-              <e p="LiveLinkToolbarTests.cs" t="Include" />
-              <e p="StartLiveLinkWindowTests.cs" t="Include" />
-              <e p="UIElementTestHelpers.cs" t="Include" />
-            </e>
-            <e p="Unity.Entities.Editor.Tests.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Entities.Hybrid" t="Include">
-            <e p="AssemblyInfo.cs" t="Include" />
-            <e p="AuthoringComponent.cs" t="Include" />
-            <e p="BufferElementDataAuthoringComponent.cs" t="Include" />
-            <e p="CompanionGameObjectUpdateSystem.cs" t="Include" />
-            <e p="Components" t="Include">
-              <e p="CompanionLink.cs" t="Include" />
-              <e p="ComponentDataProxy.cs" t="Include" />
-              <e p="ComponentDataProxyBase.cs" t="Include" />
-              <e p="DynamicBufferProxy.cs" t="Include" />
-              <e p="GameObjectEntity.cs" t="Include" />
-              <e p="SharedComponentDataProxy.cs" t="Include" />
-            </e>
-            <e p="ConvertToEntity.cs" t="Include" />
-            <e p="EditorRenderData.cs" t="Include" />
-            <e p="EntityManagerExtensions.cs" t="Include" />
-            <e p="FileUtilityHybrid.cs" t="Include" />
-            <e p="GameObjectConversion" t="Include">
-              <e p="BlobAssetComputationContext.cs" t="Include" />
-              <e p="BlobAssetStore.cs" t="Include" />
-              <e p="ConversionDependencies.cs" t="Include" />
-              <e p="ConversionJournalData.cs" t="Include" />
-              <e p="ConversionSystemFilterSettings.cs" t="Include" />
-              <e p="ConvertGameObjectToEntitySystem.cs" t="Include" />
-              <e p="GameObjectConversionMappingSystem.cs" t="Include" />
-              <e p="GameObjectConversionSettings.cs" t="Include" />
-              <e p="GameObjectConversionSystem.cs" t="Include" />
-              <e p="GameObjectConversionUtility.cs" t="Include" />
-              <e p="JournalDataDebug.cs" t="Include" />
-              <e p="JournalingUnityLogger.cs" t="Include" />
-              <e p="MultiList.cs" t="Include" />
-              <e p="SceneBoundingVolume.cs" t="Include" />
-              <e p="UnityEngineExtensions.cs" t="Include" />
-            </e>
-            <e p="GeneratedAuthoringComponentImplementation.cs" t="Include" />
-            <e p="Injection" t="Include">
-              <e p="AutomaticWorldBootstrap.cs" t="Include" />
-              <e p="CompanionGameObject.cs" t="Include" />
-              <e p="DefaultWorldInitialization.cs" t="Include" />
-              <e p="DefaultWorldInitializationProxy.cs" t="Include" />
-            </e>
-            <e p="Iterators" t="Include">
-              <e p="ComponentArray.cs" t="Include" />
-              <e p="TransformAccessArrayIterator.cs" t="Include" />
-            </e>
-            <e p="JetBrains.Annotations.cs" t="Include" />
-            <e p="LayerFieldAttribute.cs" t="Include" />
-            <e p="ReferencedUnityObjects.cs" t="Include" />
-            <e p="ResourceCatalogData.cs" t="Include" />
-            <e p="SceneSectionComponent.cs" t="Include" />
-            <e p="SceneSectionProxy.cs" t="Include" />
-            <e p="SerializeUtilityHybrid.cs" t="Include" />
-            <e p="StaticOptimizeEntity.cs" t="Include" />
-            <e p="StopConvertToEntity.cs" t="Include" />
-            <e p="TypeUtility.cs" t="Include" />
-            <e p="Unity.Entities.Hybrid.asmdef" t="Include" />
-            <e p="UpdateWorldTimeSystem.cs" t="Include" />
-          </e>
-          <e p="Unity.Entities.Hybrid.CodeGen" t="Include">
-            <e p="AuthoringComponent" t="Include">
-              <e p="AuthoringComponentPostProcessor_IBufferElementData.cs" t="Include" />
-              <e p="AuthoringComponentPostProcessor_IComponentData.cs" t="Include" />
-              <e p="AuthoringComponentPostProcessor_Shared.cs" t="Include" />
-            </e>
-            <e p="Unity.Entities.Hybrid.CodeGen.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Entities.Hybrid.CodeGen.Tests" t="Include">
-            <e p="AuthoringComponent" t="Include">
-              <e p="AuthoringComponentIntegrationTest.cs" t="Include" />
-              <e p="GeneratedAuthoringComponentImplementationTests.cs" t="Include" />
-              <e p="IBufferElementDataCompileTimeTests.cs" t="Include" />
-            </e>
-            <e p="Unity.Entities.Hybrid.CodeGen.Tests.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Entities.Hybrid.EndToEnd.Tests" t="Include">
-            <e p="TestUtilities.cs" t="Include" />
-            <e p="Unity.Entities.Hybrid.EndToEnd.Tests.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Entities.Hybrid.Tests" t="Include">
-            <e p="AddSystemsToRootLevelSystemGroupTests.cs" t="Include" />
-            <e p="AssemblyInfo.cs" t="Include" />
-            <e p="ComponentDataProxy_EntityManager_IntegrationTests.cs" t="Include" />
-            <e p="ComponentDataProxy_Prefab_IntegrationTests.cs" t="Include" />
-            <e p="ComponentDataProxy_UnitTests.cs" t="Include" />
-            <e p="ComponentGroupTransformAccessArrayTests.cs" t="Include" />
-            <e p="Conversion" t="Include">
-              <e p="BlobAssetStoreTests.cs" t="Include" />
-              <e p="ConversionDependencyTests.cs" t="Include" />
-              <e p="ConversionHybridTests.cs" t="Include" />
-              <e p="ConversionJournalDataTests.cs" t="Include" />
-              <e p="ConversionMappingSystemJournalingTests.cs" t="Include" />
-              <e p="ConversionMappingTests.cs" t="Include" />
-              <e p="ConversionTestFixtureBase.cs" t="Include" />
-              <e p="ConversionTests.cs" t="Include" />
-              <e p="ConvertGameObjectToEntityTests.cs" t="Include" />
-              <e p="GameObjectConversionSettingsTests.cs" t="Include" />
-              <e p="GeneratedAuthoringComponentConversionTests.cs" t="Include" />
-              <e p="JournalingUnityLoggerTests.cs" t="Include" />
-              <e p="MultiListTests.cs" t="Include" />
-              <e p="SceneConversionTests.cs" t="Include" />
-              <e p="UnityEngineExtensionsTests.cs" t="Include" />
-            </e>
-            <e p="DefaultWorldInitializationEndToEndTests.cs" t="Include" />
-            <e p="EntityQueryWithComponentTests.cs" t="Include" />
-            <e p="GameObjectEntity_EntityManager_IntegrationTests.cs" t="Include" />
-            <e p="GameObjectEntity_UnitTests.cs" t="Include" />
-            <e p="Runtime" t="Include">
-              <e p="EntityManagerTests.cs" t="Include" />
-              <e p="GameObjectEntityTests.cs" t="Include" />
-              <e p="HybridComponentSerializeTests.cs" t="Include" />
-              <e p="InstantiateHybridTests.cs" t="Include" />
-              <e p="MoveEntitiesFromHybridTests.cs" t="Include" />
-              <e p="SharedComponentSerializeTests.cs" t="Include" />
-            </e>
-            <e p="SharedComponentReferenceTests.cs" t="Include" />
-            <e p="TestWithCustomDefaultGameObjectInjectionWorld.cs" t="Include" />
-            <e p="TestWorldSetup.cs" t="Include" />
-            <e p="TypeUtility_UnitTests.cs" t="Include" />
-            <e p="Unity.Entities.Hybrid.Tests.asmdef" t="Include" />
-            <e p="WorldScriptUpdateOrderTests.cs" t="Include" />
-            <e p="WorldTimeTests.cs" t="Include" />
-          </e>
-          <e p="Unity.Entities.PerformanceTests" t="Include">
-            <e p="ComponentJobSafetyManagerPerformanceTests.cs" t="Include" />
-            <e p="Diff" t="Include">
-              <e p="EntityDifferPerformanceTestFixture.cs" t="Include" />
-              <e p="EntityDifferPerformanceTests.cs" t="Include" />
-            </e>
-            <e p="DynamicBufferPerformanceTests.cs" t="Include" />
-            <e p="EntityCommandBufferPerformanceTests.cs" t="Include" />
-            <e p="EntityManagerPerformanceTests.cs" t="Include" />
-            <e p="EntityPerformanceTestFixture.cs" t="Include" />
-            <e p="EntityQueryPerformanceTests.cs" t="Include" />
-            <e p="ForEachPerformanceTests.cs" t="Include" />
-            <e p="InstantiatePerformanceTests.cs" t="Include" />
-            <e p="JobForEachPrefilteringPerformanceTests.cs" t="Include" />
-            <e p="LambdaJobsPerformanceTests.cs" t="Include" />
-            <e p="NativeArrayIterationPerformanceTests.cs" t="Include" />
-            <e p="SharedComponentPerformanceTests.cs" t="Include" />
-            <e p="Unity.Entities.PerformanceTests.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Entities.TestComponents" t="Include">
-            <e p="CodeGenManagedTestComponent.cs" t="Include" />
-            <e p="CodeGenTestComponent.cs" t="Include" />
-            <e p="DeclareReferencesTestAuthoring.cs" t="Include" />
-            <e p="DependencyTestAuthoring.cs" t="Include" />
-            <e p="EntityRefTestDataAuthoring.cs" t="Include" />
-            <e p="JournalTestAuthoring.cs" t="Include" />
-            <e p="MockDataProxy.cs" t="Include" />
-            <e p="MockDynamicBufferDataProxy.cs" t="Include" />
-            <e p="MockSharedDataProxy.cs" t="Include" />
-            <e p="MockSharedDisallowMultipleProxy.cs" t="Include" />
-            <e p="TestPrefabComponentAuthoring.cs" t="Include" />
-            <e p="Unity.TestComponents.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Entities.Tests" t="Include">
-            <e p="ArchetypeChunkArrayTests.cs" t="Include" />
-            <e p="AssemblyInfo.cs" t="Include" />
-            <e p="BlobificationTests.cs" t="Include" />
-            <e p="BufferElementDataInstantiateTests.cs" t="Include" />
-            <e p="BufferElementDataSystemStateInstantiateTests.cs" t="Include" />
-            <e p="BufferElementDataSystemStateTests.cs" t="Include" />
-            <e p="BufferElementDataTests.cs" t="Include" />
-            <e p="ChangeVersionTests.cs" t="Include" />
-            <e p="ChunkChangeVersionTests.cs" t="Include" />
-            <e p="ChunkComponentTests.cs" t="Include" />
-            <e p="ChunkDataUtilityTests.cs" t="Include" />
-            <e p="ComponentOrderVersionTests.cs" t="Include" />
-            <e p="ComponentSystemGroupTests.cs" t="Include" />
-            <e p="ComponentSystemStartStopRunningTests.cs" t="Include" />
-            <e p="ComponentSystemTests.cs" t="Include" />
-            <e p="CreateAndDestroyTests.cs" t="Include" />
-            <e p="Diff" t="Include">
-              <e p="CopyAndReplaceTests.cs" t="Include" />
-              <e p="CopyEntitiesFromTests.cs" t="Include" />
-              <e p="EntityDifferTestFixture.cs" t="Include" />
-              <e p="EntityDifferTests.cs" t="Include" />
-              <e p="EntityGuidTests.cs" t="Include" />
-              <e p="EntityPatcherTests.cs" t="Include" />
-              <e p="HierarchyIntegrationTest.cs" t="Include" />
-            </e>
-            <e p="DisableComponentTests.cs" t="Include" />
-            <e p="DynamicBufferTests.cs" t="Include" />
-            <e p="ECBChainPriorityQueueTests.cs" t="Include" />
-            <e p="ECSTestsFixture.cs" t="Include" />
-            <e p="EntitiesAssert" t="Include">
-              <e p="DebugEntity.cs" t="Include" />
-              <e p="DebugEntityTests.cs" t="Include" />
-              <e p="EntitiesAssert.cs" t="Include" />
-              <e p="EntitiesAssertTests.cs" t="Include" />
-            </e>
-            <e p="EntityArchetypeQueryTests.cs" t="Include" />
-            <e p="EntityCommandBufferTests.cs" t="Include" />
-            <e p="EntityManagerBugTests.cs" t="Include" />
-            <e p="EntityManagerComponentGroupOperationsTests.cs" t="Include" />
-            <e p="EntityManagerPrefabTests.cs" t="Include" />
-            <e p="EntityManagerTests.cs" t="Include" />
-            <e p="EntityQueryBuilderMemoryTests.cs" t="Include" />
-            <e p="EntityQueryBuilderTests.cs" t="Include" />
-            <e p="EntityQueryCacheTests.cs" t="Include" />
-            <e p="EntityQueryDelta.cs" t="Include" />
-            <e p="EntityQuerySyncChangeFilterTypesTests.cs" t="Include" />
-            <e p="EntityQueryTests.cs" t="Include" />
-            <e p="EntityRemapUtilityTests.cs" t="Include" />
-            <e p="EntityTransactionTests.cs" t="Include" />
-            <e p="FastEqualityTests.cs" t="Include" />
-            <e p="ForEach" t="Include">
-              <e p="ForEachBasicMemoryTests.cs" t="Include" />
-              <e p="ForEachDelegateMemoryTests.gen.cs" t="Include" />
-              <e p="ForEachGeneralTests.cs" t="Include" />
-              <e p="ForEachMemoryTestFixtureBase.cs" t="Include" />
-              <e p="MutableForEachTests.cs" t="Include" />
-            </e>
-            <e p="ForEachCodegen" t="Include">
-              <e p="ChunkForEachTests.cs" t="Include" />
-              <e p="ForEachTests.cs" t="Include" />
-              <e p="ForEachWithStructuralChangesTests.cs" t="Include" />
-              <e p="SimpleJobTests.cs" t="Include" />
-            </e>
-            <e p="IJobChunkTests.cs" t="Include" />
-            <e p="IJobForEachCombinationsTests.cs" t="Include" />
-            <e p="IJobForEachTests.cs" t="Include" />
-            <e p="IterationTests.cs" t="Include" />
-            <e p="JobBasicTests.cs" t="Include" />
-            <e p="JobComponentSystemDependencyTests.cs" t="Include" />
-            <e p="JobSafetyTests.cs" t="Include" />
-            <e p="MoveEntitiesFromTests.cs" t="Include" />
-            <e p="NativeArraySharedValuesTests.cs" t="Include" />
-            <e p="PrefabComponentTests.cs" t="Include" />
-            <e p="SafetyTests.cs" t="Include" />
-            <e p="Serialization" t="Include">
-              <e p="SerializeTests.cs" t="Include" />
-            </e>
-            <e p="SharedComponentDataTests.cs" t="Include" />
-            <e p="SingletonTests.cs" t="Include" />
-            <e p="SizeTests.cs" t="Include" />
-            <e p="StandaloneFixme.cs" t="Include" />
-            <e p="SystemBaseComponentAccessTests.cs" t="Include" />
-            <e p="SystemBaseDependencyTests.cs" t="Include" />
-            <e p="SystemBaseSingletonAccessTests.cs" t="Include" />
-            <e p="SystemStateBufferElementTests.cs" t="Include" />
-            <e p="SystemStateComponentTests.cs" t="Include" />
-            <e p="TestCaseGeneric.cs" t="Include" />
-            <e p="TestComponents.cs" t="Include" />
-            <e p="TestComponentSystems.cs" t="Include" />
-            <e p="TypeIndexOrderTests.cs" t="Include" />
-            <e p="TypeManagerTests.cs" t="Include" />
-            <e p="Types" t="Include">
-              <e p="ComponentTypeTests.cs" t="Include" />
-              <e p="Hash128Tests.cs" t="Include" />
-              <e p="LayoutUtilityTests.cs" t="Include" />
-            </e>
-            <e p="Unity.Entities.Tests.asmdef" t="Include" />
-            <e p="WorldDebuggingToolsTests.cs" t="Include" />
-            <e p="WorldTests.cs" t="Include" />
-            <e p="WriteGroupTests.cs" t="Include" />
-            <e p="ZeroPlayerTests.cs" t="Include" />
-          </e>
-          <e p="Unity.Mathematics.Extensions" t="Include">
-            <e p="Aabb.cs" t="Include" />
-            <e p="GeneratePoints.cs" t="Include" />
-            <e p="MinMaxAABB.cs" t="Include" />
-            <e p="Unity.Mathematics.Extensions.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Mathematics.Extensions.Hybrid" t="Include">
-            <e p="BoundsToAABB.cs" t="Include" />
-            <e p="Unity.Mathematics.Extensions.Hybrid.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Scenes.Editor" t="Include">
-            <e p="AssemblyInfo.cs" t="Include" />
-            <e p="BuildStepCreateResourceCatalog.cs" t="Include" />
-            <e p="ConversionWarningsEditor.cs" t="Include" />
-            <e p="EditorConnectionExtensions.cs" t="Include" />
-            <e p="EditorEntityScenes.cs" t="Include" />
-            <e p="EditorSceneLiveLinkToPlayerSendSystem.cs" t="Include" />
-            <e p="EditorSubSceneLiveLinkSystem.cs" t="Include" />
-            <e p="HierarchyOverlay.cs" t="Include" />
-            <e p="LiveLink" t="Include">
-              <e p="BuildStepBuildClassicLiveLink.cs" t="Include" />
-              <e p="EditorPlayerConnection.cs" t="Include" />
-              <e p="IEditorConnection.cs" t="Include" />
-              <e p="LiveLinkAssetBundleBuildSystem.cs" t="Include" />
-              <e p="LiveLinkBuildImporter.cs" t="Include" />
-              <e p="LiveLinkBuildPipeline.cs" t="Include" />
-              <e p="LiveLinkDebugHelper.cs" t="Include" />
-              <e p="LiveLinkEditorEventSystem.cs" t="Include" />
-              <e p="LiveLinkEditorSystemGroup.cs" t="Include" />
-            </e>
-            <e p="LiveLinkConnection.cs" t="Include" />
-            <e p="LiveLinkDiffGenerator.cs" t="Include" />
-            <e p="RetainBlobAssetsSetting.cs" t="Include" />
-            <e p="SceneImporterData.cs" t="Include" />
-            <e p="SceneInspector.cs" t="Include" />
-            <e p="SceneMetaDataImporter.cs" t="Include" />
-            <e p="Steps" t="Include">
-              <e p="BuildStepSubSceneBundles.cs" t="Include" />
-              <e p="SubSceneBuildCode.cs" t="Include" />
-            </e>
-            <e p="SubSceneContextMenu.cs" t="Include" />
-            <e p="SubSceneImporter.cs" t="Include" />
-            <e p="SubSceneInspector.cs" t="Include" />
-            <e p="SubSceneInspectorUtility.cs" t="Include" />
-            <e p="SubSceneTransformHierarchyHook.cs" t="Include" />
-            <e p="TimeBasedCallbackInvoker.cs" t="Include" />
-            <e p="TypeDependencyCache.cs" t="Include" />
-            <e p="Unity.Scenes.Editor.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Scenes.Editor.Tests" t="Include">
-            <e p="EditorEntityScenesTests.cs" t="Include" />
-            <e p="LiveLinkEditorConnectionTests.cs" t="Include" />
-            <e p="LiveLinkEditorTests.cs" t="Include" />
-            <e p="LiveLinkTestConnection.cs" t="Include" />
-            <e p="SubSceneConversionTests.cs" t="Include" />
-            <e p="SubSceneEditorTests.cs" t="Include" />
-            <e p="SubSceneTestsHelper.cs" t="Include" />
-            <e p="TestWithTempAssets.cs" t="Include" />
-            <e p="Unity.Scenes.Editor.Tests.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Scenes.Hybrid" t="Include">
-            <e p="AssemblyInfo.cs" t="Include" />
-            <e p="AssetBundleManager.cs" t="Include" />
-            <e p="AssetDatabaseCompatibility.cs" t="Include" />
-            <e p="AssetObjectManifest.cs" t="Include" />
-            <e p="AsyncLoadSceneOperation.cs" t="Include" />
-            <e p="EditorUpdateUtility.cs" t="Include" />
-            <e p="EntityChangeSetSerialization.cs" t="Include" />
-            <e p="EntitySceneOptimization.cs" t="Include" />
-            <e p="EntityScenesPaths.cs" t="Include" />
-            <e p="GlobalAssetObjectResolver.cs" t="Include" />
-            <e p="LiveLink" t="Include">
-              <e p="LiveLinkMsg.cs" t="Include" />
-              <e p="LiveLinkPlayerAssetRefreshSystem.cs" t="Include" />
-              <e p="LiveLinkPlayerSystem.cs" t="Include" />
-              <e p="LiveLinkPlayerSystemGroup.cs" t="Include" />
-              <e p="LiveLinkResolveSceneReferenceSystem.cs" t="Include" />
-              <e p="LiveLinkSceneChangeTracker.cs" t="Include" />
-              <e p="LiveLinkUtility.cs" t="Include" />
-              <e p="MessageEventArgsExtensions.cs" t="Include" />
-            </e>
-            <e p="LiveLinkPatcher.cs" t="Include" />
-            <e p="PublicEntityRef.cs" t="Include" />
-            <e p="ResolveSceneReferenceSystem.cs" t="Include" />
-            <e p="ResolveSceneSectionUtility.cs" t="Include" />
-            <e p="SceneSectionBundleTag.cs" t="Include" />
-            <e p="SceneSectionStreamingSystem.cs" t="Include" />
-            <e p="SceneSystem.cs" t="Include" />
-            <e p="SceneSystemGroup.cs" t="Include" />
-            <e p="SceneWithBuildConfigurationGUIDs.cs" t="Include" />
-            <e p="SubScene.cs" t="Include" />
-            <e p="Unity.Scenes.Hybrid.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Scenes.Hybrid.Tests" t="Include">
-            <e p="Editmode" t="Include">
-              <e p="DebugStringTests.cs" t="Include" />
-              <e p="PatchingEndToEndWithSerialization.cs" t="Include" />
-              <e p="SaveAndLoadEndToEnd.cs" t="Include" />
-              <e p="SharedComponentSerializeTests.cs" t="Include" />
-              <e p="SubSceneTests.cs" t="Include" />
-              <e p="SubtractArraysTests.cs" t="Include" />
-              <e p="Unity.Scenes.Hybrid.Tests.asmdef" t="Include" />
-            </e>
-            <e p="Playmode" t="Include">
-              <e p="AuthoringWithMaterial.cs" t="Include" />
-              <e p="Unity.Scenes.Hybrid.Tests.Playmode.asmdef" t="Include" />
-            </e>
-          </e>
-          <e p="Unity.Transforms" t="Include">
-            <e p="BoneIndexOffset.cs" t="Include" />
-            <e p="CompositeRotation.cs" t="Include" />
-            <e p="CompositeScale.cs" t="Include" />
-            <e p="EndFrameTransformSystems.cs" t="Include" />
-            <e p="Frozen.cs" t="Include" />
-            <e p="LocalToParent.cs" t="Include" />
-            <e p="LocalToParentSystem.cs" t="Include" />
-            <e p="LocalToWorld.cs" t="Include" />
-            <e p="NonUniformScale.cs" t="Include" />
-            <e p="Parent.cs" t="Include" />
-            <e p="ParentScaleInverse.cs" t="Include" />
-            <e p="ParentSystem.cs" t="Include" />
-            <e p="PostRotationEuler.cs" t="Include" />
-            <e p="Rotation.cs" t="Include" />
-            <e p="RotationEuler.cs" t="Include" />
-            <e p="Scale.cs" t="Include" />
-            <e p="Translation.cs" t="Include" />
-            <e p="TRSToLocalToParentSystem.cs" t="Include" />
-            <e p="TRSToLocalToWorldSystem.cs" t="Include" />
-            <e p="Unity.Transforms.asmdef" t="Include" />
-            <e p="WorldToLocal.cs" t="Include" />
-          </e>
-          <e p="Unity.Transforms.Editor" t="Include">
-            <e p="TransformComponentEditors.cs" t="Include" />
-            <e p="Unity.Transforms.Editor.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Transforms.Hybrid" t="Include">
-            <e p="AssemblyInfo.cs" t="Include" />
-            <e p="CompanionGameObjectUpdateTransformSystem.cs" t="Include" />
-            <e p="CopyInitialTransformFromGameObjectProxy.cs" t="Include" />
-            <e p="CopyInitialTransformFromGameObjectSystem.cs" t="Include" />
-            <e p="CopyTransformFromGameObjectProxy.cs" t="Include" />
-            <e p="CopyTransformFromGameObjectSystem.cs" t="Include" />
-            <e p="CopyTransformToGameObjectProxy.cs" t="Include" />
-            <e p="CopyTransformToGameObjectSystem.cs" t="Include" />
-            <e p="LocalToWorldProxy.cs" t="Include" />
-            <e p="NonUniformScaleProxy.cs" t="Include" />
-            <e p="RotationProxy.cs" t="Include" />
-            <e p="TransformConversion.cs" t="Include" />
-            <e p="TranslationProxy.cs" t="Include" />
-            <e p="Unity.Transforms.Hybrid.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Transforms.PerformanceTests" t="Include">
-            <e p="ChangeHierarchyTests.cs" t="Include" />
-            <e p="Unity.Transforms.PerformanceTests.asmdef" t="Include" />
-          </e>
-          <e p="Unity.Transforms.Tests" t="Include">
-            <e p="TransformTests.cs" t="Include" />
-            <e p="Unity.Transforms.Tests.asmdef" t="Include" />
-          </e>
-        </e>
         <e p="Entities.Unlocked" t="Include">
           <e p="EntitiesRef.asmref" t="Include" />
+          <e p="Offsets.cs" t="Include" />
           <e p="UnsafeEntityManager.cs" t="Include" />
         </e>
         <e p="UnityEcsEvents" t="Include">
@@ -4662,6 +4558,7 @@
       </e>
       <e p="Temp\Bin" t="ExcludeRecursive" />
       <e p="Unity.Build.Classic.csproj" t="IncludeRecursive" />
+      <e p="Unity.Build.Classic.Private.csproj" t="IncludeRecursive" />
       <e p="Unity.Build.Common.csproj" t="IncludeRecursive" />
       <e p="Unity.Build.csproj" t="IncludeRecursive" />
       <e p="Unity.Build.DotsRuntime.csproj" t="IncludeRecursive" />
@@ -4669,122 +4566,73 @@
       <e p="Unity.Build.Internals.csproj" t="IncludeRecursive" />
       <e p="Unity.Burst.csproj" t="IncludeRecursive" />
       <e p="Unity.Burst.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.Burst.Player.csproj" t="IncludeRecursive" />
-      <e p="Unity.Burst.Tests.csproj" t="IncludeRecursive" />
       <e p="Unity.CollabProxy.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.Collections.csproj" t="IncludeRecursive" />
-      <e p="Unity.Collections.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Deformations.csproj" t="IncludeRecursive" />
-      <e p="Unity.Deformations.Player.csproj" t="IncludeRecursive" />
-      <e p="Unity.Entities.AutoCreation.Tests.csproj" t="IncludeRecursive" />
       <e p="Unity.Entities.BuildUtils.csproj" t="IncludeRecursive" />
       <e p="Unity.Entities.CodeGen.csproj" t="IncludeRecursive" />
-      <e p="Unity.Entities.CodeGen.Tests.csproj" t="IncludeRecursive" />
       <e p="Unity.Entities.CodeGen.Tests.TestTypes.csproj" t="IncludeRecursive" />
       <e p="Unity.Entities.csproj" t="IncludeRecursive" />
       <e p="Unity.Entities.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.Entities.Editor.Tests.csproj" t="IncludeRecursive" />
       <e p="Unity.Entities.Hybrid.CodeGen.csproj" t="IncludeRecursive" />
-      <e p="Unity.Entities.Hybrid.CodeGen.Tests.csproj" t="IncludeRecursive" />
       <e p="Unity.Entities.Hybrid.csproj" t="IncludeRecursive" />
       <e p="Unity.Entities.Hybrid.EndToEnd.Tests.csproj" t="IncludeRecursive" />
-      <e p="Unity.Entities.Hybrid.Player.csproj" t="IncludeRecursive" />
-      <e p="Unity.Entities.Hybrid.Tests.csproj" t="IncludeRecursive" />
-      <e p="Unity.Entities.PerformanceTests.csproj" t="IncludeRecursive" />
-      <e p="Unity.Entities.Player.csproj" t="IncludeRecursive" />
-      <e p="Unity.Entities.TestComponents.csproj" t="IncludeRecursive" />
-      <e p="Unity.Entities.TestComponents.Player.csproj" t="IncludeRecursive" />
-      <e p="Unity.Entities.Tests.csproj" t="IncludeRecursive" />
+      <e p="Unity.InternalAPIEditorBridge.012.csproj" t="IncludeRecursive" />
       <e p="Unity.Jobs.csproj" t="IncludeRecursive" />
       <e p="Unity.Jobs.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.Jobs.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Mathematics.csproj" t="IncludeRecursive" />
       <e p="Unity.Mathematics.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.Mathematics.Extensions.csproj" t="IncludeRecursive" />
       <e p="Unity.Mathematics.Extensions.Hybrid.csproj" t="IncludeRecursive" />
-      <e p="Unity.Mathematics.Extensions.Hybrid.Player.csproj" t="IncludeRecursive" />
-      <e p="Unity.Mathematics.Extensions.Player.csproj" t="IncludeRecursive" />
-      <e p="Unity.Mathematics.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.PerformanceTesting.csproj" t="IncludeRecursive" />
       <e p="Unity.PerformanceTesting.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.PerformanceTesting.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Physics.csproj" t="IncludeRecursive" />
       <e p="Unity.Physics.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.Physics.Hybrid.csproj" t="IncludeRecursive" />
-      <e p="Unity.Physics.Hybrid.Player.csproj" t="IncludeRecursive" />
-      <e p="Unity.Physics.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Platforms.Common.csproj" t="IncludeRecursive" />
-      <e p="Unity.Platforms.Common.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Platforms.csproj" t="IncludeRecursive" />
       <e p="Unity.Properties.CodeGen.csproj" t="IncludeRecursive" />
       <e p="Unity.Properties.csproj" t="IncludeRecursive" />
       <e p="Unity.Properties.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.Properties.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Properties.Reflection.csproj" t="IncludeRecursive" />
-      <e p="Unity.Properties.Reflection.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Properties.UI.csproj" t="IncludeRecursive" />
       <e p="Unity.Properties.UI.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.Properties.UI.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Rendering.Hybrid.csproj" t="IncludeRecursive" />
       <e p="Unity.Rendering.Hybrid.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.Rendering.Hybrid.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.RenderPipeline.Universal.ShaderLibrary.csproj" t="IncludeRecursive" />
-      <e p="Unity.RenderPipeline.Universal.ShaderLibrary.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.RenderPipelines.Core.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.RenderPipelines.Core.Runtime.csproj" t="IncludeRecursive" />
-      <e p="Unity.RenderPipelines.Core.Runtime.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.RenderPipelines.Core.ShaderLibrary.csproj" t="IncludeRecursive" />
-      <e p="Unity.RenderPipelines.Core.ShaderLibrary.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj" t="IncludeRecursive" />
-      <e p="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.RenderPipelines.Universal.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.RenderPipelines.Universal.Runtime.csproj" t="IncludeRecursive" />
-      <e p="Unity.RenderPipelines.Universal.Runtime.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.RenderPipelines.Universal.Shaders.csproj" t="IncludeRecursive" />
-      <e p="Unity.RenderPipelines.Universal.Shaders.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Rider.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.Scenes.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.Scenes.Editor.Tests.csproj" t="IncludeRecursive" />
       <e p="Unity.Scenes.Hybrid.csproj" t="IncludeRecursive" />
-      <e p="Unity.Scenes.Hybrid.Player.csproj" t="IncludeRecursive" />
-      <e p="Unity.Scenes.Hybrid.Tests.csproj" t="IncludeRecursive" />
-      <e p="Unity.Scenes.Hybrid.Tests.Playmode.csproj" t="IncludeRecursive" />
-      <e p="Unity.Scenes.Hybrid.Tests.Playmode.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.ScriptableBuildPipeline.csproj" t="IncludeRecursive" />
       <e p="Unity.ScriptableBuildPipeline.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.ScriptableBuildPipeline.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Searcher.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.Serialization.csproj" t="IncludeRecursive" />
       <e p="Unity.Serialization.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.Serialization.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.ShaderGraph.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.ShaderGraph.Utilities.csproj" t="IncludeRecursive" />
       <e p="Unity.TextMeshPro.csproj" t="IncludeRecursive" />
       <e p="Unity.TextMeshPro.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.TextMeshPro.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Timeline.csproj" t="IncludeRecursive" />
       <e p="Unity.Timeline.Editor.csproj" t="IncludeRecursive" />
-      <e p="Unity.Timeline.Player.csproj" t="IncludeRecursive" />
       <e p="Unity.Transforms.csproj" t="IncludeRecursive" />
       <e p="Unity.Transforms.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.Transforms.Hybrid.csproj" t="IncludeRecursive" />
-      <e p="Unity.Transforms.Hybrid.Player.csproj" t="IncludeRecursive" />
-      <e p="Unity.Transforms.PerformanceTests.csproj" t="IncludeRecursive" />
-      <e p="Unity.Transforms.Player.csproj" t="IncludeRecursive" />
-      <e p="Unity.Transforms.Tests.csproj" t="IncludeRecursive" />
       <e p="Unity.VisualStudio.Editor.csproj" t="IncludeRecursive" />
       <e p="Unity.VSCode.Editor.csproj" t="IncludeRecursive" />
       <e p="UnityEditor.CacheServer.csproj" t="IncludeRecursive" />
       <e p="UnityEditor.TestRunner.csproj" t="IncludeRecursive" />
       <e p="UnityEditor.UI.csproj" t="IncludeRecursive" />
       <e p="UnityEngine.TestRunner.csproj" t="IncludeRecursive" />
-      <e p="UnityEngine.TestRunner.Player.csproj" t="IncludeRecursive" />
       <e p="UnityEngine.UI.csproj" t="IncludeRecursive" />
-      <e p="UnityEngine.UI.Player.csproj" t="IncludeRecursive" />
       <e p="UnitySceneReference.csproj" t="IncludeRecursive" />
-      <e p="UnitySceneReference.Player.csproj" t="IncludeRecursive" />
       <e p="Vella.Events.csproj" t="IncludeRecursive" />
-      <e p="Vella.Events.Player.csproj" t="IncludeRecursive" />
       <e p="Vella.Events.Tests.csproj" t="IncludeRecursive" />
     </e>
   </component>

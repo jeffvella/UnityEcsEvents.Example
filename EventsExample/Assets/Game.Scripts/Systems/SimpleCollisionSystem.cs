@@ -24,7 +24,7 @@ namespace Assets.Scripts.Systems
     }
     
     [UpdateInGroup(typeof(PresentationSystemGroup))]
-    [UpdateBefore(typeof(EntityEventSystem))]
+    //[UpdateBefore(typeof(EntityEventSystem))]
     public class SimpleCollisionSystem : SystemBase
     {
         // There's an important timing consideration here at the moment:

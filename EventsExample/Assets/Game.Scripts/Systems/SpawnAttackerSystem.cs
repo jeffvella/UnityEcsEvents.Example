@@ -49,7 +49,7 @@ namespace Assets.Scripts.Systems
                 if (e.Catetory != ActorCategory.Attacker)
                     return;
 
-                if (prefabData.TryGetFirst(e.Catetory, out var prefab))
+                if (prefabData.Ref.TryGetFirst(e.Catetory, out var prefab))
                 {
                     entities.Resize(e.Amount, NativeArrayOptions.UninitializedMemory);
 

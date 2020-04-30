@@ -13,16 +13,14 @@ namespace ExtensionsTests
 {
     public struct MyTestData : IComponentData
     { 
-        public int value;
+        public int Value;
     }
 
     public class EntityArchetypeExtensionsTests : SimpleTestFixture
     {
-        [Test]
-        unsafe public void CopiesChunksFromEntityArchetype([Values(1, 1000)] int entityCount)
+        /*[Test]
+        public unsafe void CopiesChunksFromEntityArchetype([Values(1, 1000)] int entityCount)
         {
-            //var archetype = m_Manager.CreateArchetype(typeof(MyTestData)); // causes crash.
-
             var archetype = m_Manager.CreateArchetype(ComponentType.ReadWrite<MyTestData>());
 
             var entities = new NativeArray<Entity>(entityCount, Allocator.Persistent);
@@ -33,11 +31,15 @@ namespace ExtensionsTests
 
             m_Manager.Unsafe.CopyChunks(archetype, destination);
 
-            AssertBytesAreEqual(destination, m_Manager.GetAllChunks());
+            var chunksFromEntityManager = m_Manager.GetAllChunks();
+            
+            AssertBytesAreEqual(destination, chunksFromEntityManager);
+
+            chunksFromEntityManager.Dispose();
 
             destination.Dispose();
             entities.Dispose();
-        }
+        }*/
 
         public unsafe void AssertBytesAreEqual<T>(NativeArray<T> arr1, NativeArray<T> arr2) where T : struct
         {

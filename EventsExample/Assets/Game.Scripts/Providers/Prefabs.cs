@@ -3,12 +3,17 @@ using Assets.Scripts.Support;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
 using Unity.Mathematics;
+using UnityEngine.Rendering;
+using UnityEngine.UIElements;
+
+
 
 namespace Assets.Scripts.Providers
 {
@@ -21,17 +26,14 @@ namespace Assets.Scripts.Providers
         public bool Equals(PrefabRef other) 
             => Definition.AssetId == other.Definition.AssetId;
     }
-
-    /// <summary>
-    /// A burstable lookup for Entity prefabs; maintained by <see cref="PrefabSystem"/>
-    /// </summary>
+    
     public struct Prefabs : INativeProvider
     {
         private UnsafeMultiHashMap<int, PrefabRef> _prefabsByTeam;
         private UnsafeHashMap<int, PrefabRef> _prefabsByAssetId;
-
+        
         public int Length { get; private set; }
-
+        
         public void Allocate(SystemBase owner, Allocator allocator)
         {
             _prefabsByTeam = new UnsafeMultiHashMap<int, PrefabRef>(1, allocator);

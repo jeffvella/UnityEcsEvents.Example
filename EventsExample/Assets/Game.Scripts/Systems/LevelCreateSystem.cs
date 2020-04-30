@@ -32,10 +32,10 @@ namespace Assets.Game.Scripts.Systems
                 if (e.SceneCategory != SceneCategory.Level)
                     return;
               
-                //spawnPlayerEvents.Enqueue(new SpawnPlayerEvent
-                //{
-                //    Category = ActorCategory.HumanPlayer
-                //});
+                spawnPlayerEvents.Enqueue(new SpawnPlayerEvent
+                {
+                    Category = ActorCategory.HumanPlayer
+                });
                
             }).Run();
 

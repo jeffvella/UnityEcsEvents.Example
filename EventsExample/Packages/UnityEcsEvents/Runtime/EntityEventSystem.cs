@@ -12,7 +12,7 @@ using System.Linq;
 namespace Vella.Events
 {
 
-    [DisableAutoCreation]
+    [UpdateInGroup(typeof(PresentationSystemGroup))]
     [DebuggerTypeProxy(typeof(EntityEventSystemDebugView))]
     public unsafe class EntityEventSystem : SystemBase
     {
@@ -326,7 +326,7 @@ namespace Vella.Events
             }).Run();
         }
 
-        internal void UpdateChunkCollections() // This is just seperated out for benchmarking
+        internal void UpdateChunkCollections() // This is just separated out for benchmarking
         {
             var batchCount = Data.Batches.Length;
             var batchesPtr = (byte*)Data.Batches.Ptr;
@@ -342,7 +342,7 @@ namespace Vella.Events
             }).Run();
         }
 
-        internal void ClearQueues() // This is just seperated out for benchmarking
+        internal void ClearQueues() // This is just separated out for benchmarking
         {
             var batchCount = Data.Batches.Length;
             var batchesPtr = (byte*)Data.Batches.Ptr;

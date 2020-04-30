@@ -15,7 +15,7 @@ public class SimpleTestFixture
 
 
     [SetUp]
-    virtual public void Setup()
+    public virtual void Setup()
     {
         m_PreviousWorld = World.DefaultGameObjectInjectionWorld;
         m_World = World.DefaultGameObjectInjectionWorld = new World("Test World");
@@ -23,16 +23,16 @@ public class SimpleTestFixture
     }
 
     [TearDown]
-    virtual public void TearDown()
+    public virtual void TearDown()
     {
-        if (m_Manager != null)
+        if (m_Manager != default)
         {
             m_World.Dispose();
             m_World = null;
 
             World.DefaultGameObjectInjectionWorld = m_PreviousWorld;
             m_PreviousWorld = null;
-            m_Manager = null;
+            m_Manager = default;
         }
     }
 }

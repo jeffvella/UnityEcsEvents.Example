@@ -51,7 +51,7 @@ namespace Assets.Scripts.Systems
                 if (HasComponent<Translation>(entity) && def.Flags.IsFlagSet(ActorFlags.AddTransformAsOffset))
                     spawnOffset = GetComponent<Translation>(entity).Value;
  
-                prefabs.AddOrReplace(new PrefabRef
+                prefabs.Ref.AddOrReplace(new PrefabRef
                 {
                     Entity = entity,
                     Definition = def,
@@ -63,9 +63,9 @@ namespace Assets.Scripts.Systems
                 commands.RemoveComponent<UnprocessedTag>(entity);
 
             }).WithAll<Prefab, UnprocessedTag>()
-              .WithStoreEntityQueryInField(ref _unprocessedPrefabs)
-              .WithEntityQueryOptions(EntityQueryOptions.IncludePrefab)
-              .Run();
+                .WithStoreEntityQueryInField(ref _unprocessedPrefabs)
+                .WithEntityQueryOptions(EntityQueryOptions.IncludePrefab)
+                .Run();
 
             SetEntityNames();
         }
@@ -73,7 +73,7 @@ namespace Assets.Scripts.Systems
         [Conditional("UNITY_EDITOR")]
         public void SetEntityNames()
         {
-            foreach (var pair in _prefabs.Data)
+            foreach (var pair in _prefabs.Data.Ref)
             {
                 // Fix for entities not being named when a sub-scene is not live-linked.
                 EntityManager.SetName(pair.Value.Entity, pair.Value.Definition.AssetId.ToString());

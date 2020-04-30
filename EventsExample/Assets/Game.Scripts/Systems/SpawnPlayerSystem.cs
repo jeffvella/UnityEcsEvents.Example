@@ -25,7 +25,6 @@ namespace Assets.Scripts.Systems
     [UpdateInGroup(typeof(InitializationSystemGroup))]
     public class SpawnPlayerSystem : SystemBase
     {
-        private IProvider<Players> _players;
         private EntityArchetype _playerArchetype;
         private BeginPresentationEntityCommandBufferSystem _commandSystem;
         private IdGenerator _idGenerator;
@@ -39,7 +38,6 @@ namespace Assets.Scripts.Systems
                 ComponentType.ReadWrite<PlayerInput>(),
             };
 
-            _players = World.GetOrCreateProvider<Players>();
             _playerArchetype = EntityManager.CreateArchetype(components);
             _commandSystem = World.GetOrCreateSystem<BeginPresentationEntityCommandBufferSystem>();
             _idGenerator = new IdGenerator();
@@ -50,7 +48,6 @@ namespace Assets.Scripts.Systems
             var commands = _commandSystem.CreateCommandBuffer();
             var archetype = _playerArchetype;
             var idGenerator = _idGenerator;
-            var players = _players;
 
             Entities.ForEach((ref SpawnPlayerEvent e) =>
             {
@@ -107,9 +104,9 @@ namespace Assets.Scripts.Systems
 
             Entities.WithAll<PlayerTag, UnprocessedTag>().ForEach((Entity entity, in PlayerSession session) =>
             {
-                players.Add(new PlayerRef
+                players.Ref.Add(new PlayerRef
                 {
-                    Id = session.PlayerId,
+                    Id = session.PlayerId, 
                     Entity = entity,
                 });
 
@@ -120,7 +117,7 @@ namespace Assets.Scripts.Systems
                     Id = session.PlayerId,
                 });
 
-            }).Run();
+            }).WithoutBurst().Run();
 
             SetEntityDebuggerNamesInEditor();
         }
@@ -131,7 +128,7 @@ namespace Assets.Scripts.Systems
             Entities.WithAll<PlayerTag, UnprocessedTag>().ForEach((Entity entity, in PlayerSession session, in PlayerInput input) =>
             {
                 EntityManager.SetName(entity, $"Player: {session.PlayerId} Input:{input.InputPlayerId}");
-
+        
             }).WithoutBurst().Run();
         }
     }

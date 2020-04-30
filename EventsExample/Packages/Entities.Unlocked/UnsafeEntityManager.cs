@@ -6,52 +6,36 @@ using Unity.Entities;
 
 namespace Unity.Entities
 {
-    public sealed unsafe partial class EntityManager
+    public unsafe partial struct EntityManager
     {
-        public UnsafeEntityManager Unsafe => new UnsafeEntityManager(m_EntityComponentStore);
-
-        public void CompleteAllJobsAndInvalidateArrays()
-            => m_DependencyManager->CompleteAllJobsAndInvalidateArrays();
-
-        public void DeclareStructuralChange() => BeforeStructuralChange();
+        public UnsafeEntityManager Unsafe => new UnsafeEntityManager(this.m_EntityDataAccess->EntityComponentStore);
+        
+        public void BeforeStructuralChange_() => BeforeStructuralChange();
     }
 }
 
 public unsafe struct UnsafeEntityManager
 {
-    private readonly EntityComponentStore* entityComponentStore;
+    private readonly EntityComponentStore* _entityComponentStore;
 
-    internal UnsafeEntityManager(EntityComponentStore* entityComponentStore) => this.entityComponentStore = entityComponentStore;
-
-    public void CopyChunks(EntityArchetype entityArchetype, NativeArray<ArchetypeChunk> destination)
-    {
-        var chunkData = entityArchetype.Archetype->Chunks;
-        var destinationPtr = (ArchetypeChunk*) destination.GetUnsafePtr();
-        for (var i = 0; i < chunkData.Count; i++)
-        {
-            ArchetypeChunk chunk;
-            chunk.m_Chunk = chunkData.p[i];
-            chunk.entityComponentStore = entityArchetype._DebugComponentStore;
-            destinationPtr[i] = chunk;
-        }
-    }
-
+    internal UnsafeEntityManager(EntityComponentStore* entityComponentStore) => this._entityComponentStore = entityComponentStore;
+    
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public T* GetComponentPtr<T>(Entity entity, int typeIndex) where T : unmanaged
     {
-        return (T*) entityComponentStore->GetComponentDataRawRWEntityHasComponent(entity, typeIndex);
+        return (T*) _entityComponentStore->GetComponentDataRawRWEntityHasComponent(entity, typeIndex);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public T* GetComponentPtr<T>(Entity entity) where T : unmanaged
     {
-        return (T*) entityComponentStore->GetComponentDataRawRWEntityHasComponent(entity, TypeManager.GetTypeIndex<T>());
+        return (T*) _entityComponentStore->GetComponentDataRawRWEntityHasComponent(entity, TypeManager.GetTypeIndex<T>());
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void* GetComponentPtr(Entity entity, int typeIndex)
     {
-        return entityComponentStore->GetComponentDataRawRWEntityHasComponent(entity, typeIndex);
+        return _entityComponentStore->GetComponentDataRawRWEntityHasComponent(entity, typeIndex);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -70,7 +54,7 @@ public unsafe struct UnsafeEntityManager
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public T* GetComponentPtr<T>(ArchetypeChunk archetypeChunk, int componentTypeIndex, int entityIndexInChunk = 0) where T : unmanaged, IComponentData
+    public T* GetComponentPtr<T>(ArchetypeChunk archetypeChunk, int componentTypeIndex, int entityIndexInChunk) where T : unmanaged, IComponentData
     {
         var typeIndexInChunk = ChunkDataUtility.GetIndexInTypeArray(archetypeChunk.m_Chunk->Archetype, componentTypeIndex);
         return (T*) ChunkDataUtility.GetComponentDataRO(archetypeChunk.m_Chunk, entityIndexInChunk, typeIndexInChunk);
@@ -98,50 +82,50 @@ public unsafe struct UnsafeEntityManager
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void SetChangeVersion(ArchetypeChunk archetypeChunk, int componentTypeIndex)
-        => archetypeChunk.m_Chunk->SetChangeVersion(componentTypeIndex, entityComponentStore->GlobalSystemVersion);
+        => archetypeChunk.m_Chunk->SetChangeVersion(componentTypeIndex, _entityComponentStore->GlobalSystemVersion);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void GetChangeVersion(ArchetypeChunk archetypeChunk, int typeIndex)
         => archetypeChunk.m_Chunk->GetChangeVersion(typeIndex);
 
-    public uint GlobalSystemVersion => entityComponentStore->GlobalSystemVersion;
-    public int EntitiesCapacity => entityComponentStore->EntitiesCapacity;
+    public uint GlobalSystemVersion => _entityComponentStore->GlobalSystemVersion;
+    public int EntitiesCapacity => _entityComponentStore->EntitiesCapacity;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public bool Exists(Entity entity) => entityComponentStore->Exists(entity);
+    public bool Exists(Entity entity) => _entityComponentStore->Exists(entity);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public byte* GetChunkPtr(Entity entity) => (byte*) entityComponentStore->GetEntityInChunk(entity).Chunk;
+    public byte* GetChunkPtr(Entity entity) => (byte*) _entityComponentStore->GetEntityInChunk(entity).Chunk;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public byte* GetChunkPtr(ArchetypeChunk chunk) => (byte*) chunk.m_Chunk;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public byte* GetArchetypePtr(Entity entity) => (byte*) entityComponentStore->GetArchetype(entity);
+    public byte* GetArchetypePtr(Entity entity) => (byte*) _entityComponentStore->GetArchetype(entity);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public int GetIndexInChunk(Entity entity) => entityComponentStore->GetEntityInChunk(entity).IndexInChunk;
+    public int GetIndexInChunk(Entity entity) => _entityComponentStore->GetEntityInChunk(entity).IndexInChunk;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public int GetEntityCount(Entity entity) => entityComponentStore->GetArchetype(entity)->EntityCount;
+    public int GetEntityCount(Entity entity) => _entityComponentStore->GetArchetype(entity)->EntityCount;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public int GetEntityCount(void* archetypePtr) => ((Archetype*) archetypePtr)->EntityCount;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public int GetChunkCount(Entity entity) => entityComponentStore->GetArchetype(entity)->Chunks.Count;
+    public int GetChunkCount(Entity entity) => _entityComponentStore->GetArchetype(entity)->Chunks.Count;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public int GetChunkCount(void* archetypePtr) => ((Archetype*) archetypePtr)->Chunks.Count;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public int* GetComponentOffsets(Entity entity) => entityComponentStore->GetArchetype(entity)->Offsets;
+    public int* GetComponentOffsets(Entity entity) => _entityComponentStore->GetArchetype(entity)->Offsets;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public int* GetComponentTypeIndexes(Entity entity) => (int*) entityComponentStore->GetArchetype(entity)->Types;
+    public int* GetComponentTypeIndexes(Entity entity) => (int*) _entityComponentStore->GetArchetype(entity)->Types;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public int GetComponentTypeCount(Entity entity) => entityComponentStore->GetArchetype(entity)->TypesCount;
+    public int GetComponentTypeCount(Entity entity) => _entityComponentStore->GetArchetype(entity)->TypesCount;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public int GetComponentTypeCount(void* archetypePtr) => ((Archetype*) archetypePtr)->TypesCount;
@@ -151,61 +135,61 @@ public unsafe struct UnsafeEntityManager
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void AddComponentEntitiesBatch(UnsafeList* entityBatchList, int typeIndex)
     {
-        entityComponentStore->AddComponent(entityBatchList, ComponentType.FromTypeIndex(typeIndex), 0);
+        _entityComponentStore->AddComponent(entityBatchList, ComponentType.FromTypeIndex(typeIndex), 0);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool AddComponentEntity(Entity* entity, int typeIndex)
     {
-        return entityComponentStore->AddComponent(*entity, ComponentType.FromTypeIndex(typeIndex));
+        return _entityComponentStore->AddComponent(*entity, ComponentType.FromTypeIndex(typeIndex));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void AddComponentChunks(ArchetypeChunk* chunks, int chunkCount, int typeIndex)
     {
-        entityComponentStore->AddComponent(chunks, chunkCount, ComponentType.FromTypeIndex(typeIndex));
+        _entityComponentStore->AddComponent(chunks, chunkCount, ComponentType.FromTypeIndex(typeIndex));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public bool RemoveComponentEntity(Entity* entity, int typeIndex)
     {
-        return entityComponentStore->RemoveComponent(*entity, ComponentType.FromTypeIndex(typeIndex));
+        return _entityComponentStore->RemoveComponent(*entity, ComponentType.FromTypeIndex(typeIndex));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void RemoveComponentEntitiesBatch(UnsafeList* entityBatchList, int typeIndex)
     {
-        entityComponentStore->RemoveComponent(entityBatchList, ComponentType.FromTypeIndex(typeIndex));
+        _entityComponentStore->RemoveComponent(entityBatchList, ComponentType.FromTypeIndex(typeIndex));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void RemoveComponentChunks(ArchetypeChunk* chunks, int chunkCount, int typeIndex)
     {
-        entityComponentStore->RemoveComponent(chunks, chunkCount, ComponentType.FromTypeIndex(typeIndex));
+        _entityComponentStore->RemoveComponent(chunks, chunkCount, ComponentType.FromTypeIndex(typeIndex));
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void AddSharedComponentChunks(ArchetypeChunk* chunks, int chunkCount, int componentTypeIndex, int sharedComponentIndex)
     {
-        entityComponentStore->AddComponent(chunks, chunkCount, ComponentType.FromTypeIndex(componentTypeIndex), sharedComponentIndex);
+        _entityComponentStore->AddComponent(chunks, chunkCount, ComponentType.FromTypeIndex(componentTypeIndex), sharedComponentIndex);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void MoveEntityArchetype(Entity* entity, void* dstArchetype)
     {
-        entityComponentStore->Move(*entity, (Archetype*) dstArchetype);
+        _entityComponentStore->Move(*entity, (Archetype*) dstArchetype);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void SetChunkComponent(ArchetypeChunk* chunks, int chunkCount, void* componentData, int componentTypeIndex)
     {
-        entityComponentStore->SetChunkComponent(chunks, chunkCount, componentData, componentTypeIndex);
+        _entityComponentStore->SetChunkComponent(chunks, chunkCount, componentData, componentTypeIndex);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void CreateEntity(void* archetype, Entity* outEntities, int count)
     {
-        entityComponentStore->CreateEntities((Archetype*) archetype, outEntities, count);
+        _entityComponentStore->CreateEntities((Archetype*) archetype, outEntities, count);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -223,15 +207,9 @@ public unsafe struct UnsafeEntityManager
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public Entity CreateEntity(EntityArchetype archetype)
     {
-        return entityComponentStore->CreateEntityWithValidation(archetype);
+        return _entityComponentStore->CreateEntityWithValidation(archetype);
     }
-
-    //[MethodImpl(MethodImplOptions.AggressiveInlining)]
-    //public void CreateEntity(EntityArchetype entityArchetype, NativeArray<Entity> destination)
-    //{
-    //    StructuralChangeProxy.CreateEntity.Invoke(_componentDataStore, entityArchetype.GetArchetypePtr(), *(Entity**)UnsafeUtility.AddressOf(ref destination), destination.Length);
-    //}
-
+    
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void CreateEntity(EntityArchetype entityArchetype, NativeArray<Entity> destination, int count, int startOffset = 0)
     {
@@ -270,14 +248,13 @@ public unsafe struct UnsafeEntityManager
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     internal void DestroyEntity(Entity* entities, int count)
     {
-        entityComponentStore->AssertCanDestroy(entities, count);
-        entityComponentStore->DestroyEntities(entities, count);
+        _entityComponentStore->DestroyEntities(entities, count);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private void InstantiateEntities(Entity* srcEntity, Entity* outputEntities, int instanceCount)
     {
-        entityComponentStore->InstantiateEntities(*srcEntity, outputEntities, instanceCount);
+        _entityComponentStore->InstantiateEntities(*srcEntity, outputEntities, instanceCount);
     }
 
     #endregion
@@ -285,20 +262,20 @@ public unsafe struct UnsafeEntityManager
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void SetBufferRaw(Entity entity, int componentTypeIndex, void* bufferHeaderPtr, int sizeInChunk)
     {
-        entityComponentStore->SetBufferRawWithValidation(entity, componentTypeIndex, (BufferHeader*) bufferHeaderPtr, sizeInChunk);
+        _entityComponentStore->SetBufferRawWithValidation(entity, componentTypeIndex, (BufferHeader*) bufferHeaderPtr, sizeInChunk);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public unsafe void SetComponentDataRaw(Entity entity, int typeIndex, void* data, int size)
     {
-        entityComponentStore->SetComponentDataRawEntityHasComponent(entity, typeIndex, data, size);
+        _entityComponentStore->SetComponentDataRawEntityHasComponent(entity, typeIndex, data, size);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void SetComponentData<T>(Entity entity, int targetTypeIndex, T inputData) where T : struct, IComponentData
     {
-        entityComponentStore->AssertEntityHasComponent(entity, targetTypeIndex);
-        var ptr = entityComponentStore->GetComponentDataWithTypeRW(entity, targetTypeIndex, entityComponentStore->GlobalSystemVersion);
+        _entityComponentStore->AssertEntityHasComponent(entity, targetTypeIndex);
+        var ptr = _entityComponentStore->GetComponentDataWithTypeRW(entity, targetTypeIndex, _entityComponentStore->GlobalSystemVersion);
         UnsafeUtility.CopyStructureToPtr(ref inputData, ptr);
     }
 
@@ -310,12 +287,12 @@ public unsafe struct UnsafeEntityManager
 
     public bool HasComponent(Entity entity, ComponentType type)
     {
-        return entityComponentStore->HasComponent(entity, type);
+        return _entityComponentStore->HasComponent(entity, type);
     }
 
     public bool HasComponent(Entity entity, int componentTypeIndex)
     {
-        return entityComponentStore->HasComponent(entity, componentTypeIndex);
+        return _entityComponentStore->HasComponent(entity, componentTypeIndex);
     }
 
     public bool HasComponent(ArchetypeChunk archetypeChunk, int componentTypeIndex)
@@ -331,7 +308,7 @@ public unsafe struct UnsafeEntityManager
     }
 }
 
-public static unsafe class UnsafeEntityManagerExtentions
+public static unsafe class UnsafeEntityManagerExtensions
 {
     public static void* GetChunkPtr(this ArchetypeChunk archetypeChunk) => archetypeChunk.m_Chunk;
 
@@ -345,9 +322,9 @@ public static unsafe class UnsafeEntityManagerExtentions
 
     public static ArchetypeChunk GetArchetypeChunk(this EntityArchetype entityArchetype, int index)
     {
-        ArchetypeChunk result;
+        ArchetypeChunk result = default;
         result.m_Chunk = entityArchetype.Archetype->Chunks.p[index];
-        result.entityComponentStore = entityArchetype._DebugComponentStore;
+        result.m_EntityComponentStore = entityArchetype._DebugComponentStore;
         return result;
     }
 }

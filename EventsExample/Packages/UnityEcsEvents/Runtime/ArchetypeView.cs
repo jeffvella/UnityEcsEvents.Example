@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace Vella.Events
 {
 
-    [DebuggerDisplay("Chunks={Length}")]
+    [DebuggerDisplay("Chunks={ChunkCount}")]
     public unsafe struct ArchetypeView
     {
         private EntityArchetype _entityArchetype;

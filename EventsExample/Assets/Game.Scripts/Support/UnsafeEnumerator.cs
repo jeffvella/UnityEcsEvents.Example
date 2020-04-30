@@ -37,17 +37,17 @@ namespace Assets.Scripts.Support
             };
         }
 
-        public static void CreateReinterpret<KI, VI>(NativeKeyValueArrays<KI, VI> pairs)  where KI : unmanaged where VI : unmanaged
-        {
-            UnsafeEnumerator<K, V> enu;
-            enu._length = pairs.Keys.Length;
-            enu._current = new UnsafePair
-            {
-                _keysPtr = (byte*)pairs.Keys.GetUnsafePtr(),
-                _valuesPtr = (byte*)pairs.Values.GetUnsafePtr(),
-                _index = -1
-            };
-        }
+        // public static void CreateReinterpret<KI, VI>(NativeKeyValueArrays<KI, VI> pairs)  where KI : unmanaged where VI : unmanaged
+        // {
+        //     UnsafeEnumerator<K, V> enu;
+        //     enu._length = pairs.Keys.Length;
+        //     enu._current = new UnsafePair
+        //     {
+        //         _keysPtr = (byte*)pairs.Keys.GetUnsafePtr(),
+        //         _valuesPtr = (byte*)pairs.Values.GetUnsafePtr(),
+        //         _index = -1
+        //     };
+        // }
 
         public unsafe ref struct UnsafePair
         {

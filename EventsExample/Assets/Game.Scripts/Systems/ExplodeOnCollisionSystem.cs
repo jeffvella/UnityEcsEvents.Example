@@ -49,7 +49,7 @@ namespace Assets.Scripts.Systems
 
                 events.AttackerDeath.Enqueue(new ActorDeathEvent
                 {
-                    Definition = GetComponent<ActorDefinition>(e.Hit.Target),
+                    Definition = default, //GetComponent<ActorDefinition>(e.Hit.Target), // crashing in burst
                     DeathPosition = e.Hit.Position,
                     AttributedTo = e.Source.Owner
                 });

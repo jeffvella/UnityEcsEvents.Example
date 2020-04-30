@@ -42,10 +42,10 @@ namespace Assets.Scripts.Systems
             {
                 if (e.Catetory == ActorCategory.Defender)
                 {
-                    if (!prefabData.TryGetFirst(ActorCategory.Defender, out var prefab))
+                    if (!prefabData.Ref.TryGetFirst(ActorCategory.Defender, out var prefab))
                         throw new Exception("Prefab not found");
 
-                    if (!playerData.TryGet(e.OwnerId, out var player))
+                    if (!playerData.Ref.TryGet(e.OwnerId, out var player))
                         throw new Exception("Player not found");
 
                     for (int i = 0; i < e.Amount; i++)

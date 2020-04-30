@@ -34,12 +34,7 @@ namespace Performance
             var aMin = 1;
             var aMax = archetypeCount;
 
-            var group = new SampleGroupDefinition
-            {
-                AggregationType = AggregationType.Average,
-                Name = GetName($"Random entity counts between [{eMin}-{eMax}], and [{aMin}-{aMax}] archetypes"),
-                SampleUnit = SampleUnit.Millisecond
-            };
+            var group = new SampleGroup($"Random entity counts between [{eMin}-{eMax}], and [{aMin}-{aMax}] archetypes", SampleUnit.Millisecond);
 
             var measurements = 25;
             var warmups = 5;
@@ -787,12 +782,7 @@ namespace Performance
         {
             protected override void OnCreate()
             {
-                Group = new SampleGroupDefinition
-                {
-                    AggregationType = AggregationType.Average,
-                    Name = "EntityCommandBuffer QueuedFromJob",
-                    SampleUnit = SampleUnit.Millisecond
-                };
+                Group = new SampleGroup("EntityCommandBuffer QueuedFromJob", SampleUnit.Millisecond);
 
                 StopWatch = new Stopwatch();
             }
@@ -805,7 +795,7 @@ namespace Performance
 
             public NativeList<Entity> CreatedEntities { get; set; }
 
-            public SampleGroupDefinition Group { get; private set; }
+            public SampleGroup Group { get; private set; }
 
             public EntityQuery Query { get; set; }
 
@@ -856,40 +846,12 @@ namespace Performance
             system.EventsPerArchetype = eventsPerArchetype;
             system.ArchetypeCount = archetypeCount;
 
-            var processQueuedEventsGroup = new SampleGroupDefinition
-            {
-                AggregationType = AggregationType.Average,
-                Name = GetName("ProcessQueuedEvents", eventsPerArchetype, archetypeCount),
-                SampleUnit = SampleUnit.Millisecond
-            };
 
-            var structuralChangesEventsGroup = new SampleGroupDefinition
-            {
-                AggregationType = AggregationType.Average,
-                Name = GetName("StructuralChanges", eventsPerArchetype, archetypeCount),
-                SampleUnit = SampleUnit.Millisecond
-            };
-
-            var updateChunkCollectionsGroup = new SampleGroupDefinition
-            {
-                AggregationType = AggregationType.Average,
-                Name = GetName("UpdateChunkCollections", eventsPerArchetype, archetypeCount),
-                SampleUnit = SampleUnit.Millisecond
-            };
-
-            var setComponentsGroup = new SampleGroupDefinition
-            {
-                AggregationType = AggregationType.Average,
-                Name = GetName("SetComponents", eventsPerArchetype, archetypeCount),
-                SampleUnit = SampleUnit.Millisecond
-            };
-
-            var clearQueuesGroup = new SampleGroupDefinition
-            {
-                AggregationType = AggregationType.Average,
-                Name = GetName("ClearQueues", eventsPerArchetype, archetypeCount),
-                SampleUnit = SampleUnit.Millisecond
-            };
+            var processQueuedEventsGroup = new SampleGroup(GetName("ProcessQueuedEvents", eventsPerArchetype, archetypeCount), SampleUnit.Millisecond);
+            var structuralChangesEventsGroup = new SampleGroup(GetName("StructuralChanges", eventsPerArchetype, archetypeCount), SampleUnit.Millisecond);
+            var updateChunkCollectionsGroup = new SampleGroup(GetName("UpdateChunkCollections", eventsPerArchetype, archetypeCount), SampleUnit.Millisecond);
+            var setComponentsGroup = new SampleGroup(GetName("SetComponents", eventsPerArchetype, archetypeCount), SampleUnit.Millisecond);
+            var clearQueuesGroup = new SampleGroup(GetName("ClearQueues", eventsPerArchetype, archetypeCount), SampleUnit.Millisecond);
 
             var measurements = 25;
             var warmups = 5;
@@ -939,12 +901,7 @@ namespace Performance
             system.EventsPerArchetype = eventsPerArchetype;
             system.ArchetypeCount = archetypeCount;
 
-            var group = new SampleGroupDefinition
-            {
-                AggregationType = AggregationType.Average,
-                Name = GetName("Creating events that were queued on main thread", eventsPerArchetype, archetypeCount),
-                SampleUnit = SampleUnit.Millisecond
-            };
+            var group = new SampleGroup(GetName("Creating events that were queued on main thread", eventsPerArchetype, archetypeCount), SampleUnit.Millisecond);
 
             var measurements = 25;
             var warmups = 5;
@@ -973,12 +930,7 @@ namespace Performance
             // because of the way data is stored and read. It will effect set component time, 
             // counting how many entities are queued, etc.
 
-            var group2 = new SampleGroupDefinition 
-            {
-                AggregationType = AggregationType.Average,
-                Name = GetName("Creating events that were queued in parallel", eventsPerArchetype, archetypeCount),
-                SampleUnit = SampleUnit.Millisecond
-            };
+            var group2 = new SampleGroup(GetName("Creating events that were queued in parallel", eventsPerArchetype, archetypeCount), SampleUnit.Millisecond);
 
             for (int i = 0; i < measurements; i++)
             {
@@ -1006,12 +958,7 @@ namespace Performance
             system.EventCount = eventCount;
             system.BufferElementCount = bufferLength;
 
-            var group = new SampleGroupDefinition
-            {
-                AggregationType = AggregationType.Average,
-                Name = GetName($"Creating {eventCount} events with {bufferLength} length buffers, queued from main thread "),
-                SampleUnit = SampleUnit.Millisecond
-            };
+            var group = new SampleGroup(GetName($"Creating {eventCount} events with {bufferLength} length buffers, queued from main thread "), SampleUnit.Millisecond);
 
             var measurements = 25;
             var warmups = 5;

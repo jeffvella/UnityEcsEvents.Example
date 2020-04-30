@@ -16,12 +16,364 @@ namespace Unity.Entities.Unsafe
 
     #region Auto-Generated Content
 
-        // Entities: 0.9.0-preview.6
+        // Entities: 0.10.0-preview.6
+
+        public struct EntityManagerOffsets
+        {           
+            public const int _0000_AtomicSafetyHandle_m_Safety_versionNode_8 = 0;
+            public const int _0008_AtomicSafetyHandle_m_Safety_version_4 = 8;
+            public const int _0012_AtomicSafetyHandle_m_Safety_staticSafetyId_4 = 12;
+            public const int _0016_Boolean_m_JobMode_1 = 16;
+            public const int _0024_EntityDataAccessPtr_m_EntityDataAccess_8 = 24;
+            public const int _0032_GCHandle_m_AliveHandle_handle_4 = 32;
+        }
+
+        public struct EntityQueryOffsets
+        {           
+            public const int _0000_AtomicSafetyHandle___safety_versionNode_8 = 0;
+            public const int _0008_AtomicSafetyHandle___safety_version_4 = 8;
+            public const int _0012_AtomicSafetyHandle___safety_staticSafetyId_4 = 12;
+            public const int _0016_EntityQueryImplPtr___impl_8 = 16;
+            public const int _0024_UInt64___seqno_8 = 24;
+        }
+
+        public struct EntityDataAccessOffsets
+        {           
+            public const int _0000_EntityComponentStore_m_EntityComponentStore_m_VersionByEntity_8 = 0;
+            public const int _0008_EntityComponentStore_m_EntityComponentStore_m_ArchetypeByEntity_8 = 8;
+            public const int _0016_EntityComponentStore_m_EntityComponentStore_m_EntityInChunkByEntity_8 = 16;
+            public const int _0024_EntityComponentStore_m_EntityComponentStore_m_ComponentTypeOrderVersion_8 = 24;
+            public const int _0032_UnsafePtrList_m_blocks_Ptr_8 = 32;
+            public const int _0040_UnsafePtrList_m_blocks_length_4 = 40;
+            public const int _0044_UnsafePtrList_m_blocks_capacity_4 = 44;
+            public const int _0048_AllocatorHandle_Allocator_Value_4 = 48;
+            public const int _0056_UnsafeIntList_m_allocations_Ptr_8 = 56;
+            public const int _0064_UnsafeIntList_m_allocations_Length_4 = 64;
+            public const int _0068_UnsafeIntList_m_allocations_Capacity_4 = 68;
+            public const int _0072_AllocatorHandle_Allocator_Value_4 = 72;
+            public const int _0080_AllocatorHandle_m_handle_Value_4 = 80;
+            public const int _0084_BlockAllocator_m_ArchetypeChunkAllocator_m_nextByteOffset_4 = 84;
+            public const int _0088_UnsafeChunkPtrList_m_EmptyChunks_Ptr_8 = 88;
+            public const int _0096_UnsafeChunkPtrList_m_EmptyChunks_Length_4 = 96;
+            public const int _0100_UnsafeChunkPtrList_m_EmptyChunks_Capacity_4 = 100;
+            public const int _0104_AllocatorHandle_Allocator_Value_4 = 104;
+            public const int _0112_UnsafeArchetypePtrList_m_Archetypes_Ptr_8 = 112;
+            public const int _0120_UnsafeArchetypePtrList_m_Archetypes_Length_4 = 120;
+            public const int _0124_UnsafeArchetypePtrList_m_Archetypes_Capacity_4 = 124;
+            public const int _0128_AllocatorHandle_Allocator_Value_4 = 128;
+            public const int _0136_UnsafeUintList_hashes_Ptr_8 = 136;
+            public const int _0144_UnsafeUintList_hashes_Length_4 = 144;
+            public const int _0148_UnsafeUintList_hashes_Capacity_4 = 148;
+            public const int _0152_AllocatorHandle_Allocator_Value_4 = 152;
+            public const int _0160_UnsafeArchetypePtrList_archetypes_Ptr_8 = 160;
+            public const int _0168_UnsafeArchetypePtrList_archetypes_Length_4 = 168;
+            public const int _0172_UnsafeArchetypePtrList_archetypes_Capacity_4 = 172;
+            public const int _0176_AllocatorHandle_Allocator_Value_4 = 176;
+            public const int _0184_ArchetypeListMap_m_TypeLookup_emptyNodes_4 = 184;
+            public const int _0188_ArchetypeListMap_m_TypeLookup_skipNodes_4 = 188;
+            public const int _0192_EntityComponentStore_m_EntityComponentStore_m_ManagedComponentIndex_4 = 192;
+            public const int _0196_EntityComponentStore_m_EntityComponentStore_m_ManagedComponentIndexCapacity_4 = 196;
+            public const int _0200_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Ptr_8 = 200;
+            public const int _0208_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Length_4 = 208;
+            public const int _0212_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Capacity_4 = 212;
+            public const int _0216_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Allocator_4 = 216;
+            public const int _0220_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Alignment_4 = 220;
+            public const int _0224_UnsafeAppendBuffer_CommandBuffer_Ptr_8 = 224;
+            public const int _0232_UnsafeAppendBuffer_CommandBuffer_Length_4 = 232;
+            public const int _0236_UnsafeAppendBuffer_CommandBuffer_Capacity_4 = 236;
+            public const int _0240_UnsafeAppendBuffer_CommandBuffer_Allocator_4 = 240;
+            public const int _0244_UnsafeAppendBuffer_CommandBuffer_Alignment_4 = 244;
+            public const int _0248_EntityComponentStore_m_EntityComponentStore_m_NextChunkSequenceNumber_8 = 248;
+            public const int _0256_EntityComponentStore_m_EntityComponentStore_m_NextFreeEntityIndex_4 = 256;
+            public const int _0260_EntityComponentStore_m_EntityComponentStore_m_GlobalSystemVersion_4 = 260;
+            public const int _0264_EntityComponentStore_m_EntityComponentStore_m_EntitiesCapacity_4 = 264;
+            public const int _0268_EntityComponentStore_m_EntityComponentStore_m_ArchetypeTrackingVersion_4 = 268;
+            public const int _0272_EntityComponentStore_m_EntityComponentStore_m_LinkedGroupType_4 = 272;
+            public const int _0276_EntityComponentStore_m_EntityComponentStore_m_ChunkHeaderType_4 = 276;
+            public const int _0280_EntityComponentStore_m_EntityComponentStore_m_PrefabType_4 = 280;
+            public const int _0284_EntityComponentStore_m_EntityComponentStore_m_CleanupEntityType_4 = 284;
+            public const int _0288_EntityComponentStore_m_EntityComponentStore_m_DisabledType_4 = 288;
+            public const int _0292_EntityComponentStore_m_EntityComponentStore_m_EntityType_4 = 292;
+            public const int _0296_ComponentType_m_ChunkHeaderComponentType_TypeIndex_4 = 296;
+            public const int _0300_ComponentType_m_ChunkHeaderComponentType_AccessModeType_4 = 300;
+            public const int _0304_ComponentType_m_EntityComponentType_TypeIndex_4 = 304;
+            public const int _0308_ComponentType_m_EntityComponentType_AccessModeType_4 = 308;
+            public const int _0312_EntityComponentStore_m_EntityComponentStore_m_TypeInfos_8 = 312;
+            public const int _0320_EntityComponentStore_m_EntityComponentStore_m_EntityOffsetInfos_8 = 320;
+            public const int _0328_EntityComponentStore_m_EntityComponentStore_memoryInitPattern_1 = 328;
+            public const int _0329_EntityComponentStore_m_EntityComponentStore_useMemoryInitPattern_1 = 329;
+            public const int _0336_EntityComponentStore_m_EntityComponentStore_m_NameByEntity_8 = 336;
+            public const int _0344_EntityQueryManager_m_EntityQueryManager_m_DependencyManager_8 = 344;
+            public const int _0352_UnsafePtrList_m_blocks_Ptr_8 = 352;
+            public const int _0360_UnsafePtrList_m_blocks_length_4 = 360;
+            public const int _0364_UnsafePtrList_m_blocks_capacity_4 = 364;
+            public const int _0368_AllocatorHandle_Allocator_Value_4 = 368;
+            public const int _0376_UnsafeIntList_m_allocations_Ptr_8 = 376;
+            public const int _0384_UnsafeIntList_m_allocations_Length_4 = 384;
+            public const int _0388_UnsafeIntList_m_allocations_Capacity_4 = 388;
+            public const int _0392_AllocatorHandle_Allocator_Value_4 = 392;
+            public const int _0400_AllocatorHandle_m_handle_Value_4 = 400;
+            public const int _0404_BlockAllocator_m_GroupDataChunkAllocator_m_nextByteOffset_4 = 404;
+            public const int _0408_UnsafeEntityQueryDataPtrList_m_EntityGroupDatas_Ptr_8 = 408;
+            public const int _0416_UnsafeEntityQueryDataPtrList_m_EntityGroupDatas_Length_4 = 416;
+            public const int _0420_UnsafeEntityQueryDataPtrList_m_EntityGroupDatas_Capacity_4 = 420;
+            public const int _0424_AllocatorHandle_Allocator_Value_4 = 424;
+            public const int _0432_UntypedUnsafeHashMap_m_EntityGroupDataCacheUntyped_m_Buffer_8 = 432;
+            public const int _0440_UntypedUnsafeHashMap_m_EntityGroupDataCacheUntyped_m_AllocatorLabel_4 = 440;
+            public const int _0448_EntityQueryManager_m_EntityQueryManager_m_EntityQueryMasksAllocated_4 = 448;
+            public const int _0456_ComponentDependencyManager_m_DependencyManager_m_JobDependencyCombineBuffer_8 = 456;
+            public const int _0464_ComponentDependencyManager_m_DependencyManager_m_JobDependencyCombineBufferCount_4 = 464;
+            public const int _0472_ComponentDependencyManager_m_DependencyManager_m_TypeArrayIndices_8 = 472;
+            public const int _0480_ComponentDependencyManager_m_DependencyManager_m_DependencyHandles_8 = 480;
+            public const int _0488_ComponentDependencyManager_m_DependencyManager_m_DependencyHandlesCount_2 = 488;
+            public const int _0496_ComponentDependencyManager_m_DependencyManager_m_ReadJobFences_8 = 496;
+            public const int _0504_JobHandle_m_ExclusiveTransactionDependency_jobGroup_8 = 504;
+            public const int _0512_JobHandle_m_ExclusiveTransactionDependency_version_4 = 512;
+            public const int _0520_ComponentDependencyManager_m_DependencyManager__IsInTransaction_1 = 520;
+            public const int _0528_ComponentSafetyHandles_Safety_m_ComponentSafetyHandles_8 = 528;
+            public const int _0536_ComponentSafetyHandles_Safety_m_ComponentSafetyHandlesCount_2 = 536;
+            public const int _0544_ComponentSafetyHandles_Safety_m_TypeArrayIndices_8 = 544;
+            public const int _0552_AtomicSafetyHandle_ExclusiveTransactionSafety_versionNode_8 = 552;
+            public const int _0560_AtomicSafetyHandle_ExclusiveTransactionSafety_version_4 = 560;
+            public const int _0564_AtomicSafetyHandle_ExclusiveTransactionSafety_staticSafetyId_4 = 564;
+            public const int _0568_AtomicSafetyHandle_m_TempSafety_versionNode_8 = 568;
+            public const int _0576_AtomicSafetyHandle_m_TempSafety_version_4 = 576;
+            public const int _0580_AtomicSafetyHandle_m_TempSafety_staticSafetyId_4 = 580;
+            public const int _0584_ComponentDependencyManager_m_DependencyManager_IsInForEachDisallowStructuralChange_4 = 584;
+            public const int _0592_GCHandle_m_ManagedAccess_handle_4 = 592;
+            public const int _0600_EntityArchetype_m_EntityOnlyArchetype_Archetype_8 = 600;
+            public const int _0608_EntityArchetype_m_EntityOnlyArchetype__DebugComponentStore_8 = 608;
+            public const int _0616_Int32_m_InsideForEach_4 = 616;
+            public const int _0624_UntypedUnsafeHashMap_m_AliveEntityQueries_m_Buffer_8 = 624;
+            public const int _0632_UntypedUnsafeHashMap_m_AliveEntityQueries_m_AllocatorLabel_4 = 632;
+            public const int _0640_Boolean_m_JobMode_1 = 640;
+        }
+
+        public struct UnsafeIntListOffsets
+        {           
+            public const int _0000_Int32Ptr_Ptr_8 = 0;
+            public const int _0008_Int32_Length_4 = 8;
+            public const int _0012_Int32_Capacity_4 = 12;
+            public const int _0016_AllocatorHandle_Allocator_Value_4 = 16;
+        }
+
+        public struct AllocatorHandleOffsets
+        {           
+            public const int _0000_Int32_Value_4 = 0;
+        }
+
+        public struct UnsafeArchetypePtrListOffsets
+        {           
+            public const int _0000_ArchetypePtrPtr_Ptr_8 = 0;
+            public const int _0008_Int32_Length_4 = 8;
+            public const int _0012_Int32_Capacity_4 = 12;
+            public const int _0016_AllocatorHandle_Allocator_Value_4 = 16;
+        }
+
+        public struct UnsafeUintListOffsets
+        {           
+            public const int _0000_UInt32Ptr_Ptr_8 = 0;
+            public const int _0008_Int32_Length_4 = 8;
+            public const int _0012_Int32_Capacity_4 = 12;
+            public const int _0016_AllocatorHandle_Allocator_Value_4 = 16;
+        }
+
+        public struct ArchetypeListMapOffsets
+        {           
+            public const int _0000_UnsafeUintList_hashes_Ptr_8 = 0;
+            public const int _0008_UnsafeUintList_hashes_Length_4 = 8;
+            public const int _0012_UnsafeUintList_hashes_Capacity_4 = 12;
+            public const int _0016_AllocatorHandle_Allocator_Value_4 = 16;
+            public const int _0024_UnsafeArchetypePtrList_archetypes_Ptr_8 = 24;
+            public const int _0032_UnsafeArchetypePtrList_archetypes_Length_4 = 32;
+            public const int _0036_UnsafeArchetypePtrList_archetypes_Capacity_4 = 36;
+            public const int _0040_AllocatorHandle_Allocator_Value_4 = 40;
+            public const int _0048_Int32_emptyNodes_4 = 48;
+            public const int _0052_Int32_skipNodes_4 = 52;
+        }
+
+        public struct EntityComponentStoreOffsets
+        {           
+            public const int _0000_Int32Ptr_m_VersionByEntity_8 = 0;
+            public const int _0008_ArchetypePtrPtr_m_ArchetypeByEntity_8 = 8;
+            public const int _0016_EntityInChunkPtr_m_EntityInChunkByEntity_8 = 16;
+            public const int _0024_Int32Ptr_m_ComponentTypeOrderVersion_8 = 24;
+            public const int _0032_UnsafePtrList_m_blocks_Ptr_8 = 32;
+            public const int _0040_UnsafePtrList_m_blocks_length_4 = 40;
+            public const int _0044_UnsafePtrList_m_blocks_capacity_4 = 44;
+            public const int _0048_AllocatorHandle_Allocator_Value_4 = 48;
+            public const int _0056_UnsafeIntList_m_allocations_Ptr_8 = 56;
+            public const int _0064_UnsafeIntList_m_allocations_Length_4 = 64;
+            public const int _0068_UnsafeIntList_m_allocations_Capacity_4 = 68;
+            public const int _0072_AllocatorHandle_Allocator_Value_4 = 72;
+            public const int _0080_AllocatorHandle_m_handle_Value_4 = 80;
+            public const int _0084_BlockAllocator_m_ArchetypeChunkAllocator_m_nextByteOffset_4 = 84;
+            public const int _0088_UnsafeChunkPtrList_m_EmptyChunks_Ptr_8 = 88;
+            public const int _0096_UnsafeChunkPtrList_m_EmptyChunks_Length_4 = 96;
+            public const int _0100_UnsafeChunkPtrList_m_EmptyChunks_Capacity_4 = 100;
+            public const int _0104_AllocatorHandle_Allocator_Value_4 = 104;
+            public const int _0112_UnsafeArchetypePtrList_m_Archetypes_Ptr_8 = 112;
+            public const int _0120_UnsafeArchetypePtrList_m_Archetypes_Length_4 = 120;
+            public const int _0124_UnsafeArchetypePtrList_m_Archetypes_Capacity_4 = 124;
+            public const int _0128_AllocatorHandle_Allocator_Value_4 = 128;
+            public const int _0136_UnsafeUintList_hashes_Ptr_8 = 136;
+            public const int _0144_UnsafeUintList_hashes_Length_4 = 144;
+            public const int _0148_UnsafeUintList_hashes_Capacity_4 = 148;
+            public const int _0152_AllocatorHandle_Allocator_Value_4 = 152;
+            public const int _0160_UnsafeArchetypePtrList_archetypes_Ptr_8 = 160;
+            public const int _0168_UnsafeArchetypePtrList_archetypes_Length_4 = 168;
+            public const int _0172_UnsafeArchetypePtrList_archetypes_Capacity_4 = 172;
+            public const int _0176_AllocatorHandle_Allocator_Value_4 = 176;
+            public const int _0184_ArchetypeListMap_m_TypeLookup_emptyNodes_4 = 184;
+            public const int _0188_ArchetypeListMap_m_TypeLookup_skipNodes_4 = 188;
+            public const int _0192_Int32_m_ManagedComponentIndex_4 = 192;
+            public const int _0196_Int32_m_ManagedComponentIndexCapacity_4 = 196;
+            public const int _0200_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Ptr_8 = 200;
+            public const int _0208_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Length_4 = 208;
+            public const int _0212_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Capacity_4 = 212;
+            public const int _0216_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Allocator_4 = 216;
+            public const int _0220_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Alignment_4 = 220;
+            public const int _0224_UnsafeAppendBuffer_CommandBuffer_Ptr_8 = 224;
+            public const int _0232_UnsafeAppendBuffer_CommandBuffer_Length_4 = 232;
+            public const int _0236_UnsafeAppendBuffer_CommandBuffer_Capacity_4 = 236;
+            public const int _0240_UnsafeAppendBuffer_CommandBuffer_Allocator_4 = 240;
+            public const int _0244_UnsafeAppendBuffer_CommandBuffer_Alignment_4 = 244;
+            public const int _0248_UInt64_m_NextChunkSequenceNumber_8 = 248;
+            public const int _0256_Int32_m_NextFreeEntityIndex_4 = 256;
+            public const int _0260_UInt32_m_GlobalSystemVersion_4 = 260;
+            public const int _0264_Int32_m_EntitiesCapacity_4 = 264;
+            public const int _0268_UInt32_m_ArchetypeTrackingVersion_4 = 268;
+            public const int _0272_Int32_m_LinkedGroupType_4 = 272;
+            public const int _0276_Int32_m_ChunkHeaderType_4 = 276;
+            public const int _0280_Int32_m_PrefabType_4 = 280;
+            public const int _0284_Int32_m_CleanupEntityType_4 = 284;
+            public const int _0288_Int32_m_DisabledType_4 = 288;
+            public const int _0292_Int32_m_EntityType_4 = 292;
+            public const int _0296_ComponentType_m_ChunkHeaderComponentType_TypeIndex_4 = 296;
+            public const int _0300_ComponentType_m_ChunkHeaderComponentType_AccessModeType_4 = 300;
+            public const int _0304_ComponentType_m_EntityComponentType_TypeIndex_4 = 304;
+            public const int _0308_ComponentType_m_EntityComponentType_AccessModeType_4 = 308;
+            public const int _0312_TypeInfoPtr_m_TypeInfos_8 = 312;
+            public const int _0320_EntityOffsetInfoPtr_m_EntityOffsetInfos_8 = 320;
+            public const int _0328_Byte_memoryInitPattern_1 = 328;
+            public const int _0329_Byte_useMemoryInitPattern_1 = 329;
+            public const int _0336_NumberedWordsPtr_m_NameByEntity_8 = 336;
+        }
+
+        public struct UntypedUnsafeHashMapOffsets
+        {           
+            public const int _0000_UnsafeHashMapDataPtr_m_Buffer_8 = 0;
+            public const int _0008_Allocator_m_AllocatorLabel_4 = 8;
+        }
+
+        public struct EntityQueryManagerOffsets
+        {           
+            public const int _0000_ComponentDependencyManagerPtr_m_DependencyManager_8 = 0;
+            public const int _0008_UnsafePtrList_m_blocks_Ptr_8 = 8;
+            public const int _0016_UnsafePtrList_m_blocks_length_4 = 16;
+            public const int _0020_UnsafePtrList_m_blocks_capacity_4 = 20;
+            public const int _0024_AllocatorHandle_Allocator_Value_4 = 24;
+            public const int _0032_UnsafeIntList_m_allocations_Ptr_8 = 32;
+            public const int _0040_UnsafeIntList_m_allocations_Length_4 = 40;
+            public const int _0044_UnsafeIntList_m_allocations_Capacity_4 = 44;
+            public const int _0048_AllocatorHandle_Allocator_Value_4 = 48;
+            public const int _0056_AllocatorHandle_m_handle_Value_4 = 56;
+            public const int _0060_BlockAllocator_m_GroupDataChunkAllocator_m_nextByteOffset_4 = 60;
+            public const int _0064_UnsafeEntityQueryDataPtrList_m_EntityGroupDatas_Ptr_8 = 64;
+            public const int _0072_UnsafeEntityQueryDataPtrList_m_EntityGroupDatas_Length_4 = 72;
+            public const int _0076_UnsafeEntityQueryDataPtrList_m_EntityGroupDatas_Capacity_4 = 76;
+            public const int _0080_AllocatorHandle_Allocator_Value_4 = 80;
+            public const int _0088_UntypedUnsafeHashMap_m_EntityGroupDataCacheUntyped_m_Buffer_8 = 88;
+            public const int _0096_UntypedUnsafeHashMap_m_EntityGroupDataCacheUntyped_m_AllocatorLabel_4 = 96;
+            public const int _0104_Int32_m_EntityQueryMasksAllocated_4 = 104;
+        }
+
+        public struct ComponentDependencyManagerOffsets
+        {           
+            public const int _0000_JobHandlePtr_m_JobDependencyCombineBuffer_8 = 0;
+            public const int _0008_Int32_m_JobDependencyCombineBufferCount_4 = 8;
+            public const int _0016_UInt16Ptr_m_TypeArrayIndices_8 = 16;
+            public const int _0024_DependencyHandlePtr_m_DependencyHandles_8 = 24;
+            public const int _0032_UInt16_m_DependencyHandlesCount_2 = 32;
+            public const int _0040_JobHandlePtr_m_ReadJobFences_8 = 40;
+            public const int _0048_JobHandle_m_ExclusiveTransactionDependency_jobGroup_8 = 48;
+            public const int _0056_JobHandle_m_ExclusiveTransactionDependency_version_4 = 56;
+            public const int _0064_Boolean__IsInTransaction_1 = 64;
+            public const int _0072_ComponentSafetyHandles_Safety_m_ComponentSafetyHandles_8 = 72;
+            public const int _0080_ComponentSafetyHandles_Safety_m_ComponentSafetyHandlesCount_2 = 80;
+            public const int _0088_ComponentSafetyHandles_Safety_m_TypeArrayIndices_8 = 88;
+            public const int _0096_AtomicSafetyHandle_ExclusiveTransactionSafety_versionNode_8 = 96;
+            public const int _0104_AtomicSafetyHandle_ExclusiveTransactionSafety_version_4 = 104;
+            public const int _0108_AtomicSafetyHandle_ExclusiveTransactionSafety_staticSafetyId_4 = 108;
+            public const int _0112_AtomicSafetyHandle_m_TempSafety_versionNode_8 = 112;
+            public const int _0120_AtomicSafetyHandle_m_TempSafety_version_4 = 120;
+            public const int _0124_AtomicSafetyHandle_m_TempSafety_staticSafetyId_4 = 124;
+            public const int _0128_Int32_IsInForEachDisallowStructuralChange_4 = 128;
+        }
+
+        public struct ComponentSafetyHandlesOffsets
+        {           
+            public const int _0000_ComponentSafetyHandlePtr_m_ComponentSafetyHandles_8 = 0;
+            public const int _0008_UInt16_m_ComponentSafetyHandlesCount_2 = 8;
+            public const int _0016_UInt16Ptr_m_TypeArrayIndices_8 = 16;
+            public const int _0024_AtomicSafetyHandle_ExclusiveTransactionSafety_versionNode_8 = 24;
+            public const int _0032_AtomicSafetyHandle_ExclusiveTransactionSafety_version_4 = 32;
+            public const int _0036_AtomicSafetyHandle_ExclusiveTransactionSafety_staticSafetyId_4 = 36;
+            public const int _0040_AtomicSafetyHandle_m_TempSafety_versionNode_8 = 40;
+            public const int _0048_AtomicSafetyHandle_m_TempSafety_version_4 = 48;
+            public const int _0052_AtomicSafetyHandle_m_TempSafety_staticSafetyId_4 = 52;
+        }
+
+        public struct GCHandleOffsets
+        {           
+            public const int _0000_Int32_handle_4 = 0;
+        }
+
+        public struct EntityArchetypeOffsets
+        {           
+            public const int _0000_ArchetypePtr_Archetype_8 = 0;
+            public const int _0008_EntityComponentStorePtr__DebugComponentStore_8 = 8;
+        }
+
+        public struct UnsafePtrListOffsets
+        {           
+            public const int _0000_VoidPtrPtr_Ptr_8 = 0;
+            public const int _0008_Int32_length_4 = 8;
+            public const int _0012_Int32_capacity_4 = 12;
+            public const int _0016_AllocatorHandle_Allocator_Value_4 = 16;
+        }
+
+        public struct UnsafeChunkPtrListOffsets
+        {           
+            public const int _0000_ChunkPtrPtr_Ptr_8 = 0;
+            public const int _0008_Int32_Length_4 = 8;
+            public const int _0012_Int32_Capacity_4 = 12;
+            public const int _0016_AllocatorHandle_Allocator_Value_4 = 16;
+        }
+
+        public struct UnsafeAppendBufferOffsets
+        {           
+            public const int _0000_BytePtr_Ptr_8 = 0;
+            public const int _0008_Int32_Length_4 = 8;
+            public const int _0012_Int32_Capacity_4 = 12;
+            public const int _0016_Allocator_Allocator_4 = 16;
+            public const int _0020_Int32_Alignment_4 = 20;
+        }
+
+        public struct UnsafeEntityQueryDataPtrListOffsets
+        {           
+            public const int _0000_EntityQueryDataPtrPtr_Ptr_8 = 0;
+            public const int _0008_Int32_Length_4 = 8;
+            public const int _0012_Int32_Capacity_4 = 12;
+            public const int _0016_AllocatorHandle_Allocator_Value_4 = 16;
+        }
 
         public struct ArchetypeChunkOffsets
         {           
             public const int _0000_ChunkPtr_m_Chunk_8 = 0;
-            public const int _0008_EntityComponentStorePtr_entityComponentStore_8 = 8;
+            public const int _0008_EntityComponentStorePtr_m_EntityComponentStore_8 = 8;
+            public const int _0016_Int32_m_BatchStartEntityIndex_4 = 16;
+            public const int _0020_Int32_m_BatchEntityCount_4 = 20;
         }
 
         public struct ChunkOffsets
@@ -46,176 +398,62 @@ namespace Unity.Entities.Unsafe
             public const int _0000_Byte_m_value_1 = 0;
         }
 
-        public struct EntityComponentStoreOffsets
-        {           
-            public const int _0000_Int32Ptr_m_VersionByEntity_8 = 0;
-            public const int _0008_ArchetypePtrPtr_m_ArchetypeByEntity_8 = 8;
-            public const int _0016_EntityInChunkPtr_m_EntityInChunkByEntity_8 = 16;
-            public const int _0024_Int32Ptr_m_ComponentTypeOrderVersion_8 = 24;
-            public const int _0032_BlockAllocator_m_ArchetypeChunkAllocator_m_FirstBlock_8 = 32;
-            public const int _0040_BlockAllocator_m_ArchetypeChunkAllocator_m_LastBlock_8 = 40;
-            public const int _0048_BlockAllocator_m_ArchetypeChunkAllocator_m_LastBlockUsedSize_4 = 48;
-            public const int _0052_BlockAllocator_m_ArchetypeChunkAllocator_totalSizeInBytes_4 = 52;
-            public const int _0056_UnsafeChunkPtrList_m_EmptyChunks_Ptr_8 = 56;
-            public const int _0064_UnsafeChunkPtrList_m_EmptyChunks_Length_4 = 64;
-            public const int _0068_UnsafeChunkPtrList_m_EmptyChunks_Capacity_4 = 68;
-            public const int _0072_UnsafeChunkPtrList_m_EmptyChunks_Allocator_4 = 72;
-            public const int _0080_UnsafeArchetypePtrList_m_Archetypes_Ptr_8 = 80;
-            public const int _0088_UnsafeArchetypePtrList_m_Archetypes_Length_4 = 88;
-            public const int _0092_UnsafeArchetypePtrList_m_Archetypes_Capacity_4 = 92;
-            public const int _0096_UnsafeArchetypePtrList_m_Archetypes_Allocator_4 = 96;
-            public const int _0104_UnsafeChunkPtrList_m_DeleteChunks_Ptr_8 = 104;
-            public const int _0112_UnsafeChunkPtrList_m_DeleteChunks_Length_4 = 112;
-            public const int _0116_UnsafeChunkPtrList_m_DeleteChunks_Capacity_4 = 116;
-            public const int _0120_UnsafeChunkPtrList_m_DeleteChunks_Allocator_4 = 120;
-            public const int _0128_UnsafeUintList_hashes_Ptr_8 = 128;
-            public const int _0136_UnsafeUintList_hashes_Length_4 = 136;
-            public const int _0140_UnsafeUintList_hashes_Capacity_4 = 140;
-            public const int _0144_UnsafeUintList_hashes_Allocator_4 = 144;
-            public const int _0152_UnsafeArchetypePtrList_archetypes_Ptr_8 = 152;
-            public const int _0160_UnsafeArchetypePtrList_archetypes_Length_4 = 160;
-            public const int _0164_UnsafeArchetypePtrList_archetypes_Capacity_4 = 164;
-            public const int _0168_UnsafeArchetypePtrList_archetypes_Allocator_4 = 168;
-            public const int _0176_ArchetypeListMap_m_TypeLookup_emptyNodes_4 = 176;
-            public const int _0180_ArchetypeListMap_m_TypeLookup_skipNodes_4 = 180;
-            public const int _0184_Int32_m_ManagedComponentIndex_4 = 184;
-            public const int _0188_Int32_m_ManagedComponentIndexCapacity_4 = 188;
-            public const int _0192_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Ptr_8 = 192;
-            public const int _0200_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Length_4 = 200;
-            public const int _0204_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Capacity_4 = 204;
-            public const int _0208_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Allocator_4 = 208;
-            public const int _0212_UnsafeAppendBuffer_m_ManagedComponentFreeIndex_Alignment_4 = 212;
-            public const int _0216_UnsafeAppendBuffer_CommandBuffer_Ptr_8 = 216;
-            public const int _0224_UnsafeAppendBuffer_CommandBuffer_Length_4 = 224;
-            public const int _0228_UnsafeAppendBuffer_CommandBuffer_Capacity_4 = 228;
-            public const int _0232_UnsafeAppendBuffer_CommandBuffer_Allocator_4 = 232;
-            public const int _0236_UnsafeAppendBuffer_CommandBuffer_Alignment_4 = 236;
-            public const int _0240_UInt64_m_NextChunkSequenceNumber_8 = 240;
-            public const int _0248_Int32_m_NextFreeEntityIndex_4 = 248;
-            public const int _0252_UInt32_m_GlobalSystemVersion_4 = 252;
-            public const int _0256_Int32_m_EntitiesCapacity_4 = 256;
-            public const int _0260_UInt32_m_ArchetypeTrackingVersion_4 = 260;
-            public const int _0264_Int32_m_LinkedGroupType_4 = 264;
-            public const int _0268_Int32_m_ChunkHeaderType_4 = 268;
-            public const int _0272_Int32_m_PrefabType_4 = 272;
-            public const int _0276_Int32_m_CleanupEntityType_4 = 276;
-            public const int _0280_Int32_m_DisabledType_4 = 280;
-            public const int _0284_Int32_m_EntityType_4 = 284;
-            public const int _0288_ComponentType_m_ChunkHeaderComponentType_TypeIndex_4 = 288;
-            public const int _0292_ComponentType_m_ChunkHeaderComponentType_AccessModeType_4 = 292;
-            public const int _0296_ComponentType_m_EntityComponentType_TypeIndex_4 = 296;
-            public const int _0300_ComponentType_m_EntityComponentType_AccessModeType_4 = 300;
-            public const int _0304_TypeInfoPtr_m_TypeInfos_8 = 304;
-            public const int _0312_EntityOffsetInfoPtr_m_EntityOffsetInfos_8 = 312;
-            public const int _0320_Byte_memoryInitPattern_1 = 320;
-            public const int _0321_Byte_useMemoryInitPattern_1 = 321;
-            public const int _0328_NumberedWordsPtr_m_NameByEntity_8 = 328;
-        }
-
-        public struct UnsafeArchetypePtrListOffsets
-        {           
-            public const int _0000_ArchetypePtrPtr_Ptr_8 = 0;
-            public const int _0008_Int32_Length_4 = 8;
-            public const int _0012_Int32_Capacity_4 = 12;
-            public const int _0016_Allocator_Allocator_4 = 16;
-        }
-
-        public struct UnsafeChunkPtrListOffsets
-        {           
-            public const int _0000_ChunkPtrPtr_Ptr_8 = 0;
-            public const int _0008_Int32_Length_4 = 8;
-            public const int _0012_Int32_Capacity_4 = 12;
-            public const int _0016_Allocator_Allocator_4 = 16;
-        }
-
-        public struct UnsafeUintListOffsets
-        {           
-            public const int _0000_UInt32Ptr_Ptr_8 = 0;
-            public const int _0008_Int32_Length_4 = 8;
-            public const int _0012_Int32_Capacity_4 = 12;
-            public const int _0016_Allocator_Allocator_4 = 16;
-        }
-
-        public struct ArchetypeListMapOffsets
-        {           
-            public const int _0000_UnsafeUintList_hashes_Ptr_8 = 0;
-            public const int _0008_UnsafeUintList_hashes_Length_4 = 8;
-            public const int _0012_UnsafeUintList_hashes_Capacity_4 = 12;
-            public const int _0016_UnsafeUintList_hashes_Allocator_4 = 16;
-            public const int _0024_UnsafeArchetypePtrList_archetypes_Ptr_8 = 24;
-            public const int _0032_UnsafeArchetypePtrList_archetypes_Length_4 = 32;
-            public const int _0036_UnsafeArchetypePtrList_archetypes_Capacity_4 = 36;
-            public const int _0040_UnsafeArchetypePtrList_archetypes_Allocator_4 = 40;
-            public const int _0048_Int32_emptyNodes_4 = 48;
-            public const int _0052_Int32_skipNodes_4 = 52;
-        }
-
-        public struct BlockAllocatorOffsets
-        {           
-            public const int _0000_BytePtr_m_FirstBlock_8 = 0;
-            public const int _0008_BytePtr_m_LastBlock_8 = 8;
-            public const int _0016_Int32_m_LastBlockUsedSize_4 = 16;
-            public const int _0020_Int32_totalSizeInBytes_4 = 20;
-        }
-
-        public struct UnsafeAppendBufferOffsets
-        {           
-            public const int _0000_BytePtr_Ptr_8 = 0;
-            public const int _0008_Int32_Length_4 = 8;
-            public const int _0012_Int32_Capacity_4 = 12;
-            public const int _0016_Allocator_Allocator_4 = 16;
-            public const int _0020_Int32_Alignment_4 = 20;
-        }
-
         public struct ArchetypeOffsets
         {           
             public const int _0000_ArchetypeChunkData_Chunks_p_8 = 0;
-            public const int _0008_ArchetypeChunkData_Chunks_data_8 = 8;
-            public const int _0016_ArchetypeChunkData_Chunks_Capacity_4 = 16;
-            public const int _0020_ArchetypeChunkData_Chunks_Count_4 = 20;
-            public const int _0024_ArchetypeChunkData_Chunks_SharedComponentCount_4 = 24;
-            public const int _0028_ArchetypeChunkData_Chunks_EntityCountIndex_4 = 28;
-            public const int _0032_ArchetypeChunkData_Chunks_Channels_4 = 32;
-            public const int _0040_UnsafeChunkPtrList_ChunksWithEmptySlots_Ptr_8 = 40;
-            public const int _0048_UnsafeChunkPtrList_ChunksWithEmptySlots_Length_4 = 48;
-            public const int _0052_UnsafeChunkPtrList_ChunksWithEmptySlots_Capacity_4 = 52;
-            public const int _0056_UnsafeChunkPtrList_ChunksWithEmptySlots_Allocator_4 = 56;
-            public const int _0064_UnsafeUintList_hashes_Ptr_8 = 64;
-            public const int _0072_UnsafeUintList_hashes_Length_4 = 72;
-            public const int _0076_UnsafeUintList_hashes_Capacity_4 = 76;
-            public const int _0080_UnsafeUintList_hashes_Allocator_4 = 80;
-            public const int _0088_UnsafeChunkPtrList_chunks_Ptr_8 = 88;
-            public const int _0096_UnsafeChunkPtrList_chunks_Length_4 = 96;
-            public const int _0100_UnsafeChunkPtrList_chunks_Capacity_4 = 100;
-            public const int _0104_UnsafeChunkPtrList_chunks_Allocator_4 = 104;
-            public const int _0112_ChunkListMap_FreeChunksBySharedComponents_emptyNodes_4 = 112;
-            public const int _0116_ChunkListMap_FreeChunksBySharedComponents_skipNodes_4 = 116;
-            public const int _0120_ComponentTypeInArchetypePtr_Types_8 = 120;
-            public const int _0128_Int32_EntityCount_4 = 128;
-            public const int _0132_Int32_ChunkCapacity_4 = 132;
-            public const int _0136_Int32_TypesCount_4 = 136;
-            public const int _0140_Int32_InstanceSize_4 = 140;
-            public const int _0144_Int32_InstanceSizeWithOverhead_4 = 144;
-            public const int _0148_Int32_ManagedEntityPatchCount_4 = 148;
-            public const int _0152_Int32_ScalarEntityPatchCount_4 = 152;
-            public const int _0156_Int32_BufferEntityPatchCount_4 = 156;
-            public const int _0160_Int32Ptr_Offsets_8 = 160;
-            public const int _0168_Int32Ptr_SizeOfs_8 = 168;
-            public const int _0176_Int32Ptr_BufferCapacities_8 = 176;
-            public const int _0184_Int32Ptr_TypeMemoryOrder_8 = 184;
-            public const int _0192_Int16_FirstBufferComponent_2 = 192;
-            public const int _0194_Int16_FirstManagedComponent_2 = 194;
-            public const int _0196_Int16_FirstTagComponent_2 = 196;
-            public const int _0198_Int16_FirstSharedComponent_2 = 198;
-            public const int _0200_Int16_FirstChunkComponent_2 = 200;
-            public const int _0202_ArchetypeFlags_Flags_2 = 202;
-            public const int _0208_ArchetypePtr_CopyArchetype_8 = 208;
-            public const int _0216_ArchetypePtr_InstantiateArchetype_8 = 216;
-            public const int _0224_ArchetypePtr_SystemStateResidueArchetype_8 = 224;
-            public const int _0232_ArchetypePtr_MetaChunkArchetype_8 = 232;
-            public const int _0240_EntityPatchInfoPtr_ScalarEntityPatches_8 = 240;
-            public const int _0248_BufferEntityPatchInfoPtr_BufferEntityPatches_8 = 248;
-            public const int _0256_ManagedEntityPatchInfoPtr_ManagedEntityPatches_8 = 256;
+            public const int _0008_ArchetypeChunkData_Chunks_Capacity_4 = 8;
+            public const int _0012_ArchetypeChunkData_Chunks_Count_4 = 12;
+            public const int _0016_ArchetypeChunkData_Chunks_SharedComponentCount_4 = 16;
+            public const int _0020_ArchetypeChunkData_Chunks_ComponentCount_4 = 20;
+            public const int _0024_UnsafeChunkPtrList_ChunksWithEmptySlots_Ptr_8 = 24;
+            public const int _0032_UnsafeChunkPtrList_ChunksWithEmptySlots_Length_4 = 32;
+            public const int _0036_UnsafeChunkPtrList_ChunksWithEmptySlots_Capacity_4 = 36;
+            public const int _0040_AllocatorHandle_Allocator_Value_4 = 40;
+            public const int _0048_UnsafeUintList_hashes_Ptr_8 = 48;
+            public const int _0056_UnsafeUintList_hashes_Length_4 = 56;
+            public const int _0060_UnsafeUintList_hashes_Capacity_4 = 60;
+            public const int _0064_AllocatorHandle_Allocator_Value_4 = 64;
+            public const int _0072_UnsafeChunkPtrList_chunks_Ptr_8 = 72;
+            public const int _0080_UnsafeChunkPtrList_chunks_Length_4 = 80;
+            public const int _0084_UnsafeChunkPtrList_chunks_Capacity_4 = 84;
+            public const int _0088_AllocatorHandle_Allocator_Value_4 = 88;
+            public const int _0096_ChunkListMap_FreeChunksBySharedComponents_emptyNodes_4 = 96;
+            public const int _0100_ChunkListMap_FreeChunksBySharedComponents_skipNodes_4 = 100;
+            public const int _0104_ComponentTypeInArchetypePtr_Types_8 = 104;
+            public const int _0112_Int32_EntityCount_4 = 112;
+            public const int _0116_Int32_ChunkCapacity_4 = 116;
+            public const int _0120_Int32_TypesCount_4 = 120;
+            public const int _0124_Int32_InstanceSize_4 = 124;
+            public const int _0128_Int32_InstanceSizeWithOverhead_4 = 128;
+            public const int _0132_Int32_ManagedEntityPatchCount_4 = 132;
+            public const int _0136_Int32_ScalarEntityPatchCount_4 = 136;
+            public const int _0140_Int32_BufferEntityPatchCount_4 = 140;
+            public const int _0144_Int32Ptr_Offsets_8 = 144;
+            public const int _0152_Int32Ptr_SizeOfs_8 = 152;
+            public const int _0160_Int32Ptr_BufferCapacities_8 = 160;
+            public const int _0168_Int32Ptr_TypeMemoryOrder_8 = 168;
+            public const int _0176_Int16_FirstBufferComponent_2 = 176;
+            public const int _0178_Int16_FirstManagedComponent_2 = 178;
+            public const int _0180_Int16_FirstTagComponent_2 = 180;
+            public const int _0182_Int16_FirstSharedComponent_2 = 182;
+            public const int _0184_Int16_FirstChunkComponent_2 = 184;
+            public const int _0186_ArchetypeFlags_Flags_2 = 186;
+            public const int _0192_ArchetypePtr_CopyArchetype_8 = 192;
+            public const int _0200_ArchetypePtr_InstantiateArchetype_8 = 200;
+            public const int _0208_ArchetypePtr_SystemStateResidueArchetype_8 = 208;
+            public const int _0216_ArchetypePtr_MetaChunkArchetype_8 = 216;
+            public const int _0224_EntityPatchInfoPtr_ScalarEntityPatches_8 = 224;
+            public const int _0232_BufferEntityPatchInfoPtr_BufferEntityPatches_8 = 232;
+            public const int _0240_ManagedEntityPatchInfoPtr_ManagedEntityPatches_8 = 240;
+            public const int _0248_EntityComponentStorePtr_EntityComponentStore_8 = 248;
+            public const int _0256_Byte_QueryMaskArray_m_value_1 = 256;
+            public const int _0257_Byte_QueryMaskArray_m_value_1 = 257;
+            public const int _0258_Byte_QueryMaskArray_m_value_1 = 258;
+            public const int _0259_Byte_QueryMaskArray_m_value_1 = 259;
+            public const int _0260_Byte_QueryMaskArray_m_value_1 = 260;
+            public const int _0261_Byte_QueryMaskArray_m_value_1 = 261;
+            public const int _0262_Byte_QueryMaskArray_m_value_1 = 262;
+            public const int _0263_Byte_QueryMaskArray_m_value_1 = 263;
             public const int _0264_Byte_QueryMaskArray_m_value_1 = 264;
             public const int _0265_Byte_QueryMaskArray_m_value_1 = 265;
             public const int _0266_Byte_QueryMaskArray_m_value_1 = 266;
@@ -336,14 +574,6 @@ namespace Unity.Entities.Unsafe
             public const int _0381_Byte_QueryMaskArray_m_value_1 = 381;
             public const int _0382_Byte_QueryMaskArray_m_value_1 = 382;
             public const int _0383_Byte_QueryMaskArray_m_value_1 = 383;
-            public const int _0384_Byte_QueryMaskArray_m_value_1 = 384;
-            public const int _0385_Byte_QueryMaskArray_m_value_1 = 385;
-            public const int _0386_Byte_QueryMaskArray_m_value_1 = 386;
-            public const int _0387_Byte_QueryMaskArray_m_value_1 = 387;
-            public const int _0388_Byte_QueryMaskArray_m_value_1 = 388;
-            public const int _0389_Byte_QueryMaskArray_m_value_1 = 389;
-            public const int _0390_Byte_QueryMaskArray_m_value_1 = 390;
-            public const int _0391_Byte_QueryMaskArray_m_value_1 = 391;
         }
 
         public struct ChunkListMapOffsets
@@ -351,11 +581,11 @@ namespace Unity.Entities.Unsafe
             public const int _0000_UnsafeUintList_hashes_Ptr_8 = 0;
             public const int _0008_UnsafeUintList_hashes_Length_4 = 8;
             public const int _0012_UnsafeUintList_hashes_Capacity_4 = 12;
-            public const int _0016_UnsafeUintList_hashes_Allocator_4 = 16;
+            public const int _0016_AllocatorHandle_Allocator_Value_4 = 16;
             public const int _0024_UnsafeChunkPtrList_chunks_Ptr_8 = 24;
             public const int _0032_UnsafeChunkPtrList_chunks_Length_4 = 32;
             public const int _0036_UnsafeChunkPtrList_chunks_Capacity_4 = 36;
-            public const int _0040_UnsafeChunkPtrList_chunks_Allocator_4 = 40;
+            public const int _0040_AllocatorHandle_Allocator_Value_4 = 40;
             public const int _0048_Int32_emptyNodes_4 = 48;
             public const int _0052_Int32_skipNodes_4 = 52;
         }
@@ -363,12 +593,10 @@ namespace Unity.Entities.Unsafe
         public struct ArchetypeChunkDataOffsets
         {           
             public const int _0000_ChunkPtrPtr_p_8 = 0;
-            public const int _0008_Int32Ptr_data_8 = 8;
-            public const int _0016_Int32_Capacity_4 = 16;
-            public const int _0020_Int32_Count_4 = 20;
-            public const int _0024_Int32_SharedComponentCount_4 = 24;
-            public const int _0028_Int32_EntityCountIndex_4 = 28;
-            public const int _0032_Int32_Channels_4 = 32;
+            public const int _0008_Int32_Capacity_4 = 8;
+            public const int _0012_Int32_Count_4 = 12;
+            public const int _0016_Int32_SharedComponentCount_4 = 16;
+            public const int _0020_Int32_ComponentCount_4 = 20;
         }
 
         public struct EntityOffsets
@@ -515,6 +743,13 @@ namespace Unity.Entities.Unsafe
             public const int _0032_Int32_IndexInEntityQuery_m_value_4 = 32;
         }
 
+        public struct BufferHeaderOffsets
+        {           
+            public const int _0000_BytePtr_Pointer_8 = 0;
+            public const int _0008_Int32_Length_4 = 8;
+            public const int _0012_Int32_Capacity_4 = 12;
+        }
+
     #endregion Auto-Generated Content
 
 #if UNITY_EDITOR
@@ -544,21 +779,21 @@ namespace Unity.Entities.Unsafe
                     hash = packageInfo.version.GetHashCode();
                     if (!forceUpdate && EditorPrefs.GetInt(SettingsKey) == hash)
                         return;
-
-                    GetOffsets(items, assembly.GetType("Unity.Entities.ArchetypeChunk"));
-                    GetOffsets(items, assembly.GetType("Unity.Entities.Chunk"));
-                    GetOffsets(items, assembly.GetType("Unity.Entities.EntityComponentStore"));
-                    GetOffsets(items, assembly.GetType("Unity.Entities.Archetype"));
-                    GetOffsets(items, assembly.GetType("Unity.Entities.Entity"));
-                    GetOffsets(items, assembly.GetType("Unity.Entities.ComponentType"));
-                    GetOffsets(items, assembly.GetType("Unity.Entities.ComponentTypes"));
-                    GetOffsets(items, assembly.GetType("Unity.Entities.EntityCommandBuffer"));
-                    GetOffsets(items, assembly.GetType("Unity.Entities.EntityQueryData"));
-                    GetOffsets(items, assembly.GetType("Unity.Entities.EntityQueryFilter"));
-                    GetOffsets(items, assembly.GetType("Unity.Entities.ExclusiveTransation"));
-                    GetOffsets(items, assembly.GetType("Unity.Entities.DynamicBuffer"));
-                    GetOffsets(items, assembly.GetType("Unity.Entities.BufferFromEntity"));
-
+                    
+                    GetOffsets(items, typeof(EntityManager));
+                    GetOffsets(items, typeof(EntityQuery));
+                    GetOffsets(items, typeof(EntityDataAccess));
+                    GetOffsets(items, typeof(ArchetypeChunk));
+                    GetOffsets(items, typeof(Chunk));
+                    GetOffsets(items, typeof(EntityComponentStore));
+                    GetOffsets(items, typeof(Archetype));
+                    GetOffsets(items, typeof(Entity));
+                    GetOffsets(items, typeof(ComponentType));
+                    GetOffsets(items, typeof(ComponentTypes));
+                    GetOffsets(items, typeof(EntityCommandBuffer));
+                    GetOffsets(items, typeof(EntityQueryData));
+                    GetOffsets(items, typeof(EntityQueryFilter));
+                    GetOffsets(items, typeof(BufferHeader));
 
                     break;
                 }
@@ -725,7 +960,7 @@ namespace Unity.Entities.Unsafe
         {
             templateContent = SetLineEndings(templateContent, EditorSettings.lineEndingsForNewScripts);
             string fullPath = Path.GetFullPath(pathName);
-            System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding(true);
+            UTF8Encoding encoding = new UTF8Encoding(true);
             File.WriteAllText(fullPath, templateContent, encoding);
 
             // From 2020.1 ImportAsset requires a relative path.
@@ -736,7 +971,7 @@ namespace Unity.Entities.Unsafe
             AssetDatabase.LoadAssetAtPath(relativePath, typeof(UnityEngine.Object)); 
         }
 
-        public static T[] Slice<T>(this T[] arr, int indexFrom, int indexTo)
+        private static T[] Slice<T>(this T[] arr, int indexFrom, int indexTo)
         {
             uint length = (uint)(indexTo - indexFrom);
             T[] result = new T[length];

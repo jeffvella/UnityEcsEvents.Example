@@ -1,8 +1,12 @@
-﻿using System;
+﻿// ReSharper disable ClassNeverInstantiated.Global
+
+using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
+
 
 namespace Assets.Scripts.Providers
 {
@@ -13,47 +17,55 @@ namespace Assets.Scripts.Providers
         void Dispose();
     }
 
-    public interface IProvider : IDisposable
+    public interface IProvider : IDisposable { }
+
+    public unsafe interface IProvider<T> where T : struct
     {
+        Native<T> Data { get; }
+    }
+    
+    public readonly unsafe struct Unmanaged<T> where T : unmanaged
+    {
+        public readonly T* Ptr;
+        public Unmanaged(Allocator allocator) => Ptr = (T*)UnsafeUtility.Malloc(sizeof(T), UnsafeUtility.AlignOf<T>(), allocator);
+        public void Dispose(Allocator allocator) => UnsafeUtility.Free(Ptr, allocator);
+        public void Clear() => UnsafeUtility.MemClear(Ptr, UnsafeUtility.SizeOf<T>());
+        public ref T Ref => ref UnsafeUtilityEx.AsRef<T>(Ptr);
+        public static implicit operator Native<T>(Unmanaged<T> o) => UnsafeUtilityEx.AsRef<Native<T>>(o.Ptr);
     }
 
-    public unsafe interface IProvider<T>
+    public readonly unsafe struct Native<T> where T : struct
     {
-        void* GetUnsafePtr();
-
-        ref T Data { get; }
+        public readonly byte* Ptr;
+        public Native(Allocator allocator) => Ptr = (byte*)UnsafeUtility.Malloc(UnsafeUtility.SizeOf<T>(), UnsafeUtility.AlignOf<T>(), allocator);
+        public void Dispose(Allocator allocator) => UnsafeUtility.Free(Ptr, allocator);
+        public void Clear() => UnsafeUtility.MemClear(Ptr, UnsafeUtility.SizeOf<T>());
+        public ref T Ref => ref UnsafeUtilityEx.AsRef<T>(Ptr);
+        public ref T1 As<T1>() where T1 : struct => ref UnsafeUtilityEx.AsRef<T1>(Ptr);
     }
-
-    public unsafe class Provider<T> : IProvider<T>, IProvider where T : struct, INativeProvider 
+    
+    public unsafe class Provider<T> : IProvider<T>, IProvider where T : struct, INativeProvider
     {
-        public byte* Ptr;
+        /// <summary>
+        /// Access to the struct <typeparamref name="T"/>; Assign to local variable to pass into Entities.ForEach lambda.
+        /// </summary>
+        public Native<T> Data { get; private set; }
 
-        public ref T Data => ref UnsafeUtilityEx.AsRef<T>(Ptr);
-
-        // Regarding Memory Leak Exceptions:
-        // <T> will go out of managed scope, because there is no class holding a reference.
-        // That means any NativeContainers with a DisposeSentinel Safety will also be 
-        // out of scope and then garbage collected, triggering an incorrect error in the 
-        // DOTS leak detection systems. You can however use Unsafe versions of collections
-        // to avoid producing these errors.
+        private Allocator _allocator;
 
         public void Allocate(SystemBase system, Allocator allocator)
         {
-            Ptr = (byte*)UnsafeUtility.Malloc(UnsafeUtility.SizeOf<T>(), UnsafeUtility.AlignOf<T>(), Allocator.Persistent);
-            Data.Allocate(system, allocator);
+            _allocator = allocator;
+            Data = new Native<T>(_allocator);
+            Data.Clear();
+            Data.Ref.Allocate(system, allocator);
         }
 
-        public void Dispose()
-        {
-            Data.Dispose();
-            UnsafeUtility.Free(Ptr, Allocator.Persistent);
-        }
-
-        public void* GetUnsafePtr() => Ptr;
+        public void Dispose() => Data.Dispose(_allocator);
     }
 
     [UpdateInGroup(typeof(InitializationSystemGroup))]
-    public unsafe class ProviderSystem : SystemBase
+    public sealed class ProviderSystem : SystemBase
     {
         public Dictionary<int, IProvider> Providers = new Dictionary<int, IProvider>(); 
 
@@ -71,20 +83,19 @@ namespace Assets.Scripts.Providers
         }
     }
 
-    public unsafe static class ProviderExtensions
+    public static unsafe class ProviderExtensions
     {
         public static IProvider<T> GetOrCreateProvider<T>(this World world) where T : struct, INativeProvider
         {
             var key = typeof(T).GetHashCode();
             var providerSystem = world.GetOrCreateSystem<ProviderSystem>();
-            if (!providerSystem.Providers.TryGetValue(key, out IProvider provider))
-            {
-                var newProvider = new Provider<T>();
-                newProvider.Allocate(providerSystem, Allocator.Persistent);
-                providerSystem.Providers.Add(key, newProvider);
-                return newProvider;
-            }
-            return (IProvider<T>)provider;
+            if (providerSystem.Providers.TryGetValue(key, out var provider))
+                return (IProvider<T>) provider;
+            
+            var newProvider = new Provider<T>();
+            newProvider.Allocate(providerSystem, Allocator.Persistent);
+            providerSystem.Providers.Add(key, newProvider);
+            return newProvider;
         }
     }
 }

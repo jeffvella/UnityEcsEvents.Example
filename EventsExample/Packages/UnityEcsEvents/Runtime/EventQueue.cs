@@ -310,6 +310,7 @@ namespace Vella.Events
 
         public void EnqueueDefault()
         {
+            // temp, only for tests, stackalloc crashing burst here.
             var tmp = UnsafeUtility.Malloc(_componentSize, 4, Allocator.Temp);
             _componentData.GetBuffer(_threadIndex).Add(tmp, _componentSize);
             UnsafeUtility.Free(tmp, Allocator.Temp);

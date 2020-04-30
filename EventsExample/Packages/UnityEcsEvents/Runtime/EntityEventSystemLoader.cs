@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using Unity.Entities;
 
 namespace Vella.Events
@@ -48,4 +49,5 @@ namespace Vella.Events
     }
 
 }
+*/
 

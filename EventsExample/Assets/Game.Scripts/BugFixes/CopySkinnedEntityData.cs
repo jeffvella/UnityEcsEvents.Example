@@ -7,16 +7,13 @@ using Unity.Rendering;
 public class BugFixCopySkinnedEntityData : SystemBase
 {
     /* Suppresses the error: "ArgumentException: A component with type:BoneIndexOffset 
-    * has not been added to the entity.", until the Unity bug is fixed. */
+    * has not been added to the entity.", until the Unity bug is fixed. #1# */
 
-    protected override void OnCreate()
+    protected override void OnStartRunning()
     {
         World.GetOrCreateSystem<CopySkinnedEntityDataToRenderEntity>().Enabled = false;
         Enabled = false;
-        World.DestroySystem(this);
     }
 
-    protected override void OnUpdate() => throw new System.NotImplementedException();
+    protected override void OnUpdate() { }
 }
-
-

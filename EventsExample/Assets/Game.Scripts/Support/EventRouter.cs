@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
@@ -91,7 +92,7 @@ namespace Assets.Scripts.UI
             };
             _dispatcherSystem.Remove(typeIndex, invoker);
         }
-
+        
         public class EventDispatcher : SystemBase
         {
             private Dictionary<int, List<IDelegateInvoker>> _actions;
@@ -138,7 +139,7 @@ namespace Assets.Scripts.UI
                 }
             }
 
-            protected unsafe override void OnUpdate()
+            protected override unsafe void OnUpdate()
             {
                 var chunks = _query.CreateArchetypeChunkArray(Allocator.TempJob);
                 var uem = EntityManager.Unsafe;
@@ -153,13 +154,13 @@ namespace Assets.Scripts.UI
                         {
                             var componentsPtr = uem.GetComponentPtr(chunk, componentTypeIndex);
                             var typeInfo = TypeManager.GetTypeInfo(componentTypeIndex);
-                            var componentType = ComponentType.FromTypeIndex(componentTypeIndex);
+                            //var componentType = ComponentType.FromTypeIndex(componentTypeIndex);
 
                             for (int i = 0; i < list.Count; i++)
                             {
                                 for (int j = 0; j < chunk.Count; j++)
                                 {
-                                    if (componentType.IsZeroSized)
+                                    if (typeInfo.IsZeroSized)
                                     {
                                         list[i].ExecuteDefault();
                                     }

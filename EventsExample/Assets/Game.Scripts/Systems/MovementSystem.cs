@@ -1,13 +1,7 @@
 ﻿using Assets.Scripts.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
-using UnityEngine;
 
 namespace Assets.Scripts.Systems
 {
@@ -27,21 +21,14 @@ namespace Assets.Scripts.Systems
 
             Entities.ForEach((Entity entity, int nativeThreadIndex, ref MovementTarget target, in MovementInfo info) =>
             {
-                float3 origin = GetComponent<Translation>(entity).Value;
+                var origin = GetComponent<Translation>(entity).Value;
 
-                float3 destination = target.Entity != Entity.Null
-                    ? GetComponent<Translation>(target.Entity).Value
-                    : target.Position;
+                var destination = target.Entity != Entity.Null ? GetComponent<Translation>(target.Entity).Value : target.Position;
 
-                commands.SetComponent(nativeThreadIndex, entity, new Translation
-                {
-                    Value = origin + math.normalize(destination - origin) * info.Speed * delta
-                });
-
+                commands.SetComponent(nativeThreadIndex, entity, new Translation {Value = origin + math.normalize(destination - origin) * info.Speed * delta});
             }).Schedule();
 
             _commandSystem.AddJobHandleForProducer(Dependency);
         }
-
     }
 }

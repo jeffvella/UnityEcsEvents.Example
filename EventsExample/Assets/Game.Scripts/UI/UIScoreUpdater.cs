@@ -1,10 +1,7 @@
-﻿using Assets.Scripts.Components;
-using Assets.Scripts.Components.Events;
-using Assets.Scripts.Systems;
-using System.Collections;
-using System.Collections.Generic;
+﻿using Assets.Scripts.Components.Events;
 using UnityEngine;
 using UnityEngine.UI;
+using Vella.Events;
 
 namespace Assets.Scripts.UI
 {
@@ -13,16 +10,6 @@ namespace Assets.Scripts.UI
         public EventRouter EventSource;
         public Text ScoreText;
 
-        private void Start()
-        {
-            EventSource.AddListener<UIScoreUpdater, ScoreUpdatedEvent>(this);
-        }
-
-        private void OnDestroy()
-        {
-            EventSource.RemoveListener<UIScoreUpdater, ScoreUpdatedEvent>(this);
-        }
-
         public void OnEvent(ScoreUpdatedEvent e)
         {
             Debug.Log($"{nameof(ScoreUpdatedEvent)}! Score={e.CurrentScore} Change={e.ChangedAmount} Type={e.Type}");
@@ -30,8 +17,8 @@ namespace Assets.Scripts.UI
             ScoreText.text = e.CurrentScore.ToString();
         }
 
+        private void Start() => EventSource.Subscribe<ScoreUpdatedEvent>(this);
 
-
+        private void OnDestroy() => EventSource.Unsubscribe<ScoreUpdatedEvent>(this);
     }
-
 }

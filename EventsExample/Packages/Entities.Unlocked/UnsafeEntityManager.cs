@@ -317,14 +317,14 @@ public static unsafe class UnsafeEntityManagerExtensions
     public static void* GetArchetypePtr(this EntityArchetype entityArchetype) => entityArchetype.Archetype;
 
     public static void* GetChunkPtr(this EntityArchetype entityArchetype, int index) => entityArchetype.Archetype->Chunks.p[index];
-
-    public static UnsafeEntityManager GetUnsafeEntityManager(this EntityArchetype entityArchetype) => new UnsafeEntityManager(entityArchetype._DebugComponentStore);
-
+    
     public static ArchetypeChunk GetArchetypeChunk(this EntityArchetype entityArchetype, int index)
     {
         ArchetypeChunk result = default;
         result.m_Chunk = entityArchetype.Archetype->Chunks.p[index];
+#if ENABLE_UNITY_COLLECTIONS_CHECKS        
         result.m_EntityComponentStore = entityArchetype._DebugComponentStore;
+#endif        
         return result;
     }
 }

@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Unity.Entities;
 
 namespace Assets.Scripts.Components
 {
-    [Flags, Serializable]
+    [Flags]
+    [Serializable]
     public enum BrainFlags
     {
         None = 0,
         Alerted = 1 << 0,
         Depressed = 1 << 1,
-        Disabled = 1 << 2,
+        Disabled = 1 << 2
     }
 
     public enum BrainActivity
@@ -22,7 +19,7 @@ namespace Assets.Scripts.Components
         Idle,
         InPursuit,
         Wandering,
-        Searching,
+        Searching
     }
 
     [GenerateAuthoringComponent]

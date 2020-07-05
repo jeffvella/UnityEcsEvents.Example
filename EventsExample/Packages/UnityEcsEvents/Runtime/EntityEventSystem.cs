@@ -395,7 +395,7 @@ namespace Vella.Events
             return GetOrCreateBatch(TypeManager.GetTypeInfo(bufferType.TypeIndex), TypeManager.GetTypeInfo(bufferType.TypeIndex)).Batch.ComponentQueue;
         }
 
-        internal (EventBatch Batch, bool WasCreated) GetOrCreateBatch(TypeManager.TypeInfo typeInfo, TypeManager.TypeInfo bufferTypeInfo = default, int startingPoolSize = 0)
+        private (EventBatch Batch, bool WasCreated) GetOrCreateBatch(TypeManager.TypeInfo typeInfo, TypeManager.TypeInfo bufferTypeInfo = default, int startingPoolSize = 0)
         {
             var key = GetKey(typeInfo.TypeIndex, bufferTypeInfo.TypeIndex);
             if (!Data.TypeIndexToBatchMap.TryGetValue(key, out var index))
@@ -459,7 +459,7 @@ namespace Vella.Events
             }
         }
 
-        internal unsafe EventQueue[] ComponentQueues
+        public unsafe EventQueue[] ComponentQueues
         {
             get
             {

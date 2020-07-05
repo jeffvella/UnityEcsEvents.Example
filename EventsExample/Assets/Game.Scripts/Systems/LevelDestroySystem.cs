@@ -7,21 +7,13 @@ namespace Assets.Game.Scripts.Systems
 {
     public class LevelDestroySystem : SystemBase
     {
-        private EndSimulationEntityCommandBufferSystem _commandSystem;
         private EntityQuery _actorsQuery;
+        private EndSimulationEntityCommandBufferSystem _commandSystem;
 
         protected override void OnCreate()
         {
             _commandSystem = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
-            _actorsQuery = EntityManager.CreateEntityQuery(new EntityQueryDesc
-            {
-                Any = new[]
-                {
-                    ComponentType.ReadWrite<PlayerTag>(),
-                    ComponentType.ReadWrite<AttackerTag>(),
-                    ComponentType.ReadWrite<DefenderTag>(),
-                }
-            });
+            _actorsQuery = EntityManager.CreateEntityQuery(new EntityQueryDesc {Any = new[] {ComponentType.ReadWrite<PlayerTag>(), ComponentType.ReadWrite<AttackerTag>(), ComponentType.ReadWrite<DefenderTag>()}});
         }
 
         protected override void OnUpdate()
@@ -44,18 +36,18 @@ namespace Assets.Game.Scripts.Systems
                 if (e.Category != SceneCategory.Level)
                     return;
 
-                for (int i = 0; i < entities.Length; i++)
+                for (var i = 0; i < entities.Length; i++)
                 {
                     var entity = entities[i];
                     if (buffers.Exists(entity))
                     {
                         var children = buffers[entity];
-                        for (int j = 0; j < children.Length; j++)
+                        for (var j = 0; j < children.Length; j++)
                             commands.DestroyEntity(children[j].Value);
                     }
+
                     commands.DestroyEntity(entity);
                 }
-
             }).Run();
 
             entities.Dispose();

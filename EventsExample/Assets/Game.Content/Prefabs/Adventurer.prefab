@@ -291,6 +291,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -423,6 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 322806938190263991}
   - component: {fileID: 322806938180671831}
+  - component: {fileID: 2715244751299206588}
   - component: {fileID: 888230306}
   - component: {fileID: 888230307}
   - component: {fileID: 888230308}
@@ -464,7 +466,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322806938190162583}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 11de9d883ba29e7408300ad1c2cc424b, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 1
@@ -475,6 +477,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2715244751299206588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 322806938190162583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aea18a9fecfd504ba1a9c0f8ebcb60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bones: []
+  TranslationChannels: []
+  RotationChannels: []
+  ScaleChannels: []
+  FloatChannels: []
+  IntChannels: []
 --- !u!114 &888230306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,6 +539,7 @@ MonoBehaviour:
   AssetId: 4
   ActorType: 1
   Team: 2
+  Flags: 0
 --- !u!114 &888230311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,38 +552,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b275e5f92732148048d7b77e264ac30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShapeType: 30
+  m_ShapeType: 1
   m_PrimitiveCenter:
     x: 0
-    y: 0.8
-    z: 0.000000029802322
+    y: 0.78
+    z: 0
   m_PrimitiveSize:
-    x: 0.79999983
-    y: 1.6000001
-    z: 0.40000004
+    x: 0.56
+    y: 0.56
+    z: 1.48
   m_PrimitiveOrientation:
     Value:
-      x: -0
+      x: 90
       y: 0
       z: 0
     RotationOrder: 4
   m_Capsule:
-    Height: 0.40000004
-    Radius: 0.8000001
+    Height: 1.48
+    Radius: 0.28
     Axis: 2
   m_Cylinder:
-    Height: 0.40000004
-    Radius: 0.8000001
+    Height: 1.48
+    Radius: 0.28
     Axis: 2
   m_CylinderSideCount: 20
-  m_SphereRadius: 0.8000001
+  m_SphereRadius: 0.74
   m_MinimumSkinnedVertexWeight: 0.1
   m_ConvexHullGenerationParameters:
     m_SimplificationTolerance: 0.024000002
     m_BevelRadius: 0.05
     m_MinimumAngle: 2.5000002
   m_CustomMesh: {fileID: 0}
-  m_ForceUnique: 0
+  m_ForceUnique: 1
   m_Material:
     m_SupportsTemplate: 1
     m_Template: {fileID: 0}
@@ -688,6 +709,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -790,6 +812,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1085,6 +1108,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1282,6 +1306,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1600,6 +1625,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

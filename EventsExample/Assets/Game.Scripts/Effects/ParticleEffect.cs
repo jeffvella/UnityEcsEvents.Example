@@ -1,51 +1,31 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections;
 using UnityEngine;
-using Unity.Burst;
-using Unity.Collections;
-using Unity.Collections.LowLevel.Unsafe;
 
 namespace Assets.Game.Scripts.Effects
 {
-
-
     public class ParticleEffect : MonoBehaviour, IPoolable<ParticleEffect>
     {
-        private IObjectPool<ParticleEffect> _pool;
         private readonly List<ParticleSystem> _systems = new List<ParticleSystem>();
+        private bool _isPlayOnAwake;
+        private IObjectPool<ParticleEffect> _pool;
 
         public int DespawnDelay;
-        private bool _isPlayOnAwake;
-
-        private void Awake()
-        {
-            var childSystems = GetComponentsInChildren<ParticleSystem>();
-            if (childSystems.Any())
-            {
-                _systems.AddRange(childSystems);
-            }
-            _isPlayOnAwake = IsPlayOnAwake();
-        }
-
-        private bool IsPlayOnAwake()
-        {
-            foreach (var system in _systems)
-            {
-                if (system.main.simulationSpeed > 0)
-                    return true;
-            }
-            return false;
-        }
 
         public bool IsSpawned => _pool != null;
 
-        public void OnParticleSystemStopped()
+        public bool IsValid => _pool != null;
+
+        public bool IsPlaying
         {
-            Despawn();
+            get
+            {
+                for (var i = 0; i < _systems.Count; i++)
+                    if (_systems[i].isPlaying)
+                        return true;
+                return false;
+            }
         }
 
         public void OnSpawned(IObjectPool<ParticleEffect> pool)
@@ -56,76 +36,6 @@ namespace Assets.Game.Scripts.Effects
         public void OnDespawned()
         {
             _pool = null;
-        }
-
-        public void Reset()
-        {
-            for (int i = 0; i < _systems.Count; i++)
-            {
-                var system = _systems[i];
-                system.time = 0;
-                system.Clear();
-                SetEmission(system, true);
-            }
-        }
-
-        public void Play()
-        {
-            for (int i = 0; i < _systems.Count; i++)
-            {
-                _systems[i].Play();
-            }
-        }
-
-        public void Stop()
-        {
-            for (int i = 0; i < _systems.Count; i++)
-            {
-                _systems[i].Stop();
-            }
-        }
-
-        private void Pause()
-        {
-            for (int i = 0; i < _systems.Count; i++)
-            {
-                var main = _systems[i].main;
-                main.simulationSpeed = 0;
-            }
-        }
-
-        private void Unpause()
-        {
-            for (int i = 0; i < _systems.Count; i++)
-            {
-                var main = _systems[i].main;
-                main.simulationSpeed = 1;
-            }
-        }
-
-        public void Restart()
-        {
-            Reset();
-
-            if (!_isPlayOnAwake)
-            {
-                Play();
-            }
-        }
-
-        public bool IsValid => _pool != null;
-
-        public bool IsPlaying
-        {
-            get
-            {
-                for (int i = 0; i < _systems.Count; i++)
-                {
-                    if (_systems[i].isPlaying)
-                        return true;
-                }
-                return false;
-            }
         }
 
         public void Despawn()
@@ -145,12 +55,80 @@ namespace Assets.Game.Scripts.Effects
             }
         }
 
+        private void Awake()
+        {
+            var childSystems = GetComponentsInChildren<ParticleSystem>();
+            if (childSystems.Any())
+                _systems.AddRange(childSystems);
+            _isPlayOnAwake = IsPlayOnAwake();
+        }
+
+        private bool IsPlayOnAwake()
+        {
+            foreach (var system in _systems)
+                if (system.main.simulationSpeed > 0)
+                    return true;
+            return false;
+        }
+
+        public void OnParticleSystemStopped()
+        {
+            Despawn();
+        }
+
+        public void Reset()
+        {
+            for (var i = 0; i < _systems.Count; i++)
+            {
+                var system = _systems[i];
+                system.time = 0;
+                system.Clear();
+                SetEmission(system, true);
+            }
+        }
+
+        public void Play()
+        {
+            for (var i = 0; i < _systems.Count; i++)
+                _systems[i].Play();
+        }
+
+        public void Stop()
+        {
+            for (var i = 0; i < _systems.Count; i++)
+                _systems[i].Stop();
+        }
+
+        private void Pause()
+        {
+            for (var i = 0; i < _systems.Count; i++)
+            {
+                var main = _systems[i].main;
+                main.simulationSpeed = 0;
+            }
+        }
+
+        private void Unpause()
+        {
+            for (var i = 0; i < _systems.Count; i++)
+            {
+                var main = _systems[i].main;
+                main.simulationSpeed = 1;
+            }
+        }
+
+        public void Restart()
+        {
+            Reset();
+
+            if (!_isPlayOnAwake)
+                Play();
+        }
+
         public void SetEmission(bool value)
         {
-            for (int i = 0; i < _systems.Count; i++)
-            {
+            for (var i = 0; i < _systems.Count; i++)
                 SetEmission(_systems[i], value);
-            }
         }
 
         private void OnDestroy()

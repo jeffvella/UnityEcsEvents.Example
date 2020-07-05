@@ -1,55 +1,28 @@
-﻿using Assets.Scripts.Components.Events;
-using Assets.Scripts.UI;
-using SubjectNerd.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Components.Events;
+using SubjectNerd.Utilities;
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
+using Vella.Events;
 
 public class AudioManager : MonoBehaviour, IEventObserver<PlayAudioEvent>
 {
-    [Reorderable]
-    public List<AudioEntry> Clips = new List<AudioEntry>();
-    public EventRouter EventSource;
-
-    [Serializable]
-    public class AudioEntry
-    {
-        public SoundCategory Category;
-        public AudioClip Clip;
-    }
- 
     private List<AudioPlayer> _active = new List<AudioPlayer>();
-    private Stack<AudioPlayer> _pool = new Stack<AudioPlayer>();
-    private List<AudioPlayer> _keepBuffer = new List<AudioPlayer>();
     private ILookup<SoundCategory, AudioEntry> _clipLookup;
+    private List<AudioPlayer> _keepBuffer = new List<AudioPlayer>();
+    private readonly Stack<AudioPlayer> _pool = new Stack<AudioPlayer>();
 
-    private void Start()
-    {
-        _clipLookup = Clips.ToLookup(k => k.Category, v => v);
-        EventSource.AddListener<AudioManager, PlayAudioEvent>(this);
-    }
+    [Reorderable] public List<AudioEntry> Clips = new List<AudioEntry>();
 
-    private void OnDestroy()
-    {
-        EventSource.RemoveListener<AudioManager, PlayAudioEvent>(this);
-    }
-
-    public class AudioPlayer
-    {
-        public float EndTime;
-        public AudioSource Source;
-        public Entity Entity;
-    }
+    public EventRouter EventSource;
 
     public void OnEvent(PlayAudioEvent e)
     {
         if (e.Sound == SoundCategory.None)
-        {
-            Debug.LogError($"PlaySoundEvent detected with no sound specified");
-        }
+            Debug.LogError("PlaySoundEvent detected with no sound specified");
 
         if (_clipLookup.Contains(e.Sound))
         {
@@ -60,6 +33,14 @@ public class AudioManager : MonoBehaviour, IEventObserver<PlayAudioEvent>
                 PlayForEntity(entry.Clip, entity);
         }
     }
+
+    private void Start()
+    {
+        _clipLookup = Clips.ToLookup(k => k.Category, v => v);
+        EventSource.Subscribe<PlayAudioEvent>(this);
+    }
+
+    private void OnDestroy() => EventSource.Unsubscribe<PlayAudioEvent>(this);
 
     private void PlayForEntity(AudioClip clip, Entity entity, float3? position = null)
     {
@@ -92,8 +73,8 @@ public class AudioManager : MonoBehaviour, IEventObserver<PlayAudioEvent>
 
     private bool IsPlayingForEntity(AudioClip clip, Entity entity)
     {
-        var isPlaying = false;
-        foreach (AudioPlayer player in _active)
+        bool isPlaying = false;
+        foreach (var player in _active)
         {
             if (!player.Source.isPlaying)
             {
@@ -103,7 +84,7 @@ public class AudioManager : MonoBehaviour, IEventObserver<PlayAudioEvent>
             {
                 if (player.Entity == entity && clip == player.Source.clip)
                     isPlaying = true;
-              
+
                 _keepBuffer.Add(player);
             }
         }
@@ -114,5 +95,19 @@ public class AudioManager : MonoBehaviour, IEventObserver<PlayAudioEvent>
         _keepBuffer.Clear();
 
         return isPlaying;
+    }
+
+    [Serializable]
+    public class AudioEntry
+    {
+        public SoundCategory Category;
+        public AudioClip Clip;
+    }
+
+    public class AudioPlayer
+    {
+        public float EndTime;
+        public Entity Entity;
+        public AudioSource Source;
     }
 }

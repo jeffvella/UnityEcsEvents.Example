@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Assets.Scripts.Extensions
 {
@@ -15,8 +11,8 @@ namespace Assets.Scripts.Extensions
             if (source == null)
                 throw new ArgumentNullException(nameof(source));
 
-            int valueLength = value.Length;
-            int startIndex = 0;
+            var valueLength = value.Length;
+            var startIndex = 0;
 
             while (source.IndexOf(value, startIndex, comparisonType) == startIndex)
                 startIndex += valueLength;

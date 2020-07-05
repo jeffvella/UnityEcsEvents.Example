@@ -1,15 +1,9 @@
-﻿using Assets.Game.Scripts.Components.Events;
+﻿using System;
+using Assets.Game.Scripts.Components.Events;
 using Assets.Scripts.Components;
 using Assets.Scripts.Components.Events;
 using Assets.Scripts.Components.Tags;
-using Assets.Scripts.Extensions;
 using Assets.Scripts.Providers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unity.Collections;
 using Unity.Entities;
 using Unity.Mathematics;
 using Unity.Transforms;
@@ -19,9 +13,9 @@ namespace Assets.Scripts.Systems
 {
     public class SpawnDefenderSystem : SystemBase
     {
-        private IProvider<Prefabs> _prefabs;
-        private IProvider<Players> _players;
         private BeginSimulationEntityCommandBufferSystem _commandSystem;
+        private IProvider<Players> _players;
+        private IProvider<Prefabs> _prefabs;
 
         protected override void OnCreate()
         {
@@ -48,12 +42,9 @@ namespace Assets.Scripts.Systems
                     if (!playerData.Ref.TryGet(e.OwnerId, out var player))
                         throw new Exception("Player not found");
 
-                    for (int i = 0; i < e.Amount; i++)
-                    {
+                    for (var i = 0; i < e.Amount; i++)
                         CreateDefender(ref commands, prefab, player);
-                    }
                 }
-
             }).Run();
         }
 
@@ -61,23 +52,15 @@ namespace Assets.Scripts.Systems
         {
             var targetEntity = commands.Instantiate(prefab.Entity);
             commands.AddComponent<DefenderTag>(targetEntity);
-            commands.AddComponent(targetEntity, new OwnerRef
-            {
-                Id = player.Id,
-                Entity = player.Entity
-            });
-            commands.SetComponent(targetEntity, new Translation
-            {
-                Value = position + prefab.SpawnOffset
-            });
+            commands.AddComponent(targetEntity, new OwnerRef {Id = player.Id, Entity = player.Entity});
+            commands.SetComponent(targetEntity, new Translation {Value = position + prefab.SpawnOffset});
         }
-
     }
 
     public class InitializeDefenderSystem : SystemBase
     {
-        private EventQueue<ActorCreatedEvent> _createdEvents;
         private EndSimulationEntityCommandBufferSystem _commandSystem;
+        private EventQueue<ActorCreatedEvent> _createdEvents;
         private EntityQuery _newDefendersQuery;
 
         protected override void OnCreate()
@@ -95,13 +78,8 @@ namespace Assets.Scripts.Systems
             {
                 commands.RemoveComponent<UnprocessedTag>(entity);
 
-                events.Enqueue(new ActorCreatedEvent
-                {
-                    AssetId = def.AssetId,
-                });
-
+                events.Enqueue(new ActorCreatedEvent {AssetId = def.AssetId});
             }).WithStoreEntityQueryInField(ref _newDefendersQuery).Run();
         }
     }
-
 }

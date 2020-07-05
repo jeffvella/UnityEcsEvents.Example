@@ -1,13 +1,7 @@
-﻿using Assets.Scripts.Components;
-using Assets.Scripts.Components.Events;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Assets.Scripts.Components.Events;
 using Unity.Entities;
-using UnityEngine;
 using Vella.Events;
 
 namespace Assets.Scripts.Systems
@@ -30,13 +24,6 @@ namespace Assets.Scripts.Systems
             _uem = EntityManager.Unsafe;
         }
 
-        private struct Events
-        {
-            public EventQueue<ActorDeathEvent> AttackerDeath;
-            public EventQueue<SpawnEffectEvent> SpawnEffect;
-            public EventQueue<PlayAudioEvent> PlaySound;
-        }
-
         protected override void OnUpdate()
         {
             var uem = _uem;
@@ -54,22 +41,11 @@ namespace Assets.Scripts.Systems
                     AttributedTo = e.Source.Owner
                 });
 
-                events.SpawnEffect.Enqueue(new SpawnEffectEvent
-                {
-                    SpawnPosition = e.Hit.Position,
-                    AssociatedEntity = e.Hit.Target,
-                    Category = EffectCategory.Collision,
-                });
+                events.SpawnEffect.Enqueue(new SpawnEffectEvent {SpawnPosition = e.Hit.Position, AssociatedEntity = e.Hit.Target, Category = EffectCategory.Collision});
 
-                events.PlaySound.Enqueue(new PlayAudioEvent
-                {
-                    Sound = SoundCategory.Collision,
-                    SpawnPosition = e.Hit.Position,
-                    AssociatedEntity = e.Hit.Target
-                });
+                events.PlaySound.Enqueue(new PlayAudioEvent {Sound = SoundCategory.Collision, SpawnPosition = e.Hit.Position, AssociatedEntity = e.Hit.Target});
 
                 commands.DestroyEntity(e.Hit.Target);
-
             }).Run();
         }
 
@@ -79,8 +55,14 @@ namespace Assets.Scripts.Systems
             // Calling SystemBase.GetComponent<T>() in Burst on Entity.Null will crash the editor.
 
             if (!uem.Exists(entity))
-                throw new ArgumentException($"Entity doesn't exist");
+                throw new ArgumentException("Entity doesn't exist");
         }
 
+        private struct Events
+        {
+            public EventQueue<ActorDeathEvent> AttackerDeath;
+            public EventQueue<SpawnEffectEvent> SpawnEffect;
+            public EventQueue<PlayAudioEvent> PlaySound;
+        }
     }
 }

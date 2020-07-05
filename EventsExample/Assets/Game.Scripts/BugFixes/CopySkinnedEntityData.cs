@@ -15,5 +15,7 @@ public class BugFixCopySkinnedEntityData : SystemBase
         Enabled = false;
     }
 
-    protected override void OnUpdate() { }
+    protected override void OnUpdate()
+    {
+    }
 }

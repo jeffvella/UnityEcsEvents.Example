@@ -1,19 +1,10 @@
-﻿using Assets.Scripts.Components;
+﻿using System;
+using Assets.Scripts.Components;
 using Assets.Scripts.Support;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
 using Unity.Mathematics;
-using UnityEngine.Rendering;
-using UnityEngine.UIElements;
-
-
 
 namespace Assets.Scripts.Providers
 {
@@ -23,17 +14,19 @@ namespace Assets.Scripts.Providers
         public ActorDefinition Definition;
         internal float3 SpawnOffset;
 
-        public bool Equals(PrefabRef other) 
-            => Definition.AssetId == other.Definition.AssetId;
+        public bool Equals(PrefabRef other)
+        {
+            return Definition.AssetId == other.Definition.AssetId;
+        }
     }
-    
+
     public struct Prefabs : INativeProvider
     {
         private UnsafeMultiHashMap<int, PrefabRef> _prefabsByTeam;
         private UnsafeHashMap<int, PrefabRef> _prefabsByAssetId;
-        
+
         public int Length { get; private set; }
-        
+
         public void Allocate(SystemBase owner, Allocator allocator)
         {
             _prefabsByTeam = new UnsafeMultiHashMap<int, PrefabRef>(1, allocator);
@@ -42,8 +35,8 @@ namespace Assets.Scripts.Providers
 
         public void Clear(PrefabRef prefab)
         {
-            var teamKey = (int)prefab.Definition.Team;
-            var idKey = (int)prefab.Definition.AssetId;
+            var teamKey = (int) prefab.Definition.Team;
+            var idKey = (int) prefab.Definition.AssetId;
             if (_prefabsByAssetId.ContainsKey(idKey))
             {
                 Length -= _prefabsByTeam.CountValuesForKey(teamKey); // todo this doesnt seem right.
@@ -54,8 +47,8 @@ namespace Assets.Scripts.Providers
 
         public void AddOrReplace(PrefabRef prefab)
         {
-            var teamKey = (int)prefab.Definition.Team;
-            var idKey = (int)prefab.Definition.AssetId;
+            var teamKey = (int) prefab.Definition.Team;
+            var idKey = (int) prefab.Definition.AssetId;
             if (_prefabsByAssetId.ContainsKey(idKey))
             {
                 _prefabsByTeam.Remove(teamKey, prefab);
@@ -65,14 +58,15 @@ namespace Assets.Scripts.Providers
             {
                 Length++;
             }
+
             _prefabsByTeam.Add(teamKey, prefab);
             _prefabsByAssetId.Add(idKey, prefab);
         }
 
         public void Add(PrefabRef prefab)
         {
-            var teamKey = (int)prefab.Definition.Team;
-            var idKey = (int)prefab.Definition.AssetId;
+            var teamKey = (int) prefab.Definition.Team;
+            var idKey = (int) prefab.Definition.AssetId;
             _prefabsByTeam.Add(teamKey, prefab);
             _prefabsByAssetId.Add(idKey, prefab);
             Length++;
@@ -80,15 +74,15 @@ namespace Assets.Scripts.Providers
 
         public bool TryGetFirst(ActorCategory team, out PrefabRef item)
         {
-            return _prefabsByTeam.TryGetFirstValue((int)team, out item, out var it);
+            return _prefabsByTeam.TryGetFirstValue((int) team, out item, out var it);
         }
 
         public bool TryGet(ActorAssetId id, out PrefabRef item)
         {
-            return _prefabsByAssetId.TryGetValue((int)id, out item);
+            return _prefabsByAssetId.TryGetValue((int) id, out item);
         }
 
-        public unsafe UnsafeEnumerator<int, PrefabRef> GetEnumerator()
+        public UnsafeEnumerator<int, PrefabRef> GetEnumerator()
         {
             return new UnsafeEnumerator<int, PrefabRef>(_prefabsByTeam.GetKeyValueArrays(Allocator.Temp));
         }
@@ -99,5 +93,4 @@ namespace Assets.Scripts.Providers
             _prefabsByAssetId.Dispose();
         }
     }
-
 }

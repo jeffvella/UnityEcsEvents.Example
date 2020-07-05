@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unity.Entities;
+﻿using Unity.Entities;
 
 namespace Assets.Game.Scripts.Components.Events
 {
@@ -11,7 +6,7 @@ namespace Assets.Game.Scripts.Components.Events
     {
         None = 0,
         Level,
-        Menu,
+        Menu
     }
 
     public struct SceneLoadedEvent : IComponentData

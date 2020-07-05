@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unity.Entities;
+﻿using Unity.Entities;
 using Unity.Mathematics;
 
 namespace Assets.Scripts.Components.Events
@@ -13,7 +8,7 @@ namespace Assets.Scripts.Components.Events
         None = 0,
         Collision,
         ScoreGained,
-        Spawn,
+        Spawn
     }
 
     public struct SpawnEffectEvent : IComponentData

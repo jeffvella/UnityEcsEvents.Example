@@ -1,10 +1,4 @@
-﻿using Assets.Scripts.Components;
-using Assets.Scripts.Support;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Assets.Scripts.Support;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Entities;
@@ -18,7 +12,7 @@ namespace Assets.Scripts.Providers
     }
 
     /// <summary>
-    /// A burstable lookup for <see cref="PlayerRef"/>; maintained by <see cref="SpawnPlayerSystem"/>
+    ///     A burstable lookup for <see cref="PlayerRef" />; maintained by <see cref="SpawnPlayerSystem" />
     /// </summary>
     public struct Players : INativeProvider
     {
@@ -42,8 +36,10 @@ namespace Assets.Scripts.Providers
             return _playerById.TryGetFirstValue(playerId, out item, out var it);
         }
 
-        public unsafe UnsafeEnumerator<int, PlayerRef> GetEnumerator()
-            => new UnsafeEnumerator<int, PlayerRef>(_playerById.GetKeyValueArrays(Allocator.Temp));
+        public UnsafeEnumerator<int, PlayerRef> GetEnumerator()
+        {
+            return new UnsafeEnumerator<int, PlayerRef>(_playerById.GetKeyValueArrays(Allocator.Temp));
+        }
 
         public void Dispose()
         {

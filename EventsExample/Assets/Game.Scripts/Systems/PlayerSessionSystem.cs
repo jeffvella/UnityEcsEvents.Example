@@ -1,13 +1,5 @@
 ﻿using Assets.Scripts.Components;
 using Assets.Scripts.Components.Events;
-using Assets.Scripts.Components.Tags;
-using Assets.Scripts.Providers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Unity.Collections;
 using Unity.Entities;
 using Vella.Events;
 
@@ -38,12 +30,9 @@ namespace Assets.Scripts.Systems
 
                     events.Enqueue(new ScoreUpdatedEvent // todo pool into single event with buffer?
                     {
-                        Type = ScoreUpdateType.AttackerDeath,
-                        ChangedAmount = deathValue,
-                        CurrentScore = session.Score
+                        Type = ScoreUpdateType.AttackerDeath, ChangedAmount = deathValue, CurrentScore = session.Score
                     });
                 }
-
             }).Run();
         }
     }

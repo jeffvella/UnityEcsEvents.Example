@@ -1,13 +1,8 @@
 ﻿using Assets.Game.Scripts.Components.Events;
+using Assets.Scripts.Components;
 using Assets.Scripts.Components.Events;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Unity.Entities;
 using Vella.Events;
-using Assets.Scripts.Components;
 
 namespace Assets.Game.Scripts.Systems
 {
@@ -31,26 +26,13 @@ namespace Assets.Game.Scripts.Systems
             {
                 if (e.SceneCategory != SceneCategory.Level)
                     return;
-              
-                spawnPlayerEvents.Enqueue(new SpawnPlayerEvent
-                {
-                    Category = ActorCategory.HumanPlayer
-                });
-               
+
+                spawnPlayerEvents.Enqueue(new SpawnPlayerEvent {Category = ActorCategory.HumanPlayer});
             }).Run();
 
             var spawnActorEvents = _spawnActorEvents;
 
-            Entities.ForEach((in PlayerCreatedEvent e) =>
-            {
-                spawnActorEvents.Enqueue(new SpawnActorEvent
-                {
-                    OwnerId = e.Id,
-                    Amount = 1,
-                    Catetory = ActorCategory.Defender
-                });
-
-            }).Run();
+            Entities.ForEach((in PlayerCreatedEvent e) => { spawnActorEvents.Enqueue(new SpawnActorEvent {OwnerId = e.Id, Amount = 1, Catetory = ActorCategory.Defender}); }).Run();
         }
     }
 }

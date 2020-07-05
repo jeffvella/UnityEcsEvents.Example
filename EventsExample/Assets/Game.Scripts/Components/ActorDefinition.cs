@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Unity.Entities;
-using Unity.Mathematics;
 
 namespace Assets.Scripts.Components
 {
@@ -16,7 +11,7 @@ namespace Assets.Scripts.Components
         Environment,
         Lighting,
         Effect,
-        Sound,
+        Sound
     }
 
     public enum ActorCategory
@@ -25,7 +20,7 @@ namespace Assets.Scripts.Components
         Attacker,
         Defender,
         HumanPlayer,
-        AIPlayer,
+        AIPlayer
     }
 
     public enum ActorAssetId
@@ -34,10 +29,11 @@ namespace Assets.Scripts.Components
         PlayerPawn,
         DefenderSphere,
         AttackerCube,
-        Adventurer,
+        Adventurer
     }
 
-    [Flags, Serializable]
+    [Flags]
+    [Serializable]
     public enum ActorFlags
     {
         None = 0,

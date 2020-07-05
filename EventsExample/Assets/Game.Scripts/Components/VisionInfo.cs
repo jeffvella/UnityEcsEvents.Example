@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Unity.Entities;
 
 namespace Assets.Scripts.Components
@@ -12,7 +8,7 @@ namespace Assets.Scripts.Components
     {
         None = 0,
         Blinded = 1 << 0,
-        Perceptive = 1 << 0,
+        Perceptive = 1 << 0
     }
 
     [GenerateAuthoringComponent]

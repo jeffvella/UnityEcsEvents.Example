@@ -1,28 +1,23 @@
-﻿using Assets.Scripts.Components;
+﻿using Assets.Game.Scripts.Components.Events;
+using Assets.Scripts.Components;
 using Assets.Scripts.Components.Events;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Unity.Collections;
-using Assets.Scripts.Extensions;
-using Unity.Collections.LowLevel.Unsafe;
-using Unity.Entities;
-using Unity.Mathematics;
-using Unity.Scenes;
-using Unity.Transforms;
-using UnityEngine;
 using Assets.Scripts.Components.Tags;
 using Assets.Scripts.Providers;
+using Unity.Collections;
+using Unity.Entities;
+using Unity.Mathematics;
+using Unity.Transforms;
+using UnityEngine;
 using Vella.Events;
-using Assets.Game.Scripts.Components.Events;
+using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.Systems
 {
     public class SpawnAttackerSystem : SystemBase
     {
-        private IProvider<Prefabs> _prefabs;
         private NativeList<Entity> _buffer;
         private EventQueue<PlayAudioEvent> _playAudioEvents;
+        private IProvider<Prefabs> _prefabs;
 
         protected override void OnCreate()
         {
@@ -39,10 +34,7 @@ namespace Assets.Scripts.Systems
             var prefabData = _prefabs.Data;
             var events = _playAudioEvents;
 
-            events.Enqueue(new PlayAudioEvent
-            {
-                Sound = SoundCategory.Spawn
-            });
+            events.Enqueue(new PlayAudioEvent {Sound = SoundCategory.Spawn});
 
             Entities.ForEach((ref SpawnActorEvent e) =>
             {
@@ -59,24 +51,18 @@ namespace Assets.Scripts.Systems
 
                     EntityManager.AddComponent<AttackerTag>(entities);
                 }
-
             }).WithStructuralChanges().Run();
         }
 
-        private unsafe void SetSpawnPositions(NativeList<Entity> entities, float3 center, float radius)
+        private void SetSpawnPositions(NativeList<Entity> entities, float3 center, float radius)
         {
-            for (int i = 0; i < entities.Length; i++)
-            {
-                EntityManager.SetComponentData(entities[i], new Translation
-                {
-                    Value = GetRandomCirclePosition(center, radius)
-                });
-            }
+            for (var i = 0; i < entities.Length; i++)
+                EntityManager.SetComponentData(entities[i], new Translation {Value = GetRandomCirclePosition(center, radius)});
         }
 
         private float3 GetRandomCirclePosition(float3 center, float radius)
         {
-            float ang = UnityEngine.Random.value * 360;
+            var ang = Random.value * 360;
             float3 pos;
             pos.x = center.x + radius * Mathf.Sin(ang * Mathf.Deg2Rad);
             pos.y = center.y;
@@ -92,8 +78,8 @@ namespace Assets.Scripts.Systems
 
     public class InitializeAttackerSystem : SystemBase
     {
-        private EventQueue<ActorCreatedEvent> _createdEvents;
         private EndSimulationEntityCommandBufferSystem _commandSystem;
+        private EventQueue<ActorCreatedEvent> _createdEvents;
         private EntityQuery _newAttackerQuery;
 
         protected override void OnCreate()
@@ -111,11 +97,7 @@ namespace Assets.Scripts.Systems
             {
                 commands.RemoveComponent<UnprocessedTag>(entity);
 
-                events.Enqueue(new ActorCreatedEvent
-                {
-                    AssetId = def.AssetId,
-                });
-
+                events.Enqueue(new ActorCreatedEvent {AssetId = def.AssetId});
             }).WithStoreEntityQueryInField(ref _newAttackerQuery).Run();
         }
     }

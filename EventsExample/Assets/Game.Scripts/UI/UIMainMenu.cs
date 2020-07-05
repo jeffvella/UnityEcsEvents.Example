@@ -1,13 +1,7 @@
 ﻿using Assets.Game.Scripts;
 using Assets.Game.Scripts.Components.Events;
-using Assets.Scripts.Components;
-using Assets.Scripts.Components.Events;
-using Assets.Scripts.Systems;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Entities;
 using UnityEngine;
-using UnityEngine.UI;
+using Vella.Events;
 
 namespace Assets.Scripts.UI
 {
@@ -32,6 +26,5 @@ namespace Assets.Scripts.UI
                 ThenLoad = SceneId.MainMenu
             });
         }
-
     }
 }

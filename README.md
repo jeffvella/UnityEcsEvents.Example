@@ -2,6 +2,8 @@
 # UnityEcsEvents.Example
 An example showing the how ECS Events package can be utilized in a game.
 
+# Note: this example has not yet been updated to use the latest version of UnityEcsEvents and Unity packages.
+
 #### What is this?
 
 A demonstration project for how the [ECS Events package](https://github.com/jeffvella/UnityEcsEvents) could be used in a real project. The game itself is pretty simple but the point is to illustrate methods of wiring functionality together. The project shows:

@@ -1780,6 +1780,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4392023828103392508, guid: 295e81f3297c7354b805b5ab9013b6fb,
+        type: 3}
+      propertyPath: AutoLoad.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392023828103392508, guid: 295e81f3297c7354b805b5ab9013b6fb,
+        type: 3}
+      propertyPath: AutoLoad.Array.data[0]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392023828103392508, guid: 295e81f3297c7354b805b5ab9013b6fb,
+        type: 3}
+      propertyPath: Scenes.Array.data[0].Id
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4392023828103392508, guid: 295e81f3297c7354b805b5ab9013b6fb,
+        type: 3}
+      propertyPath: Scenes.Array.data[1].Id
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4392023828103392510, guid: 295e81f3297c7354b805b5ab9013b6fb,
         type: 3}
       propertyPath: m_Name

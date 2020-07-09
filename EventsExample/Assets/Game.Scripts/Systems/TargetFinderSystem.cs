@@ -25,6 +25,11 @@ namespace Assets.Scripts.Systems
             RequireForUpdate(_hasNoTargetQuery);
         }
 
+        protected override void OnDestroy()
+        {
+            _targets.Dispose();
+        }
+
         protected override void OnUpdate()
         {
             var commands = _commandSystem.CreateCommandBuffer();
@@ -32,39 +37,49 @@ namespace Assets.Scripts.Systems
             var potentialTargets = _targets;
             potentialTargets.Clear();
 
-            Entities.WithAll<DefenderTag>().ForEach((Entity entity, in Translation pos) => { potentialTargets.Add(new TargetInfo {Position = pos.Value, Entity = entity}); }).Run();
+            Entities.WithAll<DefenderTag>().ForEach((Entity entity, in Translation pos) =>
+            {
+                potentialTargets.Add(new TargetInfo
+                {
+                    Position = pos.Value,
+                    Entity = entity
+                });
+
+            }).Run();
 
             Entities.WithNone<MovementTarget>().ForEach((Entity attackerEntity, ref BrainState state, in Translation pos, in Rotation rot, in VisionInfo vision) =>
             {
-                for (var i = 0; i < potentialTargets.Length; i++)
+                for (int i = 0; i < potentialTargets.Length; i++)
                 {
                     var target = potentialTargets[i];
 
-                    var effectiveSightDistance = state.Flags.IsFlagSet(BrainFlags.Alerted) ? vision.Distance * 2.5 : vision.Distance;
+                    double effectiveSightDistance = state.Flags.IsFlagSet(BrainFlags.Alerted) ? vision.Distance * 2.5 : vision.Distance;
 
                     if (math.distance(target.Position, pos.Value) > effectiveSightDistance)
                         continue;
 
                     state.Activity = BrainActivity.InPursuit;
 
-                    commands.AddComponent(attackerEntity, new MovementTarget {Entity = target.Entity});
+                    commands.AddComponent(attackerEntity, new MovementTarget { Entity = target.Entity });
 
-                    events.Enqueue(new TargetAcquiredEvent {Source = attackerEntity, SourcePosition = pos.Value, Target = target.Entity, TargetPosition = target.Position});
+                    events.Enqueue(new TargetAcquiredEvent
+                    {
+                        Source = attackerEntity,
+                        SourcePosition = pos.Value,
+                        Target = target.Entity,
+                        TargetPosition = target.Position
+                    });
 
                     break;
                 }
-            }).WithAll<AttackerTag>().WithStoreEntityQueryInField(ref _hasNoTargetQuery).Run();
-        }
 
-        protected override void OnDestroy()
-        {
-            _targets.Dispose();
+            }).WithAll<AttackerTag>().WithStoreEntityQueryInField(ref _hasNoTargetQuery).Run();
         }
 
         public struct TargetInfo
         {
-            public float3 Position;
             public Entity Entity;
+            public float3 Position;
         }
     }
 }

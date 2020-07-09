@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
+using Assets.Scripts.Components;
 using Assets.Scripts.Components.Events;
 using Unity.Entities;
 using Vella.Events;
@@ -15,12 +15,11 @@ namespace Assets.Scripts.Systems
 
         protected override void OnCreate()
         {
-            _commandSystem = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
-
             var eventSystem = World.GetOrCreateSystem<EntityEventSystem>();
             _events.AttackerDeath = eventSystem.GetQueue<ActorDeathEvent>();
             _events.SpawnEffect = eventSystem.GetQueue<SpawnEffectEvent>();
             _events.PlaySound = eventSystem.GetQueue<PlayAudioEvent>();
+            _commandSystem = World.GetOrCreateSystem<EndSimulationEntityCommandBufferSystem>();
             _uem = EntityManager.Unsafe;
         }
 
@@ -32,37 +31,46 @@ namespace Assets.Scripts.Systems
 
             Entities.ForEach((in CollisionEvent e) =>
             {
-                CheckEntityExistsOrThrow(uem, e.Hit.Target);
-
-                events.AttackerDeath.Enqueue(new ActorDeathEvent
+                if (uem.Exists(e.Hit.Target))
                 {
-                    Definition = default, //GetComponent<ActorDefinition>(e.Hit.Target), // crashing in burst
-                    DeathPosition = e.Hit.Position,
-                    AttributedTo = e.Source.Owner
-                });
+                    events.AttackerDeath.Enqueue(new ActorDeathEvent
+                    {
+                        Definition = GetComponent<ActorDefinition>(e.Hit.Target),
+                        DeathPosition = e.Hit.Position,
+                        AttributedTo = e.Source.Owner
+                    });
 
-                events.SpawnEffect.Enqueue(new SpawnEffectEvent {SpawnPosition = e.Hit.Position, AssociatedEntity = e.Hit.Target, Category = EffectCategory.Collision});
+                    events.SpawnEffect.Enqueue(new SpawnEffectEvent
+                    {
+                        SpawnPosition = e.Hit.Position,
+                        AssociatedEntity = e.Hit.Target,
+                        Category = EffectCategory.Collision
+                    });
 
-                events.PlaySound.Enqueue(new PlayAudioEvent {Sound = SoundCategory.Collision, SpawnPosition = e.Hit.Position, AssociatedEntity = e.Hit.Target});
+                    events.PlaySound.Enqueue(new PlayAudioEvent
+                    {
+                        Sound = SoundCategory.Collision,
+                        SpawnPosition = e.Hit.Position,
+                        AssociatedEntity = e.Hit.Target
+                    });
 
-                commands.DestroyEntity(e.Hit.Target);
-            }).Run();
-        }
+                    commands.AddComponent(e.Hit.Target, new PendingDestruction
+                    {
+                        QueuedTime = DateTime.UtcNow,
+                        DestroyTime = DateTime.UtcNow
+                    });
 
-        [Conditional("ENABLE_UNITY_COLLECTIONS_CHECKS")]
-        private static void CheckEntityExistsOrThrow(UnsafeEntityManager uem, Entity entity)
-        {
-            // Calling SystemBase.GetComponent<T>() in Burst on Entity.Null will crash the editor.
+                    commands.AddComponent<Disabled>(e.Hit.Target);
+                }
 
-            if (!uem.Exists(entity))
-                throw new ArgumentException("Entity doesn't exist");
+            }).WithoutBurst().Run();
         }
 
         private struct Events
         {
             public EventQueue<ActorDeathEvent> AttackerDeath;
-            public EventQueue<SpawnEffectEvent> SpawnEffect;
             public EventQueue<PlayAudioEvent> PlaySound;
+            public EventQueue<SpawnEffectEvent> SpawnEffect;
         }
     }
 }

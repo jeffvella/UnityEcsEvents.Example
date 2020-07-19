@@ -113,9 +113,10 @@ PlayerSettings:
   switchNVNShaderPoolsGranularity: 33554432
   switchNVNDefaultPoolsGranularity: 16777216
   switchNVNOtherPoolsGranularity: 16777216
+  stadiaPresentMode: 0
+  stadiaTargetFramerate: 0
   vulkanNumSwapchainBuffers: 3
   vulkanEnableSetSRGBWrite: 0
-  vulkanEnablePreTransform: 0
   m_SupportedAspectRatios:
     4:3: 1
     5:4: 1
@@ -258,6 +259,9 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
+  AndroidMinifyWithR8: 0
+  AndroidMinifyRelease: 0
+  AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 100
   m_BuildTargetIcons: []
@@ -569,7 +573,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: ENABLE_HYBRID_RENDERER_V2
+    1: ENABLE_HYBRID_RENDERER_V2;UNITY_ENABLE_ANIMATION_ANIMATOR_CONVERSION
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}

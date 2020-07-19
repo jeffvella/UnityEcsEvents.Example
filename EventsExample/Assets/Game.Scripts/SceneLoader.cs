@@ -279,6 +279,38 @@ namespace Assets.Game.Scripts
                 return scene;
             }
 
+            private void HandleFinishedLoading(int i, AsyncOperationTracker currentTracker)
+            {
+                _eventSystem.Enqueue(new SceneLoadedEvent
+                {
+                    Id = currentTracker.SceneEntry.Id,
+                    ProgressEntity = currentTracker.Entity,
+                    SceneCategory = currentTracker.SceneEntry.Category
+                });
+
+                _currentlyLoading.RemoveAt(i);
+            }
+
+            private void HandleFinishedUnloading(int i, AsyncOperationTracker currentTracker)
+            {
+                _eventSystem.Enqueue(new SceneUnloadedEvent
+                {
+                    Id = currentTracker.SceneEntry.Id,
+                    ProgressEntity = currentTracker.Entity,
+                    Category = currentTracker.SceneEntry.Category
+                });
+
+                _currentlyUnloading.RemoveAt(i);
+
+                if (currentTracker.SubsequentSceneId != SceneId.None)
+                {
+                    _eventSystem.Enqueue(new RequestSceneLoadEvent
+                    {
+                        Id = currentTracker.SubsequentSceneId
+                    });
+                }
+            }
+
             private void LoadNextScene()
             {
                 if (_sceneQueue.Current == null)
@@ -398,22 +430,15 @@ namespace Assets.Game.Scripts
                 {
                     for (int i = _currentlyLoading.Count - 1; i != -1; i--)
                     {
-                        var current = _currentlyLoading[i];
-                        if (current.Operation.isDone)
+                        var currentTracker = _currentlyLoading[i];
+                        if (currentTracker.Operation.isDone)
                         {
-                            _eventSystem.Enqueue(new SceneLoadedEvent
-                            {
-                                Id = current.SceneEntry.Id,
-                                ProgressEntity = current.Entity,
-                                SceneCategory = current.SceneEntry.Category
-                            });
-
-                            _currentlyLoading.RemoveAt(i);
+                            HandleFinishedLoading(i, currentTracker);
                         }
 
-                        EntityManager.SetComponentData(current.Entity, new SceneLoadingProgress
+                        EntityManager.SetComponentData(currentTracker.Entity, new SceneLoadingProgress
                         {
-                            PercentComplete = current.Operation.progress
+                            PercentComplete = currentTracker.Operation.progress
                         });
                     }
                 }
@@ -422,30 +447,15 @@ namespace Assets.Game.Scripts
                 {
                     for (int i = _currentlyUnloading.Count - 1; i != -1; i--)
                     {
-                        var current = _currentlyUnloading[i];
-                        if (current.Operation.isDone)
+                        var currentTracker = _currentlyUnloading[i];
+                        if (currentTracker.Operation.isDone)
                         {
-                            _eventSystem.Enqueue(new SceneUnloadedEvent
-                            {
-                                Id = current.SceneEntry.Id,
-                                ProgressEntity = current.Entity,
-                                Category = current.SceneEntry.Category
-                            });
-
-                            _currentlyUnloading.RemoveAt(i);
-
-                            if (current.SubsequentSceneId != SceneId.None)
-                            {
-                                _eventSystem.Enqueue(new RequestSceneLoadEvent
-                                {
-                                    Id = current.SubsequentSceneId
-                                });
-                            }
+                            HandleFinishedUnloading(i, currentTracker);
                         }
 
-                        EntityManager.SetComponentData(current.Entity, new SceneUnloadingProgress
+                        EntityManager.SetComponentData(currentTracker.Entity, new SceneUnloadingProgress
                         {
-                            PercentComplete = current.Operation.progress
+                            PercentComplete = currentTracker.Operation.progress
                         });
                     }
                 }

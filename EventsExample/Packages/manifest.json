@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.unity.animation": "0.5.1-preview.2",
+    "com.unity.animation": "0.5.1-preview.3",
     "com.unity.burst": "1.3.3",
     "com.unity.collab-proxy": "1.3.7",
     "com.unity.dataflowgraph": "0.14.0-preview.1",
